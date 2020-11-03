@@ -1,8 +1,8 @@
 [build]
-  base = "/opt/build/repo"
+  base = "/"
 
   # next exportの出力先
-  publish = "/opt/build/repo/out"
+  publish = "/out"
 
   # next buildからのnext exportでファイル生成
   command = "NODE_ENV=production yarn run build && yarn run export"
