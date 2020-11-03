@@ -1,11 +1,12 @@
 [build]
-  base = "/"
+  base = "/opt/build/repo"
 
   # next exportの出力先
-  publish = "out/"
+  publish = "/opt/build/repo/out"
 
   # next buildからのnext exportでファイル生成
-  command = "yarn run build && yarn run export"
+  command = "NODE_ENV=production yarn run build && yarn run export"
+  commandOrigin = "config"
 
 [context.production]
   command = "NODE_ENV=production yarn run build && yarn run export"
