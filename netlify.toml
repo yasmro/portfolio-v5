@@ -1,16 +1,3 @@
-[build]
-  base = "/"
-
-  # next exportの出力先
-  publish = "/out"
-
-  # next buildからのnext exportでファイル生成
-  command = "NODE_ENV=production yarn run build && yarn run export"
-  commandOrigin = "config"
-
-[context.production]
-  command = "NODE_ENV=production yarn run build && yarn run export"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
