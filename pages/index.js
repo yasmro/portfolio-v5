@@ -1,22 +1,18 @@
 import Link from "next/link";
+// import * as mdb from 'mdb-ui-kit'; // lib
+// import { Input } from 'mdb-ui-kit'; // module
+import Button from '@material-ui/core/Button';
 import { getAllPosts } from '../lib'
 import fetch from "isomorphic-unfetch";
 
 const Index = (props) => {
-    console.log(props)
     return(
         <div>
-            <h1>Batman TV Shows</h1>
-            <ul>
-            {props.shows ? 
-                props.shows.map((show, idx) => (
-                <li key={idx}>
-                    <Link href="/portfolios/[id]" as={`/portfolios/${idx}`}>
-                    <a>{show.fields.title}</a>
-                    </Link>
-                </li>
-            )) : <h1>null</h1>}
-            </ul>
+            <h1>Top</h1>
+            
+            <Button variant="contained" color="primary">
+                Hello World
+            </Button>
         </div>
     )
 };

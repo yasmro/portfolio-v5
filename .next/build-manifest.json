@@ -29,15 +29,25 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
+    "/about": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/about.js"
+    ],
     "/next/dist/pages/_error": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/next/dist/pages/_error.js"
     ],
-    "/portfolios/[id]": [
+    "/works": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/portfolios/[id].js"
+      "static/chunks/pages/works.js"
+    ],
+    "/works/[id]": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/works/[id].js"
     ]
   },
   "ampFirstPages": []
