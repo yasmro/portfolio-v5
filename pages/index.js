@@ -1,16 +1,18 @@
 import Link from "next/link";
+import { getAllPosts } from '../lib'
 import fetch from "isomorphic-unfetch";
 
 const Index = (props) => {
+    console.log(props)
     return(
         <div>
             <h1>Batman TV Shows</h1>
             <ul>
             {props.shows ? 
-                props.shows.map(show => (
-                <li key={show.id}>
-                    <Link href="/shows/[id]" as={`/shows/${show.id}`}>
-                        <a>{show.name}</a>
+                props.shows.map((show, idx) => (
+                <li key={idx}>
+                    <Link href="/portfolios/[id]" as={`/portfolios/${idx}`}>
+                    <a>{show.fields.title}</a>
                     </Link>
                 </li>
             )) : <h1>null</h1>}
@@ -20,11 +22,13 @@ const Index = (props) => {
 };
 
 Index.getInitialProps = async function() {
-    const res = await fetch("https://api.tvmaze.com/search/shows?q=batman");
-    const data = await res.json();
-    console.log(`Show data fetched. Count: ${data.length}`);
-    console.log(data)
-    return { shows: data.map(entry => entry.show) };
+    console.log(process.env.REACT_APP_NEXT_PUBLIC_CONTENTFUL_SPACE_ID)
+    const res = await fetch("https://api.tvmaze.com/search/shows?q=batman")
+    const res2 = await getAllPosts();
+    console.log(res2)
+    // console.log(`Show data fetched. Count: ${data.length}`);
+
+    return { shows: res2};
 };
 
 export default Index;
