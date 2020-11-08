@@ -11,7 +11,7 @@ const Index = (props) => {
             {props.shows ? 
                 props.shows.map((show, idx) => (
                 <li key={idx}>
-                    <Link href="/works/[id]" as={`/works/${idx}`}>
+                    <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
                     <a>{show.fields.title}</a>
                     </Link>
                 </li>
