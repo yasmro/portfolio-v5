@@ -9,10 +9,12 @@ const Index = (props) => {
     return(
         <div>
             <h1>Top</h1>
+            <h1>About</h1>
             
             <Button variant="contained" color="primary">
                 Hello World
             </Button>
+            
         </div>
     )
 };

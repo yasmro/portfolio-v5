@@ -1,10 +1,10 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 
 const mainBlack = "#212121";
 const mainWhite = "#fafafa";
 const blue = "#757ce8";
 // Create a theme instance.
-const theme = createMuiTheme({
+var theme = createMuiTheme({
   palette: {
     common: {
       black: mainBlack,
@@ -22,6 +22,20 @@ const theme = createMuiTheme({
     },
   },
   typography: {
+    fontFamily: [
+      'Karla',
+      'Noto Sans JP',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
     h1: {
       fontSize: "2.5rem",
       fontWeight: 500,
@@ -39,5 +53,6 @@ const theme = createMuiTheme({
     },
   },
 });
+theme = responsiveFontSizes(theme);
 
 export default theme;
