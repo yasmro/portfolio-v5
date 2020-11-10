@@ -34,10 +34,10 @@ const Header = () => (
               <a className="nav-link waves-effect" href="https://mdbootstrap.com/docs/vue/" target="_blank">Vue</a>
             </li> */}
           </ul>
-          <ul className="navbar-nav nav-flex-icons" >
+          <ul className="navbar-nav" >
               {
                   routes.map( route => (
-                    <li className="nav-item">
+                    <li className="nav-item p-3 align-items-stretch">
                         <Link href={route.link} className="nav-link waves-effect">
                         <a className="nav-link waves-effect">{route.name}</a>
                         </Link>

@@ -8,7 +8,7 @@ import { routes } from '../data/routes'
 
 
 const Footer = () => (
-    <footer className="mt-5 position-absolute w-100 page-footer font-small bg-dark text-light pink pt-4">
+    <footer className="mt-5 position-absolute w-100 page-footer bg-dark text-light pink pt-4">
         <div className="container text-center text-md-left">
             <div className="row">
                 <div className="col-md-6 mt-md-0 mt-3">
@@ -17,10 +17,10 @@ const Footer = () => (
                 </div>
                 
 
-                <div className="col-md-3 mb-md-0 mb-3">
+                <div className="col-md-6 mb-md-0 mb-3">
 
                     <h5 className="text-uppercase">Socials</h5>
-                    <ul className="d-flex list-unstyled nav-item">
+                    <ul className="d-inline-flex text-center list-unstyled">
                     {
                         socialMedia.map( media => (
                             <li>
@@ -31,15 +31,12 @@ const Footer = () => (
                     }
                     </ul>
 
-                </div>
-
-                <div className="col-md-3 mb-md-0 mb-3">
                     <h5 className="text-uppercase">PAGES</h5>
 
-                    <ul className="list-unstyled">
+                    <ul className="d-inline-flex list-unstyled">
                     {
                         routes.map( route => (
-                            <li className="">
+                            <li className="nav-link waves-effect">
                                 <Link href={route.link}>{route.name}</Link>
                             </li>
                         ))
