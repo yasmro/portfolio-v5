@@ -24,7 +24,7 @@ const Footer = () => (
                     {
                         socialMedia.map( media => (
                             <li>
-                                <a className="nav-link waves-effect" href={`${media.href}`} target="_blank"><i className={media.icon}></i></a>
+                                <a className="nav-link waves-effect text-light" href={`${media.href}`} target="_blank"><i className={`${media.icon} fa-2x`}></i></a>
                                 {/* <a className="nav-link waves-effect" href="https://mdbootstrap.com/docs/angular/" target="_blank">Angular</a> */}
                             </li>
                         ))
@@ -36,8 +36,8 @@ const Footer = () => (
                     <ul className="d-inline-flex list-unstyled">
                     {
                         routes.map( route => (
-                            <li className="nav-link waves-effect">
-                                <Link href={route.link}>{route.name}</Link>
+                            <li className="nav-link waves-effect text-light">
+                                <Link className="text-light" href={route.link}>{route.name}</Link>
                             </li>
                         ))
                     }

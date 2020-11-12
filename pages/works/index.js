@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import { getAllPosts } from '../../lib'
 
@@ -5,54 +6,35 @@ import {Paper} from '@material-ui/core'
 
 import fetch from "isomorphic-unfetch";
 
+import Title from "../../components/Title"
+import ListCard from "../../components/ListCard"
+
 const Index = (props) => {
     return(
-        <div>
-            <div class="jumbotron jumbotron-fluid py-5" >
-                <div class="container">
-                    <span className="topLeft" />
-                    <h1 class="display-4">Works</h1>
-                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                </div>
-            </div>
-            
-            <div className="container">
-                <div className="row row-30 masonry cols">
-
-            
-                    {props.shows ? 
-                        props.shows.map((show, idx) => (
-                            
-                            <div className="col-md-6 col-lg-4 g-3">
-                                <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
-                                <div className="card waves-effect">
-                                    <div className="bg-image hover-overlay ripple" data-ripple-color="light">
-                                    <img
-                                        src={show.fields.thumbnail ? show.fields.thumbnail.fields.file.url : "https://source.unsplash.com/random/1600x900/"}
-                                        className="img-fluid"
-                                    />
-                                    <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
-                                        <div className="waves-effect" Style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                                    </Link>
-                                    </div>
-                                    <div className="card-body">
-                                    <h4 className="card-title">{show.fields.title}</h4>
-                                    <p className="card-text">
-                                        <span className="badge bg-black rounded-0">Category</span>
-                                    </p>
-                                    
-                                    </div>
-                                </div>
-                                </Link>
-                            </div>
-                        
-                        
-                    )) : <h1>null</h1>}
+        <>
+            <Head>
+                <title>Works - Yu Ohno's site 2020</title>
+            </Head>
+            <div>
+                <Title title="Works" description="" />
                 
+                <div className="container">
+                    <div className="row row-40">
+                
+                        {props.shows ? 
+                            props.shows.map((show, idx) => (
+                                
+                                <div className="col-md-6 col-lg-4 g-3">
+                                    <ListCard title={show.fields.title}  thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
+                                </div>
+                            
+                            
+                        )) : <h1>null</h1>}
+                    
+                    </div>
                 </div>
             </div>
-            
-        </div>
+        </>
     )
 };
 
