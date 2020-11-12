@@ -12,6 +12,7 @@ import Slider from "react-slick";
 import WorkTitle from '../../components/WorkTitle'
 import ListCard from '../../components/ListCard'
 
+
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
@@ -22,16 +23,17 @@ const [length, setLength] = useState(0)
 var settings = {
   className: "center",
   dots: true,
+  lazyLoad: true,
   infinite: true,
   touchMove: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   adaptiveHeight: true,
   beforeChange: (current, next) => setCarouselIndex(next),
-  nextArrow: <a href="#" uk-slidenav-next="true" style = {{"color": "black !important"}}></a>,
-  prevArrow: <a href="#" uk-slidenav-previous="true" style = {{"color": "black !important"}}></a>,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
   // appendDots: dots => (
-  //   <div>
+  //   <div style={{ position: "absolute",  top:-40 + 'px', right: 0 + 'px' }}>
   //     <ul style={{ margin: "0px" }}> {dots} </ul>
   //   </div>
   // ),
@@ -71,13 +73,14 @@ return(
             <>
               <div className="">
                   <p><span className="h3">{carouselIndex + 1}</span>/{props.show.fields.photos.length} {props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
-                </div>
+                  
+              </div>
               <Slider {...settings}>
                 
                 {
                   props.show.fields.photos.map( photo => (
-                    <div className="w-75 text-center">
-                      <img className="img-fluid" src={photo.fields.file.url ? photo.fields.file.url : "https://source.unsplash.com/random/1600x900/"} alt="" />
+                    <div className="w-75 text-center" Style="margin:0 auto;" >
+                      <img className="align-item-center img-fluid" src={photo.fields.file.url ? photo.fields.file.url : "https://source.unsplash.com/random/1600x900/"} alt="" />
                     </div>
                   ))
                 }
@@ -115,6 +118,28 @@ return(
   </div>
   </>
 )};
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", padding: '40px 0' }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", padding: '40px 0' }}
+      onClick={onClick}
+    />
+  );
+}
 
 Post.getInitialProps = async function(context) {
   const { id } = context.query;

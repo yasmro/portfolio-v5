@@ -97,6 +97,26 @@ export default createGlobalStyle`
       transition: all 0.3s;
     }
 
+    .myMasonryGrid{
+      display: flex,
+      margin-left: -30px;
+      width: auto;
+    },
+    .myMasonryGridColumn {
+      padding-left: 30px;
+
+    }
+
+    .slick-prev:before, .slick-next:before {
+      font-family: 'slick';
+      font-size: 20px;
+      line-height: 1;
+      opacity: .75;
+      color: black;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     ::selection{
       background: rgba(202, 12, 53, 1)!important;
       color: #fff;

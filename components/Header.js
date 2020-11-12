@@ -1,13 +1,17 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+
 import { AppBar, Toolbar, IconButton, MenuIcon, Typography, Button } from '@material-ui/core';
 
 import { socialMedia } from '../data/socialMedia'
 import { routes } from '../data/routes'
 
 
-const Header = () => (
+const Header = ({ href, children }) => {
+    const router = useRouter();
+    return(
     <nav className="navbar navbar-expand-lg navbar-light bg-red-800 scrolling-navbar p-4">
       <div className="container">
         <a className="navbar-brand waves-effect" href="#">
@@ -39,7 +43,7 @@ const Header = () => (
                   routes.map( route => (
                     <li className="nav-item p-3 align-items-stretch">
                         <Link href={route.link} className="nav-link waves-effect">
-                        <a className="nav-link waves-effect">{route.name}</a>
+                        <a className={"nav-link waves-effect " + (router.pathname.replaceAll("/[id]", "") === route.link ? "active" : "" )}>{route.name}</a>
                         </Link>
                     </li>
                 ))
@@ -90,7 +94,8 @@ const Header = () => (
     </AppBar> */}
     </nav>
     
-)
+    )
+}
 
 
 export default Header
