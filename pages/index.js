@@ -6,6 +6,9 @@ import Button from '@material-ui/core/Button';
 import { getAllPosts } from '../lib'
 import fetch from "isomorphic-unfetch";
 
+import { mySelf, myself } from '../data/about'
+
+import HomeJumbotron from '../components/HomeJumbotron'
 import Title from '../components/Title'
 import ListCard from '../components/ListCard'
 
@@ -16,8 +19,8 @@ const Index = (props) => {
             <title>Home - Yu Ohno's site 2020</title>
             </Head>
             <div>
-                <h1>Top</h1>
-                <Title title="About Me" description="" />
+                <HomeJumbotron name={myself.name} quickWord={myself.quickWord}/>
+                
                 <div className="container">
                 <div className="card border">
                     <div className="bg-image hover-overlay ripple" data-ripple-color="light">
@@ -25,6 +28,7 @@ const Index = (props) => {
                             src={thumbnail !== {} ? thumbnail.fields.file.url : "https://source.unsplash.com/random/1600x900/"}
                             className="img-fluid"
                         /> */}
+                        
                     </div>
                     <div className="card-body">
                         <h4 className="card-title">Yu Ohno</h4>

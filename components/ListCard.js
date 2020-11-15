@@ -12,6 +12,7 @@ const ListCard = ({title, description="", thumbnail={}, slug}) => (
                     src={thumbnail !== {} ? thumbnail.fields.file.url : "https://source.unsplash.com/random/1600x900/"}
                     className="img-fluid"
                     style={{width: "100%", height: "100%", objectFit: "scale-down"}}
+                    alt={title}
                 />
                 
                 </div>

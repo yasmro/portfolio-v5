@@ -21,7 +21,7 @@ const Post = props => {
 const [length, setLength] = useState(0)
 
 var settings = {
-  className: "center",
+  className: "",
   dots: true,
   lazyLoad: true,
   infinite: true,
@@ -29,6 +29,7 @@ var settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   adaptiveHeight: true,
+  centering: true,
   beforeChange: (current, next) => setCarouselIndex(next),
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
@@ -72,15 +73,19 @@ return(
             (props.show.fields.photos) &&
             <>
               <div className="">
-                  <p><span className="h3">{carouselIndex + 1}</span>/{props.show.fields.photos.length} {props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
+                  <span className="h3">{carouselIndex + 1}</span>/{props.show.fields.photos.length}
+                  <p>{props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
+
                   
               </div>
               <Slider {...settings}>
                 
                 {
                   props.show.fields.photos.map( photo => (
-                    <div className="w-75 text-center" Style="margin:0 auto;" >
-                      <img className="align-item-center img-fluid" src={photo.fields.file.url ? photo.fields.file.url : "https://source.unsplash.com/random/1600x900/"} alt="" />
+                    <div className="w-75" Style="min-height: 500px; padding:0 auto;" >
+                      <div className="" Style="">
+                        <img className="align-item-center img-fluid" src={photo.fields.file.url ? photo.fields.file.url : "https://source.unsplash.com/random/1600x900/"} alt="" />
+                      </div>
                     </div>
                   ))
                 }

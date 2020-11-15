@@ -13,6 +13,7 @@ export default class MyDocument extends Document {
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <link rel="stylesheet" href="https://egkoppel.github.io/product-sans/google-fonts.css"></link>
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -27,6 +28,19 @@ export default class MyDocument extends Document {
               h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
             })(document);`,
           }}>
+          </script>
+          <script dangerouslySetInnerHTML={{
+            __html: `
+            var toggle = document.getElementById('toggle')
+            var overlay = document.getElementById('overlay')
+            toggle.addEventListener('click', function(){
+              toggle.classList.toggle('toggle-active');
+              overlay.classList.toggle('open');
+            });
+            `,
+
+          }}>
+            
           </script>
         </Head>
         <body>

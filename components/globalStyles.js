@@ -12,16 +12,26 @@ export default createGlobalStyle`
     button:focus {
         outline:0;
     }
+    
+    // html, body{
+    //   background-image:
+    //     repeating-linear-gradient(
+    //       45deg,
+    //       #f5f5f5,#f5f5f5 5px,
+    //       rgba(0 0 0 / 0) 0,
+    //       rgba(0 0 0 / 0) 10px
+    //     );
+    // }
 
     *{
-        font-family: toppan-bunkyu-mincho-pr6n, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std,'Noto Sans JP', sans-serif;
-        // font-family: corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
+        font-family: ff-dax-pro, a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std,'Noto Sans JP', sans-serif;
+        // font-family: toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
         /* font-style: italic !important; */
         font-weight: 300;
       }
     
       h1, h2, h3, h4, h5, h6{
-        font-family: din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron, sans-serif;
+        font-family: ff-dax-pro, corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron, sans-serif;
       }
 
     .topLeft{
@@ -31,6 +41,13 @@ export default createGlobalStyle`
     .bottomRight{
         background:
           linear-gradient(to bottom right, rgba(255,255,255,0) 50%, #f00 50.5%) no-repeat top left/100% 100%
+    }
+
+    .active{
+      background-color: rgba(202, 12, 53, 1)!important;
+      color: white!important;
+      font-weight: 400;
+      // border-bottom: solid 2px rgba(202, 12, 53, 1)!important;
     }
 
     .square {
@@ -93,8 +110,32 @@ export default createGlobalStyle`
       transition: all 0.3s;
     }
     .card-hover:hover{
+      // border-color: rgba(202, 12, 53, 1)!important;
+      background-color: rgba(202, 12, 53, 1)!important;
+      color: white;
+      box-shadow: 0 10px 20px 0 rgba(202,12,53,.05);
       transform: translateY(-10px);
       transition: all 0.3s;
+      cursor: pointer;
+    }
+
+
+    .whatICanDo{
+      position: relative;
+       padding: 1rem 0rem 1.5rem 90px;
+      //  border-bottom: 3px solid #000;
+       min-height: 240px;
+     }
+
+     .whatICanDo span {
+      //  font-family:toppan-bunkyu-mincho-pr6n, astoria-sans, a-otf-ud-shin-go-pr6n;
+      font-size: 10rem;
+      line-height: 1;
+      position: absolute;
+      bottom: -1.25rem;
+      left: 0;
+      opacity: 0.3;
+      font-weight:600;
     }
 
     .myMasonryGrid{
@@ -117,10 +158,148 @@ export default createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
     }
 
+    /* button */
+.button_container {
+  position: fixed;
+  top: 4%;
+  right: 6%;
+  height: 27px;
+  width: 35px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+.button_container:hover {
+  opacity: 0.7;
+}
+.button_container.toggle-active .top {
+  transform: translateY(11px) translateX(0) rotate(45deg);
+  background: #FFF;
+}
+.button_container.toggle-active .middle {
+  opacity: 0;
+  background: #FFF;
+}
+.button_container.toggle-active .bottom {
+  transform: translateY(-11px) translateX(0) rotate(-45deg);
+  background: #FFF;
+}
+.button_container span {
+  background: #343a40;
+  border: none;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.button_container span:nth-of-type(2) {
+  top: 11px;
+}
+.button_container span:nth-of-type(3) {
+  top: 22px;
+}
+/* Open menu */
+.overlay {
+  z-index: 20;
+  position: fixed;
+  background: rgb(52, 58, 64) ;
+  backdrop-filter: blur(8px);
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+.overlay.open {
+  opacity: 0.9;
+  visibility: visible;
+  height: 100%;
+}
+.overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+}
+.overlay.open li:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.overlay.open li:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+.overlay.open li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+.overlay nav {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  
+  
+  text-align: center;
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.overlay ul li {
+  display: block;
+  height: 25%;
+  height: calc(100% / 4);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+.overlay ul li a {
+  display: block;
+  position: relative;
+  color: #FFF;
+  text-decoration: none;
+  overflow: hidden;
+}
+.overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+  width: 100%;
+}
+.overlay ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: #FFF;
+  transition: 0.35s;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
     ::selection{
       background: rgba(202, 12, 53, 1)!important;
       color: #fff;
     }
+
+
 
     /* scroll bar */
     ::-webkit-scrollbar{
