@@ -10,6 +10,8 @@ const ListCard = ({title, description="", thumbnail={}, slug}) => (
             <div className="bg-light hover-overlay ripple" style={{ height: "200px"}}data-ripple-color="light">
                 <img
                     src={thumbnail !== {} ? thumbnail.fields.file.url : "https://source.unsplash.com/random/1600x900/"}
+                    height={thumbnail !== {} ? thumbnail.fields.file.details.image.height : "0"}
+                    width={thumbnail !== {} ? thumbnail.fields.file.details.image.width : "0"}
                     className="img-fluid"
                     style={{width: "100%", height: "100%", objectFit: "scale-down"}}
                     alt={title}
@@ -17,7 +19,7 @@ const ListCard = ({title, description="", thumbnail={}, slug}) => (
                 
                 </div>
                 <div className="card-body">
-                <h4 className="card-title">{title}</h4>
+                <p className="h4 card-title text-center">{title}</p>
                 <p className="card-text">
                     
                 </p>

@@ -2,11 +2,11 @@ import Head from "next/head"
 import Link from "next/link";
 // import * as mdb from 'mdb-ui-kit'; // lib
 // import { Input } from 'mdb-ui-kit'; // module
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import { getAllPosts } from '../lib'
-import fetch from "isomorphic-unfetch";
+// import fetch from "isomorphic-unfetch";
 
-import { mySelf, myself } from '../data/about'
+import { myself } from '../data/about'
 
 import HomeJumbotron from '../components/HomeJumbotron'
 import Title from '../components/Title'
@@ -18,10 +18,12 @@ const Index = (props) => {
             <Head>
             <title>Home - Yu Ohno's site 2020</title>
             </Head>
-            <div>
+            <div className="">
+                <div className="skewedArea">
                 <HomeJumbotron name={myself.name} quickWord={myself.quickWord}/>
+                </div>
                 
-                <div className="container">
+                <div className="container ">
                 <div className="card border">
                     <div className="bg-image hover-overlay ripple" data-ripple-color="light">
                         {/* <img
@@ -50,7 +52,7 @@ const Index = (props) => {
                         {props.shows ? 
                             props.shows.map((show, idx) => (
                                 
-                                <div className="col-md-4 col-lg-3 g-3">
+                                <div className="col-md-4 col-lg-3 g-3" key={`card-${idx}`}>
                                     <ListCard title={show.fields.title}  thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                 </div>
                             

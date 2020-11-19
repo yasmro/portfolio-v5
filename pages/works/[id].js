@@ -2,11 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 
 import {useState, useEffect} from 'react'
-import fetch from "isomorphic-unfetch";
 
 import { getAllPosts, getPostBySlug } from '../../lib'
 import ReactMarkdown from 'react-markdown'
-import Image from 'react-image-resizer'
 import Slider from "react-slick";
 
 import WorkTitle from '../../components/WorkTitle'
@@ -28,7 +26,7 @@ var settings = {
   touchMove: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  adaptiveHeight: true,
+  adaptiveHeight: false,
   centering: true,
   beforeChange: (current, next) => setCarouselIndex(next),
   nextArrow: <SampleNextArrow />,
@@ -61,17 +59,11 @@ return(
     <WorkTitle title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} />
     
     <div className="container">
-      <div className="row">
+      <div className="row row-30">
       <div className="col-lg-4">
-        <ReactMarkdown children={props.show.fields.description} />
-      {props.show.image ? <img src={props.show.image.medium} /> : null}
-
-      </div>
-
-      <div className="col-lg-8">
         {
             (props.show.fields.photos) &&
-            <>
+            <div className="d-inline d-lg-none">
               <div className="">
                   <span className="h3">{carouselIndex + 1}</span>/{props.show.fields.photos.length}
                   <p>{props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
@@ -81,16 +73,48 @@ return(
               <Slider {...settings}>
                 
                 {
-                  props.show.fields.photos.map( photo => (
-                    <div className="w-75" Style="min-height: 500px; padding:0 auto;" >
+                  props.show.fields.photos.map( (photo, idx) => (
+                    <div className="w-100 mb-0" Style="padding:0 auto;" key={`slide-sm-${idx}`}>
                       <div className="" Style="">
-                        <img className="align-item-center img-fluid" src={photo.fields.file.url ? photo.fields.file.url : "https://source.unsplash.com/random/1600x900/"} alt="" />
+                        <img className="align-item-center img-fluid" width={photo.fields.file.details.image.width} height={photo.fields.file.details.image.height} src={photo.fields.file.url ? photo.fields.file.url : "https://source.unsplash.com/random/1600x900/"} alt="" />
                       </div>
                     </div>
                   ))
                 }
               </Slider>
-            </>
+            </div>
+          }
+        <div className="mt-5 mt-lg-0">
+        <ReactMarkdown children={props.show.fields.description} />
+        </div>
+        
+      {props.show.image ? <img src={props.show.image.medium} /> : null}
+
+      </div>
+
+      <div className="col-lg-8">
+        {
+            (props.show.fields.photos) &&
+            <div className="d-none d-lg-inline">
+              <div className="">
+                  <span className="h2">{carouselIndex + 1}</span>/{props.show.fields.photos.length}
+                  <p>{props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
+
+                  
+              </div>
+              <Slider {...settings}>
+                
+                {
+                  props.show.fields.photos.map( (photo, idx) => (
+                    <div className="w-100" Style="min-height: 500px; padding:0 auto;" key={`slide-sm-${idx}`}>
+                      <div className="" Style="">
+                        <img className="align-item-center img-fluid" width={photo.fields.file.details.image.width} height={photo.fields.file.details.image.height} src={photo.fields.file.url ? photo.fields.file.url : "https://source.unsplash.com/random/1600x900/"} alt="" />
+                      </div>
+                    </div>
+                  ))
+                }
+              </Slider>
+            </div>
           }
 
       </div>
@@ -104,7 +128,7 @@ return(
             {props.shows ? 
                   props.shows.map((show, idx) => (
                       
-                      <div className="col-md-4 col-lg-3 g-3">
+                      <div className="col-md-4 col-lg-3 g-3" key={`worklist-${show.fields.slug}`}>
                           <ListCard title={show.fields.title}  thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                       </div>
                   

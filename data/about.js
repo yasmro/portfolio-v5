@@ -15,8 +15,8 @@ export const myself = {
       description:"I can develop Web page / Web service with HTML, CSS and JavaScript. I'm studying development Web service with React (front-end) and Python Django framework (back-end)."
     },
     {
-      title:"Robotic Process Automation (RPA) Development",
-      description:"I can develop RPA with Zoho Deluge/API and Google Apps Script. I've ever developed the business automation and integration with third-party products."
+      title:"RPA Development",
+      description:"I can develop RPA (Robotic Process Automation) with low-code script such as Zoho Deluge/API and Google Apps Script. I've ever developed the business automation and integration with third-party products."
     },
     {
       title:"Art - Shodo",

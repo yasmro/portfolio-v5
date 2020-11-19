@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { AppBar, Toolbar, IconButton, MenuIcon, Typography, Button } from '@material-ui/core';
+// import { AppBar, Toolbar, IconButton, MenuIcon, Typography, Button } from '@material-ui/core';
 
-import { socialMedia } from '../data/socialMedia'
+// import { socialMedia } from '../data/socialMedia'
 import { routes } from '../data/routes'
 
 
@@ -15,7 +15,7 @@ const Header = ({ href, children }) => {
 
 
     return(
-    <nav className="navbar navbar-expand-lg navbar-light bg-red-800 scrolling-navbar p-4">
+    <nav className={"navbar navbar-expand-lg navbar-light bg-red-800 scrolling-navbar p-4  " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )}>
       <div className="container">
         <Link href="/">
             <a className="navbar-brand waves-effect">
@@ -30,10 +30,10 @@ const Header = ({ href, children }) => {
         </button>
 
         <div className="d-lg-none d-inline">
-          <div class={"button_container " + (isToggle ? "toggle-active" : "")} id="toggle" onClick={() => setIsToggle(!isToggle)}>
-            <span class="top"></span>
-            <span class="middle"></span>
-            <span class="bottom"></span>
+          <div className={"button_container " + (isToggle ? "toggle-active" : "")} id="toggle" onClick={() => setIsToggle(!isToggle)}>
+            <span className="top"></span>
+            <span className="middle"></span>
+            <span className="bottom"></span>
           </div>
 
 
@@ -42,7 +42,7 @@ const Header = ({ href, children }) => {
               <ul>
               {
                   routes.map( route => (
-                    <li className="nav-item p-3 align-items-stretch">
+                    <li className="nav-item p-3 align-items-stretch" key={`header-menu-${route.name}`}>
                         <Link href={route.link} className="nav-link waves-effect">
                         <a className={"nav-link waves-effect " + (router.pathname.replace("/[id]", "") === route.link ? "active" : "" )} onClick={() => setIsToggle(!isToggle)}>{route.name}</a>
                         </Link>
@@ -50,7 +50,7 @@ const Header = ({ href, children }) => {
                 ))
               }
               </ul>
-              <div className="overflow-hidden ml-0 pl-0" Style=" left:0%;">
+              <div className="overflow-hidden ml-0 pl-0" style={{left:0}}>
               </div>
             </nav>
           </div>
@@ -62,7 +62,7 @@ const Header = ({ href, children }) => {
           <ul className="navbar-nav" id="header-menu">
               {
                   routes.map( route => (
-                    <li className="nav-item p-3 align-items-stretch">
+                    <li className="nav-item p-3 align-items-stretch" key={`header-navbar-${route.name}`}>
                         <Link href={route.link} className="nav-link waves-effect">
                         <a className={"nav-link waves-effect " + (router.pathname.replace("/[id]", "") === route.link ? "active" : "" )} >{route.name}</a>
                         </Link>

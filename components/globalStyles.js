@@ -3,36 +3,54 @@ import {　createGlobalStyle } from 'styled-components';
 
 
 export default createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
     button:focus {
         outline:0;
     }
+
+    :root {
+      --primary: rgba(202, 12, 53, 1)!important;
+      --secondary: rgba(197,179,88, 1)!important;
+    }
     
     // html, body{
     //   background-image:
     //     repeating-linear-gradient(
-    //       45deg,
-    //       #f5f5f5,#f5f5f5 5px,
+    //       -23.4deg,
+    //       #fafafa,#fafafa 10px,
     //       rgba(0 0 0 / 0) 0,
-    //       rgba(0 0 0 / 0) 10px
+    //       rgba(0 0 0 / 0) 20px
     //     );
     // }
 
+    .home-jumbotron{
+      background-image:
+        repeating-linear-gradient(
+          -23.4deg,
+          rgba(0,0,0,0.1), rgba(0,0,0,0.1), 40px,
+          rgba(0 0 0 / 0) 0,
+          rgba(0 0 0 / 0) 80px
+        );
+    }
+
+    
+
     *{
-        font-family: ff-dax-pro, a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std,'Noto Sans JP', sans-serif;
-        // font-family: toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
-        /* font-style: italic !important; */
+        font-family: ff-dax-pro,'Noto Sans JP', sans-serif;
+        // font-family: a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
+        // font-style: italic !important; 
         font-weight: 300;
       }
     
-      h1, h2, h3, h4, h5, h6{
-        font-family: ff-dax-pro, corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron, sans-serif;
-      }
+      // h1, h2, h3, h4, h5, h6{
+      //   font-family: ff-dax-pro, sans-serif;
+      //   // corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron, 
+      // }
 
     .topLeft{
         background:
@@ -43,11 +61,31 @@ export default createGlobalStyle`
           linear-gradient(to bottom right, rgba(255,255,255,0) 50%, #f00 50.5%) no-repeat top left/100% 100%
     }
 
-    .active{
-      background-color: rgba(202, 12, 53, 1)!important;
+    .skewedArea1::before{
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      z-index: -1;
+      background-color: var(--bs-dark);
+      transform: skewY(-3deg);
+    }
+
+    footer .nav-link{
+      opacity: 0.5;
+      transition: 0.3s;
+    }
+
+    footer .nav-link:hover{
+      opacity: 1;
+      transition: 0.3s;
+    }
+
+    .active, .nav-link.active{
+      background-color: var(--primary)!important;
       color: white!important;
       font-weight: 400;
-      // border-bottom: solid 2px rgba(202, 12, 53, 1)!important;
+      // border-bottom: solid 2px var(--primary)!important;
+      opacity: 1;
     }
 
     .square {
@@ -66,10 +104,10 @@ export default createGlobalStyle`
     }
 
     .square:before{
-      background: rgba(202, 12, 53, 1);
+      background: var(--primary);
     }
     .square:after{
-      background: rgba(197,179,88, 1);
+      background: var(--secondary);
     }
 
     h2.square:before, h2.square:after{
@@ -86,22 +124,22 @@ export default createGlobalStyle`
 
     .quotation:before, .quotation:after {
       content:'';
-      width: 20px;
+      width: 30px;
       height: 30px;
       position: absolute;
       display: inline-block;
     }
 
     .quotation:before {
-      border-left: solid 2px rgba(202, 12, 53, 1);
-      border-top: solid 2px rgba(202, 12, 53, 1);
+      border-left: solid 2px var(--primary);
+      border-top: solid 2px var(--primary);
       top:0;
       left: 0;
     }
     
     .quotation:after {
-      border-right: solid 2px rgba(202, 12, 53, 1);
-      border-bottom: solid 2px rgba(202, 12, 53, 1);
+      border-right: solid 2px var(--primary);
+      border-bottom: solid 2px var(--primary);
       bottom:0;
       right: 0;
     }
@@ -110,10 +148,10 @@ export default createGlobalStyle`
       transition: all 0.3s;
     }
     .card-hover:hover{
-      // border-color: rgba(202, 12, 53, 1)!important;
-      background-color: rgba(202, 12, 53, 1)!important;
+      // border-color: var(--primary)!important;
+      background-color: var(--primary)!important;
       color: white;
-      box-shadow: 0 10px 20px 0 rgba(202,12,53,.05);
+      box-shadow: 0 10px 20px 0 rgba(202,12,53,.1);
       transform: translateY(-10px);
       transition: all 0.3s;
       cursor: pointer;
@@ -122,9 +160,10 @@ export default createGlobalStyle`
 
     .whatICanDo{
       position: relative;
-       padding: 1rem 0rem 1.5rem 90px;
+       padding: 0.5rem 0rem 0rem 80px;
+       margin-bottom: auto;
       //  border-bottom: 3px solid #000;
-       min-height: 240px;
+       min-height: 210px;
      }
 
      .whatICanDo span {
@@ -132,8 +171,8 @@ export default createGlobalStyle`
       font-size: 10rem;
       line-height: 1;
       position: absolute;
-      bottom: -1.25rem;
-      left: 0;
+      bottom: -1.1rem;
+      left: -1px;
       opacity: 0.3;
       font-weight:600;
     }
@@ -158,6 +197,11 @@ export default createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
     }
 
+    .slick-dots li.slick-active button:before {
+      color: var(--primary);
+      opacity: 1;
+    }
+
     /* button */
 .button_container {
   position: fixed;
@@ -169,6 +213,7 @@ export default createGlobalStyle`
   z-index: 100;
   transition: opacity 0.25s ease;
 }
+
 .button_container:hover {
   opacity: 0.7;
 }
@@ -294,8 +339,14 @@ export default createGlobalStyle`
   }
 }
 
+
+.form-control:focus{
+  border-color: var(--primary)!important;
+  box-shadow: inset 0 0 0 1px var(--primary)!important;
+}
+
     ::selection{
-      background: rgba(202, 12, 53, 1)!important;
+      background: var(--primary)!important;
       color: #fff;
     }
 

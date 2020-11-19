@@ -45,28 +45,28 @@ const Contact = (props) => {
             </Head>
             <div>
                 <Title title="Contact" />
-                <div className="container-md">
-                    <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true">
+                <div className="container" >
+                    <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true" style={{ margin: "0 auto", maxWidth: "540px" }}>
                         <div className="row row-30 g-3">
                             <input type="hidden" name="form-name" value="contact" />
-                            <div className="col-md-6 g-3">
-                                <div className="md-form mb-0">
+                            <div className="col-md-12 g-3">
+                                <div className="md-form mb-3">
                                     <label htmlFor="name">Name</label>
                                     <input type="text" name="name" className="form-control" onChange={(e) => setName(e.target.value)} id="name" />
                                 </div>
-                                <div className="md-form mb-0">
+                                <div className="md-form mb-3">
                                     <label htmlFor="email">Email</label>
                                     <input type="email" name="email" className="form-control" onChange={(e) => setEmail(e.target.value)} id="email" />
                                 </div>
-                            </div>
-                            <div className="col-md-6 g-3">
-                                <div className="md-form mb-0">
+                                <div className="md-form ">
                                     <label htmlFor="message">Message</label>
                                     <textarea name="message" className="form-control" onChange={(e) => setMessage(e.target.value)} id="message"></textarea>
                                 </div>
                             </div>
+
                             <div className="text-center">
-                                <button type="submit" onClick={validateForm} className="mt-5 btn btn-outline-dark btn-lg rounded-0" disabled={name==="" || email === "" || message === ""} data-ripple-color="dark">Send</button>
+                                {/* btn-outline-dark  */}
+                                <button type="submit" onClick={validateForm} className={"mt-5 btn btn-lg rounded-0 " + (name==="" || email === "" || message === "" ? "btn-light" : "btn-danger")} disabled={name==="" || email === "" || message === ""} data-ripple-color="dark">Send</button>
                             </div>
                             <div className="status"></div>
                         </div>

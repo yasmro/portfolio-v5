@@ -1,10 +1,9 @@
 import Head from "next/head";
-import Link from "next/link";
+// import Link from "next/link";
 import { getAllPosts } from '../../lib'
 
-import {Paper} from '@material-ui/core'
-
-import fetch from "isomorphic-unfetch";
+// import {Paper} from '@material-ui/core'
+// import fetch from "isomorphic-unfetch";
 
 
 import Title from "../../components/Title"
@@ -25,7 +24,7 @@ const Index = (props) => {
                         {props.shows ? 
                             props.shows.map((show, idx) => (
                                 
-                                <div className="col-md-6 col-lg-4 g-3">
+                                <div className="col-md-6 col-lg-4 g-3" key={`worklist-${show.fields.slug}`}>
                                     <ListCard title={show.fields.title}  thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                 </div>
                             

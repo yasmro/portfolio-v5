@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import { useRouter } from 'next/router'
 
-import { AppBar, Toolbar, IconButton, MenuIcon, Typography, Button } from '@material-ui/core';
+// import { AppBar, Toolbar, IconButton, MenuIcon, Typography, Button } from '@material-ui/core';
 
 import { myself } from '../data/about'
 
@@ -15,22 +15,23 @@ import { routes } from '../data/routes'
 const Footer = () => {
     const router = useRouter();
     return(
-            <footer className="mt-5 position-absolute w-100 page-footer bg-dark text-light pink pt-4">
+            <footer className="mt-5 position-absolute w-100 page-footer text-light pink pt-4 skewedArea bg-dark">
                 <div className="container text-center text-md-left">
                     <div className="row">
                         <div className="col-md-6 mt-md-0 mt-3">
-                            <h5 className="text-uppercase">{myself.name}</h5>
+                            <p className="h5 text-uppercase">{myself.name}</p>
                             <p>{myself.quickWord}</p>
                         </div>
                         
+                        <hr className="d-inline-flex d-md-none mt-3 mb-4 bg-dark"/>
 
                         <div className="col-md-6 mb-md-0 mb-3">
 
-                            <h5 className="text-uppercase">Socials</h5>
+                            <p className="h5 text-uppercase">Socials</p>
                             <ul className="d-inline-flex text-center list-unstyled">
                             {
                                 socialMedia.map( media => (
-                                    <li>
+                                    <li key={`footer-media-${media.name}`}>
                                         <a className="nav-link waves-effect text-light" rel="noreferrer" href={`${media.href}`} target="_blank"><i className={`${media.icon} fa-2x`}></i></a>
                                         {/* <a className="nav-link waves-effect" href="https://mdbootstrap.com/docs/angular/" target="_blank">Angular</a> */}
                                     </li>
@@ -38,14 +39,13 @@ const Footer = () => {
                             }
                             </ul>
 
-                            <h5 className="text-uppercase">PAGES</h5>
-
+                            <p className="h5 text-uppercase">PAGES</p>
                             <ul className="d-inline-flex list-unstyled">
                             {
                                 routes.map( route => (
-                                    <li className="nav-item text-white">
-                                        <Link className="text-white" href={route.link}>
-                                            <a className={"nav-link waves-effect text-white " + (router.pathname.replace("/[id]", "") === route.link ? "active" : "" )}>{route.name}</a>
+                                    <li className="nav-item" key={`footer-route-${route.name}`}>
+                                        <Link href={route.link}>
+                                            <a className={"nav-link waves-effect link-hover text-white " + (router.pathname.replace("/[id]", "") === route.link ? "active" : "" )}>{route.name}</a>
                                         </Link>
                                     </li>
                                 ))

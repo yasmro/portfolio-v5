@@ -19,7 +19,7 @@ const About = (props) => {
                     <div className="card border">
 
                         <div className="row g-0">
-                            <div className="col-md-4 bg-danger">
+                            <div className="col-md-4 bg-dark">
                                 <div className="bg-dark hover-overlay ripple" data-ripple-color="light">
                                     {/* <img
                                         src={thumbnail !== {} ? thumbnail.fields.file.url : "https://source.unsplash.com/random/1600x900/"}
@@ -44,13 +44,13 @@ const About = (props) => {
                         
                     </div>
 
-                    <div className="">
+                    <div className="mt-4">
                         <h2 className="text-center square">What I Can Do</h2>
                         <div className="row row-40">
                             {
                                 myself.whatICanDo.map( (skill, index) =>
                                     <div className="col-md-6 g-3">
-                                        <div className="card whatICanDo">
+                                        <div className="card border whatICanDo">
                                             <div className="card-body">
                                                 <h3 className="card-title"><span className="black">{index + 1}</span>{skill.title}</h3>
                                                 <div className="card-text">

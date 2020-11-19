@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { motion } from "framer-motion"
 
 const variants = {
@@ -10,11 +10,11 @@ const variants = {
 }
 
 const Title = ({title, description}) => (
-  <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} class="jumbotron jumbotron-fluid py-5 text-center" >
-    <div class="container">
+  <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="jumbotron jumbotron-fluid py-5 text-center" >
+    <div className="container">
         
-        <h1 class="square display-4">{title}</h1>
-        <p class="lead">{description}</p>
+        <h1 className="square display-4 font-weight-bold">{title}</h1>
+        <p className="lead">{description}</p>
         
     </div>
   </motion.div>
