@@ -10,14 +10,14 @@ const variants = {
 }
 
 const Title = ({title, description}) => (
-  <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="jumbotron jumbotron-fluid py-5 text-center" >
-    <div className="container">
+  <div className="jumbotron jumbotron-fluid py-5 text-center bg-white" >
+    <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="container">
         
-        <h1 className="square display-4 font-weight-bold">{title}</h1>
+        <h1 className="square display-2 font-weight-bold shadow-text">{title}</h1>
         <p className="lead">{description}</p>
         
-    </div>
-  </motion.div>
+    </motion.div>
+  </div>
 )
 
 

@@ -56,22 +56,19 @@ return(
   </Head>
   <div>
 
-    <WorkTitle title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} />
+    <WorkTitle title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} />
     
     <div className="container">
-      <div className="row row-30">
-      <div className="col-lg-4">
+      <div className="row row-40">
+      <div className={props.show.fields.description ? "col-lg-4" : "d-lg-none"}>
         {
             (props.show.fields.photos) &&
             <div className="d-inline d-lg-none">
               <div className="">
                   <span className="h3">{carouselIndex + 1}</span>/{props.show.fields.photos.length}
                   <p>{props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
-
-                  
               </div>
               <Slider {...settings}>
-                
                 {
                   props.show.fields.photos.map( (photo, idx) => (
                     <div className="w-100 mb-0" Style="padding:0 auto;" key={`slide-sm-${idx}`}>
@@ -87,26 +84,29 @@ return(
         <div className="mt-5 mt-lg-0">
         <ReactMarkdown children={props.show.fields.description} />
         </div>
-        
-      {props.show.image ? <img src={props.show.image.medium} /> : null}
-
       </div>
 
-      <div className="col-lg-8">
+      <div className={props.show.fields.description ? "col-lg-8" : "col-lg-6 offset-lg-3"}>
         {
             (props.show.fields.photos) &&
             <div className="d-none d-lg-inline">
-              <div className="">
-                  <span className="h2">{carouselIndex + 1}</span>/{props.show.fields.photos.length}
-                  <p>{props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
-
-                  
+              <div className="d-flex mb-3 position-relative">
+                <div className="border border-dark bg-dark rounded-0 pt-1 position-relative" style={{width: "60px", height: "60px"}}>
+                  <span className="h1 position-absolute text-center text-light" style={{ top: "-2px", left: "10px" }}>{carouselIndex + 1}</span>
+                  <span className="position-absolute bottomRight" style={{bottom: "0px", right: "0px" }}></span>
+                  <span className="position-absolute text-right" style={{ bottom: "0px", right: "5px" }}>{props.show.fields.photos.length}</span>
+                </div>
+                <div className="position-absolute align-middle" style={{top: "0%", left: "70px"}}>
+                <span className="h4">{props.show.fields.photos[carouselIndex].fields.title}</span>
+                <p>{props.show.fields.photos[carouselIndex].fields.description}</p>
+                </div>
+                
               </div>
               <Slider {...settings}>
                 
                 {
                   props.show.fields.photos.map( (photo, idx) => (
-                    <div className="w-100" Style="min-height: 500px; padding:0 auto;" key={`slide-sm-${idx}`}>
+                    <div className="w-100" Style="min-height: 400px; padding:0 auto;" key={`slide-sm-${idx}`}>
                       <div className="" Style="">
                         <img className="align-item-center img-fluid" width={photo.fields.file.details.image.width} height={photo.fields.file.details.image.height} src={photo.fields.file.url ? photo.fields.file.url : "https://source.unsplash.com/random/1600x900/"} alt="" />
                       </div>
@@ -128,7 +128,7 @@ return(
             {props.shows ? 
                   props.shows.map((show, idx) => (
                       
-                      <div className="col-md-4 col-lg-3 g-3" key={`worklist-${show.fields.slug}`}>
+                      <div className="col-md-4 col-lg-3 g-3" onClick={() => setCarouselIndex(0)} key={`worklist-${show.fields.slug}`}>
                           <ListCard title={show.fields.title}  thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                       </div>
                   

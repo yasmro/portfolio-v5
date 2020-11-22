@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from 'next/image'
+
 import { getAllPosts } from '../../lib'
 import fetch from "isomorphic-unfetch";
 
@@ -19,12 +21,9 @@ const About = (props) => {
                     <div className="card border">
 
                         <div className="row g-0">
-                            <div className="col-md-4 bg-dark">
-                                <div className="bg-dark hover-overlay ripple" data-ripple-color="light">
-                                    {/* <img
-                                        src={thumbnail !== {} ? thumbnail.fields.file.url : "https://source.unsplash.com/random/1600x900/"}
-                                        className="img-fluid"
-                                    /> */}
+                            <div className="col-md-4 bg-dark position-relative">
+                                <div className="hover-overlay ripple position-absolute" style={{left: "40%", top: "1%"}} >
+                                    <Image src="/static/images/Toplogo.svg"   loading="lazy" alt="Yu Ohno" width={65} height={300} />
                                 </div>
                             </div>
                             <div className="col-md-8">
@@ -49,8 +48,8 @@ const About = (props) => {
                         <div className="row row-40">
                             {
                                 myself.whatICanDo.map( (skill, index) =>
-                                    <div className="col-md-6 g-3">
-                                        <div className="card border whatICanDo">
+                                    <div className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
+                                        <div className="card border whatICanDo h-100">
                                             <div className="card-body">
                                                 <h3 className="card-title"><span className="black">{index + 1}</span>{skill.title}</h3>
                                                 <div className="card-text">

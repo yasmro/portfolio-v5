@@ -3,8 +3,9 @@ import {　createGlobalStyle } from 'styled-components';
 
 
 export default createGlobalStyle`
+    // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -14,7 +15,8 @@ export default createGlobalStyle`
     }
 
     :root {
-      --primary: rgba(202, 12, 53, 1)!important;
+      // --primary: rgba(201, 0, 118, 1)!important;
+      --primary: rgba(192, 12, 53, 1)!important;
       --secondary: rgba(197,179,88, 1)!important;
     }
     
@@ -29,13 +31,41 @@ export default createGlobalStyle`
     // }
 
     .home-jumbotron{
-      background-image:
-        repeating-linear-gradient(
-          -23.4deg,
-          rgba(0,0,0,0.1), rgba(0,0,0,0.1), 40px,
-          rgba(0 0 0 / 0) 0,
-          rgba(0 0 0 / 0) 80px
-        );
+        // background-image:
+        //   repeating-linear-gradient(
+        //     -23.4deg,
+        //     rgba(0,0,0,0.1), rgba(0,0,0,0.1), 40px,
+        //     rgba(0 0 0 / 0) 0,
+        //     rgba(0 0 0 / 0) 80px
+        //   );
+
+        // background: -webkit-linear-gradient(45deg, rgba(204, 0, 136, 1), rgba(204, 0, 136, 1)) !important;
+        background-color: var(--primary);
+        background-image:
+      -webkit-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
+      transparent 25%, transparent 75%,
+      rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%),
+      
+      -webkit-linear-gradient(
+      135deg,
+      rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
+      transparent 25%, transparent 75%,
+      rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%);
+      
+      // background-image:
+      //   linear-gradient(
+      //   45deg,
+      //   rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
+      //   transparent 25%, transparent 75%,
+      //   rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%),
+      //   linear-gradient(
+      //   -45deg,
+      //   rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
+      //   transparent 25%, transparent 75%,
+      //   rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%);
+      background-size: 40px 40px;
     }
 
     
@@ -56,9 +86,20 @@ export default createGlobalStyle`
         background:
           linear-gradient(to top left, rgba(255,255,255,0) 50%, #f00 50.5%) no-repeat top left/100% 100%
     }
+    // .bottomRight{
+    //     background:
+    //       linear-gradient(to bottom right, rgba(255,255,255,0) 50%, #f00 50.5%) no-repeat top left/100% 100%
+    // }
+     
     .bottomRight{
-        background:
-          linear-gradient(to bottom right, rgba(255,255,255,0) 50%, #f00 50.5%) no-repeat top left/100% 100%
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 35px 35px;
+      border-color: transparent transparent #ffffff transparent;
+      line-height: 0px;
+      _border-color: #000000 #000000 #ffffff #000000;
+      _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
     }
 
     .skewedArea1::before{
@@ -82,8 +123,9 @@ export default createGlobalStyle`
 
     .active, .nav-link.active{
       background-color: var(--primary)!important;
+      background: linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))!important;
       color: white!important;
-      font-weight: 400;
+      font-weight: 700;
       // border-bottom: solid 2px var(--primary)!important;
       opacity: 1;
     }
@@ -131,15 +173,15 @@ export default createGlobalStyle`
     }
 
     .quotation:before {
-      border-left: solid 2px var(--primary);
-      border-top: solid 2px var(--primary);
+      border-left: solid 2px var(--secondary);
+      border-top: solid 2px var(--secondary);
       top:0;
       left: 0;
     }
     
     .quotation:after {
-      border-right: solid 2px var(--primary);
-      border-bottom: solid 2px var(--primary);
+      border-right: solid 2px var(--secondary);
+      border-bottom: solid 2px var(--secondary);
       bottom:0;
       right: 0;
     }

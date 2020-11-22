@@ -14,17 +14,18 @@ export const myself = {
       title:"Web Development",
       description:"I can develop Web page / Web service with HTML, CSS and JavaScript. I'm studying development Web service with React (front-end) and Python Django framework (back-end)."
     },
+    // {
+    //   title:"RPA Development",
+    //   description:"I can develop RPA (Robotic Process Automation) with low-code script such as Zoho Deluge/API and Google Apps Script. I've ever developed the business automation and integration with third-party products."
+    // },
     {
-      title:"RPA Development",
-      description:"I can develop RPA (Robotic Process Automation) with low-code script such as Zoho Deluge/API and Google Apps Script. I've ever developed the business automation and integration with third-party products."
+      title:"Propose Solution",
+      description:"I can propose solutions for the problem. To solve the problem, I often use the \"modeling\" which convert and solve the problem with mathematics, schematic and so on."
     },
     {
       title:"Art - Shodo",
       description:"Experienced for 12 years and took 20+ awards on Japanese calligraphy concours before."
     },
-    {
-      title:"Propose Solution",
-      description:"I can propose solutions for the problem. To solve the problem, I often use the \"modeling\" which convert and solve the problem with mathematics, schematic and so on."
-    }
+    
   ]
 };
