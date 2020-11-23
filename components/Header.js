@@ -20,7 +20,7 @@ const Header = ({ href, children }) => {
       <div className="container">
         <Link href="/">
             <a className="navbar-brand waves-effect pr-3">
-              <Image src="/images/name.png" loading="lazy" alt="Yu Ohno" width={120} height={30} />
+              <Image src="/public/images/name.png" loading="lazy" alt="Yu Ohno" width={120} height={30} />
             </a>
         </Link>
         

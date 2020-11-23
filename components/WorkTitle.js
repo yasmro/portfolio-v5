@@ -3,7 +3,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const WorkTitle = ({title, description="", category="", tags=[], abstract=""}) => (
-  <div class="jumbotron jumbotron-fluid py-5 mb-5 text-light" style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}} >
+  // style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}}
+  <div class="jumbotron jumbotron-fluid py-5 mb-5 bg-light"  >
     <div class="container text-center">
       <h1 class="display-2 quotation font-weight-bold " >{title}</h1>        
       <p class="mt-3 lead">{abstract}</p>

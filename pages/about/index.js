@@ -23,7 +23,7 @@ const About = (props) => {
                         <div className="row g-0">
                             <div className="col-md-4 bg-dark position-relative">
                                 <div className="hover-overlay ripple position-absolute" style={{left: "40%", top: "1%"}} >
-                                    <Image src="/images/Toplogo.svg"   loading="lazy" alt="Yu Ohno" width={65} height={300} />
+                                    <Image src="/public/images/Toplogo.svg"   loading="lazy" alt="Yu Ohno" width={65} height={300} />
                                 </div>
                             </div>
                             <div className="col-md-8">
