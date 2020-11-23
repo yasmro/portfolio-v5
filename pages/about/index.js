@@ -70,7 +70,7 @@ const About = (props) => {
 
 About.getInitialProps = async function() {
     const res2 = await getAllPosts();
-    console.log(res2)
+    // console.log(res2)
     // console.log(`Show data fetched. Count: ${data.length}`);
 
     return { shows: res2};

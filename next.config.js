@@ -12,5 +12,10 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+
+    images: {
+      path: '/_next/image',
+      domains: ['yasmro.netlify.app'],
+    },
     
 };

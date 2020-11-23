@@ -174,7 +174,7 @@ Post.getInitialProps = async function(context) {
   const { id } = context.query;
   const res = await getAllPosts();
   const res2 = await getPostBySlug(id);
-    console.log(res2)
+    // console.log(res2)
     // console.log(`Show data fetched. Count: ${data.length}`);
 
     return { shows: res, show: res2};

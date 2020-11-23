@@ -40,7 +40,7 @@ const Index = (props) => {
 
 Index.getInitialProps = async function() {
     const res = await getAllPosts();
-    console.log(res)
+    // console.log(res)
     // console.log(`Show data fetched. Count: ${data.length}`);
 
     return {shows: res};
