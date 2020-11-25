@@ -91,12 +91,12 @@ return(
             (props.show.fields.photos) &&
             <div className="d-none d-lg-inline">
               <div className="d-flex mb-3 position-relative">
-                <div className="border border-dark bg-dark rounded-0 pt-1 position-relative" style={{width: "60px", height: "60px"}}>
+                <div className="bg-dark rounded-0 pt-1 position-relative shadow" style={{width: "60px", height: "60px"}}>
                   <span className="h1 position-absolute text-center text-light" style={{ top: "-2px", left: "10px" }}>{carouselIndex + 1}</span>
-                  <span className="position-absolute bottomRight" style={{bottom: "0px", right: "0px" }}></span>
+                  <span className="position-absolute bottomRight" style={{bottom: "1px", right: "1px" }}></span>
                   <span className="position-absolute text-right" style={{ bottom: "0px", right: "5px" }}>{props.show.fields.photos.length}</span>
                 </div>
-                <div className="position-absolute align-middle" style={{top: "0%", left: "70px"}}>
+                <div className="position-absolute align-middle" style={{top: "1px", left: "75px"}}>
                 <span className="h4">{props.show.fields.photos[carouselIndex].fields.title}</span>
                 <p>{props.show.fields.photos[carouselIndex].fields.description}</p>
                 </div>

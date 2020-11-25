@@ -4,17 +4,21 @@ import React from 'react'
 import { motion } from "framer-motion"
 
 const variants = {
-  hidden: { opacity: 0, y: 20},
-  visible: { opacity: 1, y: 0},
-  transition: { duration: 0.8 }
+  hidden: { opacity: 0, y: 5},
+  visible: { opacity: 1, y: 0 },
+  transition: { duration: 1.5 }
 }
 
 const Title = ({title, description}) => (
-  <div className="jumbotron jumbotron-fluid py-5 text-center bg-white" >
+  <div className="jumbotron jumbotron-fluid py-5 text-center bg-light mb-5" >
     <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="container">
         
-        <h1 className="square display-2 font-weight-bold shadow-text">{title}</h1>
+        <h1 className="square display-2 font-weight-bold text-shadow">{title}</h1>
         <p className="lead">{description}</p>
+        {/* <h1 className="display-2 position-relative">
+          <span className="shadow font-weight-bold px-4 position-absolute" Style="color: rgba(0,0,0,0); background: linear-gradient(45deg, var(--primary), var(--primary1))!important " >{title}</span>
+          <span className="shadow font-weight-bold px-4 text-white position-absolute" Style="background: linear-gradient(45deg, var(--primary), var(--primary1))!important" >{title}</span>
+        </h1> */}
         
     </motion.div>
   </div>

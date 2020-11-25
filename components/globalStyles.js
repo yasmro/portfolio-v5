@@ -15,7 +15,8 @@ export default createGlobalStyle`
     }
 
     :root {
-      // --primary: rgba(201, 0, 118, 1)!important;
+      --primary2: rgba(201, 0, 118, 1)!important;
+      --primary1: rgba( 227, 66, 51, 1)!important;
       --primary: rgba(192, 12, 53, 1)!important;
       --secondary: rgba(197,179,88, 1)!important;
     }
@@ -39,20 +40,20 @@ export default createGlobalStyle`
         //     rgba(0 0 0 / 0) 80px
         //   );
 
-        // background: -webkit-linear-gradient(45deg, rgba(204, 0, 136, 1), rgba(204, 0, 136, 1)) !important;
-        background-color: var(--primary);
-        background-image:
-      -webkit-linear-gradient(
-      45deg,
-      rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
-      transparent 25%, transparent 75%,
-      rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%),
+        background: -webkit-linear-gradient(45deg, var(--primary), var(--primary1)) !important;
+        // background-color: var(--primary);
+      //   background-image:
+      // -webkit-linear-gradient(
+      // 45deg,
+      // rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
+      // transparent 25%, transparent 75%,
+      // rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%),
       
-      -webkit-linear-gradient(
-      135deg,
-      rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
-      transparent 25%, transparent 75%,
-      rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%);
+      // -webkit-linear-gradient(
+      // 135deg,
+      // rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
+      // transparent 25%, transparent 75%,
+      // rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%);
       
       // background-image:
       //   linear-gradient(
@@ -122,12 +123,16 @@ export default createGlobalStyle`
     }
 
     .active, .nav-link.active{
-      background-color: var(--primary)!important;
-      background: linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))!important;
+      // background-color: var(--primary)!important;
+      background: linear-gradient(45deg, var(--primary), var(--primary1))!important;
       color: white!important;
       font-weight: 700;
       // border-bottom: solid 2px var(--primary)!important;
       opacity: 1;
+    }
+
+    .text-shadow{
+      text-shadow: 0 .5rem .75rem rgba(0,0,0,.15)!important;
     }
 
     .square {
@@ -173,15 +178,15 @@ export default createGlobalStyle`
     }
 
     .quotation:before {
-      border-left: solid 2px var(--secondary);
-      border-top: solid 2px var(--secondary);
+      border-left: solid 3px var(--primary);
+      border-top: solid 3px var(--primary);
       top:0;
       left: 0;
     }
     
     .quotation:after {
-      border-right: solid 2px var(--secondary);
-      border-bottom: solid 2px var(--secondary);
+      border-right: solid 3px var(--primary);
+      border-bottom: solid 3px var(--primary);
       bottom:0;
       right: 0;
     }
@@ -191,7 +196,8 @@ export default createGlobalStyle`
     }
     .card-hover:hover{
       // border-color: var(--primary)!important;
-      background-color: var(--primary)!important;
+      // background-color: var(--primary)!important;
+      background: linear-gradient(45deg, var(--primary), var(--primary1))!important;
       color: white;
       box-shadow: 0 10px 20px 0 rgba(202,12,53,.1);
       transform: translateY(-10px);
