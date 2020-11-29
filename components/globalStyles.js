@@ -127,6 +127,12 @@ export default createGlobalStyle`
       transform: skewY(-3deg);
     }
 
+    nav.navbar{
+      background-color: rgba(255,255,255, 1);
+      // backdrop-filter: blur(8px);
+      // -webkit-backdrop-filter: blur(8px);
+    }
+
     footer .nav-link{
       opacity: 0.5;
       transition: 0.3s;
@@ -318,8 +324,9 @@ export default createGlobalStyle`
 .overlay {
   z-index: 20;
   position: fixed;
-  background: rgb(52, 58, 64) ;
+  background: rgb(10,10,10) ;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   
   top: 0;
   left: 0;

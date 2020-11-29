@@ -16,7 +16,10 @@ const Header = ({ href, children }) => {
 
 
     return(
-    <nav className={"navbar navbar-expand-lg navbar-light  scrolling-navbar p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )}>
+    <nav
+      className={"navbar navbar-expand-lg navbar-light position-fixed w-100 p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )} 
+      style={{ zIndex: 1}}
+      >
       <div className="container">
         <Link href="/">
             <a className="navbar-brand waves-effect pr-3">

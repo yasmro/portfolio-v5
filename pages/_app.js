@@ -64,7 +64,11 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         {/* <CssBaseline /> */}
         <Header />
+        <div style={{paddingTop: "90px"}}>
+
+        
         <Component {...pageProps} />
+        </div>
         <Footer />
       {/* </ThemeProvider> */}
     </React.Fragment>
