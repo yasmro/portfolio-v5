@@ -31,6 +31,17 @@ export default createGlobalStyle`
     //     );
     // }
 
+    .jumbotron{
+      background: -webkit-linear-gradient(45deg, var(--primary), var(--primary1)) !important;
+      color: white;
+    }
+
+    .card{
+      backdrop-filter: saturate(180%) blur(20px);
+      background-color: rgba(255,255,255,0.3)!important;
+      border-radius: 0;
+    }
+
     .home-jumbotron{
         // background-image:
         //   repeating-linear-gradient(
@@ -72,10 +83,14 @@ export default createGlobalStyle`
     
 
     *{
-        font-family: ff-dax-pro,'Noto Sans JP', sans-serif;
+        font-family:ff-dax-pro,'Noto Sans JP', sans-serif;
         // font-family: a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
         // font-style: italic !important; 
         font-weight: 300;
+      }
+
+      .display-2{
+        font-family:  ff-dax-compact-pro, niagara-engraved;
       }
     
       // h1, h2, h3, h4, h5, h6{
@@ -151,7 +166,7 @@ export default createGlobalStyle`
     }
 
     .square:before{
-      background: var(--primary);
+      background: var(--secondary);
     }
     .square:after{
       background: var(--secondary);
@@ -160,6 +175,7 @@ export default createGlobalStyle`
     h2.square:before, h2.square:after{
       height: 10px;
       width: 10px;
+      background: var(--primary);
     }
 
     .quotation{
@@ -178,17 +194,21 @@ export default createGlobalStyle`
     }
 
     .quotation:before {
-      border-left: solid 3px var(--primary);
-      border-top: solid 3px var(--primary);
+      border-left: solid 3px var(--secondary);
+      border-top: solid 3px var(--secondary);
       top:0;
       left: 0;
     }
     
     .quotation:after {
-      border-right: solid 3px var(--primary);
-      border-bottom: solid 3px var(--primary);
+      border-right: solid 3px var(--secondary);
+      border-bottom: solid 3px var(--secondary);
       bottom:0;
       right: 0;
+    }
+
+    .card{
+      text-align: justify;
     }
 
     .card-hover{
@@ -208,13 +228,13 @@ export default createGlobalStyle`
 
     .whatICanDo{
       position: relative;
-       padding: 0.5rem 0rem 0rem 80px;
+       padding: 0.5rem 0.5rem 0rem 70px;
        margin-bottom: auto;
       //  border-bottom: 3px solid #000;
        min-height: 210px;
      }
 
-     .whatICanDo span {
+     .whatICanDo span.skillNumber {
       //  font-family:toppan-bunkyu-mincho-pr6n, astoria-sans, a-otf-ud-shin-go-pr6n;
       font-size: 10rem;
       line-height: 1;

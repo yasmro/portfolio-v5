@@ -17,6 +17,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
           <script dangerouslySetInnerHTML={{
             __html: `(function(d) {
               var config = {
@@ -28,23 +32,6 @@ export default class MyDocument extends Document {
             })(document);`,
           }}>
           </script>
-          <script dangerouslySetInnerHTML={{
-            __html: `
-            var toggle = document.getElementById('toggle')
-            var overlay = document.getElementById('overlay')
-            toggle.addEventListener('click', function(){
-              toggle.classList.toggle('toggle-active');
-              overlay.classList.toggle('open');
-            });
-            `,
-
-          }}>
-            
-          </script>
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
         </body>
       </Html>
     );

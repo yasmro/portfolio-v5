@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const WorkTitle = ({title, description="", category="", tags=[], abstract=""}) => (
+const WorkTitle = ({index=0, length=0, title, description="", category="", tags=[], abstract=""}) => (
   // style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}}
   <div class="jumbotron jumbotron-fluid py-5 mb-5 bg-light"  >
     <div class="container text-center">

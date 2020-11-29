@@ -19,14 +19,18 @@ const Index = (props) => {
                 <Title title="Works" description="" />
                 
                 <div className="container">
-                    <div className="row row-40">
+                    {/* style={{columnCount: "3"}} */}
+                    <div className="row row-40" >
                 
                         {props.shows ? 
                             props.shows.map((show, idx) => (
-                                
+                                // style={{breakInside:"avoid !important"}} 
+                                <>
                                 <div className="col-md-6 col-lg-4 g-3" key={`worklist-${show.fields.slug}`}>
                                     <ListCard title={show.fields.title}  thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                 </div>
+                                
+                                </>
                             
                             
                         )) : <h1>null</h1>}

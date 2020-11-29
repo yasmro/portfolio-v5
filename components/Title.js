@@ -4,9 +4,9 @@ import React from 'react'
 import { motion } from "framer-motion"
 
 const variants = {
-  hidden: { opacity: 0, y: 5},
-  visible: { opacity: 1, y: 0 },
-  transition: { duration: 1.5 }
+  hidden: { opacity: 0, y: 5, duration: 2},
+  visible: { opacity: 1, y: 0, duration: 2 },
+  transition: { duration: 2 }
 }
 
 const Title = ({title, description}) => (

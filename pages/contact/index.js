@@ -52,15 +52,15 @@ const Contact = (props) => {
                             <div className="col-md-12 g-3">
                                 <div className="md-form mb-3">
                                     <label htmlFor="name">Name</label>
-                                    <input type="text" name="name" className="form-control" onChange={(e) => setName(e.target.value)} id="name" />
+                                    <input type="text" name="name" className="form-control rounded-0" onChange={(e) => setName(e.target.value)} id="name" />
                                 </div>
                                 <div className="md-form mb-3">
                                     <label htmlFor="email">Email</label>
-                                    <input type="email" name="email" className="form-control" onChange={(e) => setEmail(e.target.value)} id="email" />
+                                    <input type="email" name="email" className="form-control rounded-0" onChange={(e) => setEmail(e.target.value)} id="email" />
                                 </div>
                                 <div className="md-form ">
                                     <label htmlFor="message">Message</label>
-                                    <textarea name="message" className="form-control" onChange={(e) => setMessage(e.target.value)} id="message"></textarea>
+                                    <textarea name="message" className="form-control rounded-0" onChange={(e) => setMessage(e.target.value)} id="message"></textarea>
                                 </div>
                             </div>
 
