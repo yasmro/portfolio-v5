@@ -133,14 +133,14 @@ return(
                   
                   
               )) : <h1>null</h1>} */}
-              {/* <div className="col-6 g-3" onClick={() => setCarouselIndex(0)} key={`worklist-${props.prevShow.fields.slug}`}>
+              <div className="col-6 g-3" onClick={() => setCarouselIndex(0)} key={`worklist-${props.prevShow.fields.slug}`}>
                 <ListCard title={`< PREV ${props.prevShow.fields.title}`}  thumbnail={props.prevShow.fields.thumbnail} slug={props.prevShow.fields.slug} />
               </div>
               <div className="col-6 g-3" onClick={() => setCarouselIndex(0)} key={`worklist-${props.nextShow.fields.slug}`}>
                 <ListCard title={`${props.nextShow.fields.title} NEXT >`}  thumbnail={props.nextShow.fields.thumbnail} slug={props.nextShow.fields.slug} />
-              </div> */}
+              </div>
 
-              <div className="col-4 g-3" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
+              {/* <div className="col-4 g-3" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
                 <Link href="/works/[id]" as={`/works/${props.prevShow.fields.slug}`}>
                   <div className="w-100 position-relative">
                     <h1 className="position-absolute display-1 font-weight-bold" style={{"top": "-18%", "left": "3%", "color": "rgba(0,0,0, 0.1)"}}>{('0' + (props.index.prev + 1).toString()).slice(-2)}</h1>
@@ -162,12 +162,12 @@ return(
                       <span className="h6">{props.nextShow.fields.title}</span>
                     </div>
                 </Link>
-              </div>
+              </div> */}
         
           </div>
           
 
-          <div className="mt-5 d-none">
+          <div className="mt-5 text-center">
             <Link href="/works">
               <button type="button" class="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">View All Works</button>
             </Link>
