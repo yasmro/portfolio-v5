@@ -205,13 +205,14 @@ function SamplePrevArrow(props) {
 Post.getInitialProps = async function(context) {
   const { id } = context.query;
   const res = await getAllPosts();
+  const res2 = await getPostBySlug(id);
   
   const slugs = res.map( r => r.fields.slug)
   const presenceIndex = slugs.indexOf(id)
   const prevIndex = (presenceIndex - 1 + slugs.length) % (slugs.length) 
   const nextIndex = (presenceIndex + 1 + slugs.length) % (slugs.length) 
 
-  return { shows: res, index:{prev:prevIndex, presence:presenceIndex, next:nextIndex}, show: res[presenceIndex], prevShow: res[prevIndex], nextShow: res[nextIndex] };
+  return { shows: res, index:{prev:prevIndex, presence:presenceIndex, next:nextIndex}, show: res2, prevShow: res[prevIndex], nextShow: res[nextIndex] };
 };
 
 export default Post;
