@@ -5,10 +5,10 @@ import {　createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
     // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+    // @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
 
     button:focus {
         outline:0;
@@ -18,6 +18,7 @@ export default createGlobalStyle`
       --primary2: rgba(201, 0, 118, 1)!important;
       --primary1: rgba( 227, 66, 51, 1)!important;
       --primary: rgba(192, 12, 53, 1)!important;
+      // --primary: rgba(128, 39, 63, 1)!important;
       --secondary: rgba(197,179,88, 1)!important;
     }
     
@@ -83,14 +84,24 @@ export default createGlobalStyle`
     
 
     *{
-        font-family:ff-dax-pro,'Noto Sans JP', sans-serif;
-        // font-family: a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
+        font-family: ff-dax-pro,'Noto Sans JP',  sans-serif;
+        // font-family: 'Poppins',  'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
         // font-style: italic !important; 
-        font-weight: 300;
-      }
+        font-weight: 200;
+    }
+    
+    i, .slick-arrow, .slick-dots button, .form-control{
+      font-style: normal !important;
+    }
+
+    .badge span{
+      font-weight: 400;
+    }
+    
 
       .display-2{
         font-family:  ff-dax-compact-pro, niagara-engraved;
+        font-weight: 100;
       }
     
       // h1, h2, h3, h4, h5, h6{

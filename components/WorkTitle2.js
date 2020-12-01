@@ -34,7 +34,7 @@ const WorkTitle2 = ({index=0, length=0, title, description="", category="", tags
         <div className="col-md-9">
 
           <h1 class="display-2 text-shadow" >{title}</h1>
-          <p class="mt-3 lead">{abstract}</p>
+          <p class="mt-3">{abstract}</p>
         </div> 
       </div>
 
