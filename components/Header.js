@@ -23,7 +23,7 @@ const Header = ({ href, children }) => {
       <div className="container">
         <Link href="/">
             <a className="navbar-brand waves-effect pr-3">
-              <img src="https://yasmro.github.io/portfolio/static/media/name.53c4e24b.png" loading="lazy" alt="Yu Ohno" width={120} height={30} />
+              <img src="https://yasmro.github.io/portfolio/static/media/name.53c4e24b.png" loading="lazy" alt="Yu Ohno" width={120}  />
             </a>
         </Link>
         

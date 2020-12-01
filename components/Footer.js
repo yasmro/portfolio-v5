@@ -32,7 +32,7 @@ const Footer = () => {
                             {
                                 socialMedia.map( media => (
                                     <li key={`footer-media-${media.name}`}>
-                                        <a className="nav-link waves-effect text-light" rel="noreferrer" href={`${media.href}`} target="_blank"><i className={`${media.icon} fa-2x`}></i></a>
+                                        <a className="nav-link text-light" rel="noreferrer" href={`${media.href}`} target="_blank"><i className={`${media.icon} fa-2x`}></i><span className="d-none">{`${media.href}`}</span></a>
                                         {/* <a className="nav-link waves-effect" href="https://mdbootstrap.com/docs/angular/" target="_blank">Angular</a> */}
                                     </li>
                                 ))
