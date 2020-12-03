@@ -67,7 +67,7 @@ return(
             <div className="d-inline d-lg-none">
               <div className="">
                   <span className="h3">{carouselIndex + 1}</span>/{props.show.fields.photos.length}
-                  <p>{props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
+                  <p className="japanese">{props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
               </div>
               <Slider {...settings}>
                 {
@@ -99,7 +99,7 @@ return(
                 </div>
                 <div className="position-absolute align-middle" style={{top: "1px", left: "75px"}}>
                 <span className="h4">{props.show.fields.photos[carouselIndex].fields.title}</span>
-                <p>{props.show.fields.photos[carouselIndex].fields.description}</p>
+                <p className="japanese">{props.show.fields.photos[carouselIndex].fields.description}</p>
                 </div>
                 
               </div>
@@ -143,7 +143,7 @@ return(
               <div className="col-4 g-3" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
                 <Link href="/works/[id]" as={`/works/${props.prevShow.fields.slug}`}>
                   <div className="w-100 position-relative">
-                    <h1 className="position-absolute display-1 font-weight-bold" style={{"top": "-18%", "left": "3%", "color": "rgba(0,0,0, 0.1)"}}>{('0' + (props.index.prev + 1).toString()).slice(-2)}</h1>
+                    <h1 className="position-absolute display-1" style={{"top": "-18%", "left": "1%", "color": "rgba(0,0,0, 0.1)"}}>{('0' + (props.index.prev + 1).toString()).slice(-2)}</h1>
                     <h2 className="h2 font-weight-bold">&lt; PREV</h2>
                     <span className="h6 counter">{props.prevShow.fields.title}</span>
                   </div>
@@ -157,7 +157,7 @@ return(
               <div className="col-4 g-3" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
                 <Link href="/works/[id]" as={`/works/${props.nextShow.fields.slug}`} >
                     <div className=" position-relative text-right">
-                      <h1 className="position-absolute display-1 font-weight-bold" style={{"top": "-18%","right": "3%", "color": "rgba(0,0,0, 0.1)"}}>{('0' + (props.index.next + 1).toString()).slice(-2)}</h1>
+                      <h1 className="position-absolute display-1" style={{"top": "-18%","right": "1%", "color": "rgba(0,0,0, 0.1)"}}>{('0' + (props.index.next + 1).toString()).slice(-2)}</h1>
                       <h2 className="h2 font-weight-bold">NEXT &gt;</h2>
                       <span className="h6">{props.nextShow.fields.title}</span>
                     </div>

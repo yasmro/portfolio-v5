@@ -26,7 +26,7 @@ const Index = (props) => {
                             props.shows.map((show, idx) => (
                                 // style={{breakInside:"avoid !important"}} 
                                 <>
-                                <div className="col-md-6 col-lg-4 g-3" key={`worklist-${show.fields.slug}`}>
+                                <div className="col-md-6 col-lg-4 g-3" Style="align-items: stretch;" key={`worklist-${show.fields.slug}`} >
                                     <ListCard title={show.fields.title}  thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                 </div>
                                 

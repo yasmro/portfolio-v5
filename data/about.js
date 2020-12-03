@@ -17,7 +17,7 @@ export const myself = {
     },
     {
       title:"RPA Development",
-      description:"I can develop RPA (Robotic Process Automation) with low-code script such as Zoho Deluge/API and Google Apps Script. I've ever developed the business automation and integration with third-party products.",
+      description:"I can develop RPA (Robotic Process Automation) with low-code script such as Zoho Deluge/API and Google Apps Script. I've ever developed business automations with integrating third-party products.",
       skills:["Google Apps Script", "Zoho Deluge", "REST API"]
     },
     // {
