@@ -5,8 +5,8 @@ import {　createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
     // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
@@ -38,11 +38,13 @@ export default createGlobalStyle`
       color: white;
     }
 
-    .card{
-      backdrop-filter: saturate(180%) blur(20px);
-      background-color: rgba(255,255,255,0.3)!important;
-      border-radius: 0;
-    }
+    // .card{
+    //   background-color: rgba(255,255,255,0.7)!important;
+    //   border-radius: 0px;
+    //   -webkit-backdrop-filter: saturate(180%) blur(2.5px);
+    //   backdrop-filter: saturate(180%) blur(2.5px);
+      
+    // }
 
     .home-jumbotron{
         // background-image:
@@ -144,9 +146,9 @@ export default createGlobalStyle`
     }
 
     nav.navbar{
-      background-color: rgba(255,255,255, 1);
-      // backdrop-filter: blur(8px);
-      // -webkit-backdrop-filter: blur(8px);
+      background-color: rgba(255,255,255, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     footer .nav-link{
@@ -242,7 +244,7 @@ export default createGlobalStyle`
       background: linear-gradient(45deg, var(--primary), var(--primary1))!important;
       color: white;
       box-shadow: 0 10px 20px 0 rgba(202,12,53,.1);
-      transform: translateY(-10px);
+      transform: translateY(-5px);
       transition: all 0.3s;
       cursor: pointer;
     }
@@ -292,11 +294,21 @@ export default createGlobalStyle`
       opacity: 1;
     }
 
+    // .hover-page.hover-page-prev{
+    //   transition: all 0.3s;
+    // }
+
+    .hover-page.hover-page-prev :hover{
+      // transform: translateY(-5px);
+      // transition: all 0.3s;
+      // background: red;
+    }
+
     /* button */
 .button_container {
   position: fixed;
-  top: 4%;
-  right: 6%;
+  top: 33px;
+  right: 40px;
   height: 27px;
   width: 35px;
   cursor: pointer;
@@ -445,22 +457,23 @@ export default createGlobalStyle`
 
     /* scroll bar */
     ::-webkit-scrollbar{
+      display: none;
       width: 6px;
       background: rgba(0,0,0,0);
       
-    }
-    ::-webkit-scrollbar-track{
-      /* background: rgba(255,255,255,0.2); */
-      background: rgba(0,0,0,0);
-      border: none;
-      border-radius: 5px;
-      box-shadow: inset 0 0 2px #777; 
-    }
-    ::-webkit-scrollbar-thumb{
-      background: rgba(0,0,0,0.6);
-      border-radius: 0px;
-      box-shadow: none;
-    }
+    // }
+    // ::-webkit-scrollbar-track{
+    //   /* background: rgba(255,255,255,0.2); */
+    //   background: rgba(0,0,0,0);
+    //   border: none;
+    //   border-radius: 5px;
+    //   box-shadow: inset 0 0 2px #777; 
+    // }
+    // ::-webkit-scrollbar-thumb{
+    //   background: rgba(0,0,0,0.6);
+    //   border-radius: 0px;
+    //   box-shadow: none;
+    // }
 
     
 

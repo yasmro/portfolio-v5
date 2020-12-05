@@ -15,7 +15,7 @@ import { routes } from '../data/routes'
 const Footer = () => {
     const router = useRouter();
     return(
-            <footer className="mt-5 position-absolute w-100 page-footer text-light pink pt-4 skewedArea bg-dark">
+            <footer className="position-absolute w-100 page-footer text-light pink pt-4 skewedArea bg-dark">
                 <div className="container text-center text-md-left">
                     <div className="row">
                         <div className="col-md-6 mt-md-0 mt-3">

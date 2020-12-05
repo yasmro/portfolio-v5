@@ -8,32 +8,6 @@ import { myself } from '../../data/about'
 import Title from "../../components/Title"
 
 const Contact = (props) => {
-
-    const validateForm = () => {
-        var name =  document.getElementById('name').value;
-        if (name == "") {
-            document.querySelector('.status').innerHTML = "Name cannot be empty";
-            return false;
-        }
-        var email =  document.getElementById('email').value;
-        if (email == "") {
-            document.querySelector('.status').innerHTML = "Email cannot be empty";
-            return false;
-        } else {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            if(!re.test(email)){
-                document.querySelector('.status').innerHTML = "Email format invalid";
-                return false;
-            }
-        }
-        var message =  document.getElementById('message').value;
-        if (message == "") {
-            document.querySelector('.status').innerHTML = "Message cannot be empty";
-            return false;
-        }
-        document.querySelector('.status').innerHTML = "Sending...";
-      }
-
       const [name, setName] = useState("");
       const [email, setEmail] = useState("");
       const [message, setMessage] = useState("");
@@ -66,7 +40,7 @@ const Contact = (props) => {
 
                             <div className="text-center">
                                 {/* btn-outline-dark  */}
-                                <button type="submit" onClick={validateForm} className={"mt-5 btn btn-lg rounded-0 " + (name==="" || email === "" || message === "" ? "btn-light" : "btn-danger")} disabled={name==="" || email === "" || message === ""} data-ripple-color="dark">Send</button>
+                                <button type="submit" className={"mt-5 btn btn-lg rounded-0 " + (name==="" || email === "" || message === "" ? "btn-light" : "btn-danger")} disabled={name==="" || email === "" || message === ""} data-ripple-color="dark">Send</button>
                             </div>
                             <div className="status"></div>
                         </div>

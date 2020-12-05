@@ -26,7 +26,7 @@ export const myself = {
     // },
     {
       title:"Art - Shodo",
-      description:"Experienced for 12 years and took 20+ awards on Japanese calligraphy concours before.",
+      description:"Experienced for 12 years and took 20+ awards on Japanese calligraphy concours before. I'm able to make Japanese calligraphy works with brushes, pens and so on.",
       skills:["Art"]
     },
     

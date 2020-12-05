@@ -33,19 +33,24 @@ var settings = {
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
   // appendDots: dots => (
-  //   <div style={{ position: "absolute",  top:-40 + 'px', right: 0 + 'px' }}>
-  //     <ul style={{ margin: "0px" }}> {dots} </ul>
+  //   <div>
+  //     {/* style={{ position: "absolute",  top:-40 + 'px', right: 0 + 'px' }}> */}
+  //     <ul style={{ margin: "-10px" }}> {dots} </ul>
   //   </div>
   // ),
   // customPaging: i => (
   //   <div
-  //     style={{
-  //       width: "30px",
-  //       color: "blue",
-  //       border: "1px blue solid"
-  //     }}
+  //     // style={{
+  //     //   width: "30px",
+  //     //   height: "30px",
+  //     //   color: (i === carouselIndex ? "var(--primary)": "black")
+  //     // }}
+  //     // style={{
+  //     //   width: "8px",
+  //     //   height: "8px",
+  //     //   background: (i === carouselIndex ? "var(--primary)": "black")
+  //     // }}
   //   >
-  //     {i + 1}
   //   </div>
   // )
 };
@@ -140,23 +145,23 @@ return(
                 <ListCard title={`${props.nextShow.fields.title} NEXT >`}  thumbnail={props.nextShow.fields.thumbnail} slug={props.nextShow.fields.slug} />
               </div> */}
 
-              <div className="col-4 g-3" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
+              <div className="col-4 g-3 hover-page hover-page-prev" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
                 <Link href="/works/[id]" as={`/works/${props.prevShow.fields.slug}`}>
-                  <div className="w-100 position-relative">
+                  <div className="w-100 position-relative ">
                     <h1 className="position-absolute display-1" style={{"top": "-18%", "left": "1%", "color": "rgba(0,0,0, 0.1)"}}>{('0' + (props.index.prev + 1).toString()).slice(-2)}</h1>
                     <h2 className="h2 font-weight-bold">&lt; PREV</h2>
                     <span className="h6 counter">{props.prevShow.fields.title}</span>
                   </div>
                 </Link>
               </div>
-              <div className="col-4 pt-1 g-3 text-center" onClick={() => setCarouselIndex(0)} >
+              {/* <div className="col-4 pt-1 g-3 text-center" onClick={() => setCarouselIndex(0)} >
                 <Link href="/works">
                   <button type="button" class="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">All Works</button>
                 </Link>
-              </div>
-              <div className="col-4 g-3" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
+              </div> */}
+              <div className="offset-4 col-4  g-3" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
                 <Link href="/works/[id]" as={`/works/${props.nextShow.fields.slug}`} >
-                    <div className=" position-relative text-right">
+                    <div className="position-relative text-right hover-page hover-page-next">
                       <h1 className="position-absolute display-1" style={{"top": "-18%","right": "1%", "color": "rgba(0,0,0, 0.1)"}}>{('0' + (props.index.next + 1).toString()).slice(-2)}</h1>
                       <h2 className="h2 font-weight-bold">NEXT &gt;</h2>
                       <span className="h6">{props.nextShow.fields.title}</span>
@@ -183,22 +188,36 @@ return(
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", padding: '40px 0' }}
+    <button
+      className={"btn rounded-0"}
+      style={{ ...style, padding:"8px 14px", position: "absolute", top: "-53px", right: 0 }}
       onClick={onClick}
-    />
+      
+    ><i className="fa fa-angle-right"></i></button>
+    // <div
+    //   className={className}
+    //   style={{ ...style, display: "inline", padding: '0px 0' }}
+    //   onClick={onClick}
+    // >
+    //   <p>NEXT</p>
+    // </div>
   );
 }
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", padding: '40px 0' }}
+    <button
+      className={"btn  rounded-0"}
+      style={{ ...style, padding:"8px 14px", position: "absolute", top: "-53px", right: "45px" }}
       onClick={onClick}
-    />
+      
+    ><i className="fa fa-angle-left"></i></button>
+    // <div
+    //   className={className}
+    //   style={{ ...style, display: "block", padding: '40px 0' }}
+    //   onClick={onClick}
+    // />
   );
 }
 

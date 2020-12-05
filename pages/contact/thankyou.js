@@ -3,9 +3,6 @@ import Link from "next/link";
 import { getAllPosts } from '../../lib'
 import fetch from "isomorphic-unfetch";
 
-import { myself } from '../../data/about'
-import Title from "../../components/Title"
-
 const ContactThankYou = (props) => {
     return(
         <>

@@ -2,8 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from 'next/image'
 
-import { getAllPosts } from '../../lib'
+import { getData, getAllPosts } from '../../lib'
 import fetch from "isomorphic-unfetch";
+
+import ReactMarkdown from 'react-markdown'
 
 import { myself } from '../../data/about'
 import Title from "../../components/Title"
@@ -17,7 +19,6 @@ const variants = {
 }
 
 const About = (props) => {
-    console.log(props)
     return(
         <>
             <Head>
@@ -37,10 +38,7 @@ const About = (props) => {
                                 <div className="card-body">
                                     <h3 className="card-title">{myself.name}</h3>
                                     <div className="card-text">
-                                        <p>My name is Yu Ohno born in Nara, Japan on 1996.</p>
-                                        <p>I've learned Information Technology in National Information Technology, Nara College, Japan for seven years(2012 – 2019) and joined Zoho Japan corp in April 2019. I'm taking care of supporting queries from Japanese customers, developers, and reseller partners. I support in the range of ten products:  Zoho CRM (Customer Relationship Management), Zoho Campaigns (provides email marketing application), Zoho SalesIQ (Web visitors' tracking, live chat, and chatbot platform), Zoho Deluge (which we can develop Zoho services' customization with low-code programming language) and API integrations.</p>
-                                        <p>My hobby is art calligraphy and Web development. I post works of art calligraphy and Web pages to Instagram. I would like to work as an art calligrapher and/or a Web developer, and I hope to make audiences impressive :) </p>
-                                    
+                                        <ReactMarkdown children={props.about[0].fields.about}/>
                                     </div>
                             
                                 </div>
@@ -54,16 +52,16 @@ const About = (props) => {
                         <h2 className="text-center square">What I Can Do</h2>
                         <div className="row row-40">
                             {
-                                myself.whatICanDo.map( (skill, index) =>
+                                props.whatICanDo.map( (skill, index) =>
                                     <div className="col-md-6 col-lg-6 g-3" key={`skill-${index}`}>
                                         <div className="card border whatICanDo h-100">
                                             <div className="card-body">
-                                                <h3 className="card-title"><span className="skillNumber black">{index + 1}</span>{skill.title}</h3>
+                                                <h3 className="card-title"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</h3>
                                                 <div className="card-text">
-                                                    <p>{skill.description}</p>
+                                                    <p>{skill.fields.description}</p>
                                                     {   
-                                                        skill.skills &&
-                                                        skill.skills.map( tag =>
+                                                        skill.fields.relatedSkills &&
+                                                        skill.fields.relatedSkills.map( tag =>
                                                         <span className="mr-2 badge border text-dark rounded-0"><span>{tag}</span></span>
                                                         )
                                                     }
@@ -83,11 +81,13 @@ const About = (props) => {
 };
 
 About.getInitialProps = async function() {
-    const res2 = await getAllPosts();
+    const resAbout = await getData("about");
+    const resWhatICanDo = await getData("whatICanDo");
     // console.log(res2)
     // console.log(`Show data fetched. Count: ${data.length}`);
-
-    return { shows: res2};
+    console.log(resAbout);
+    console.log(resWhatICanDo)
+    return { about: resAbout, whatICanDo: resWhatICanDo};
 };
 
 export default About;
