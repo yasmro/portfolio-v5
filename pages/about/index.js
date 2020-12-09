@@ -36,7 +36,7 @@ const About = (props) => {
                             </div>
                             <div className="col-lg-8">
                                 <div className="card-body">
-                                    <h3 className="card-title">{myself.name}</h3>
+                                    <div className="h3 card-title">{myself.name}</div>
                                     <div className="card-text">
                                         <ReactMarkdown children={props.about[0].fields.about}/>
                                     </div>
@@ -52,7 +52,7 @@ const About = (props) => {
                         <h2 className="text-center square">What I Can Do</h2>
                         <div className="row row-40">
                             {
-                                props.whatICanDo.map( (skill, index) =>
+                                props.whatICanDo.reverse().map( (skill, index) =>
                                     <div className="col-md-6 col-lg-6 g-3" key={`skill-${index}`}>
                                         <div className="card border whatICanDo h-100">
                                             <div className="card-body">

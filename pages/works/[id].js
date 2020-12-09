@@ -38,21 +38,19 @@ var settings = {
   //     <ul style={{ margin: "-10px" }}> {dots} </ul>
   //   </div>
   // ),
-  // customPaging: i => (
-  //   <div
-  //     // style={{
-  //     //   width: "30px",
-  //     //   height: "30px",
-  //     //   color: (i === carouselIndex ? "var(--primary)": "black")
-  //     // }}
-  //     // style={{
-  //     //   width: "8px",
-  //     //   height: "8px",
-  //     //   background: (i === carouselIndex ? "var(--primary)": "black")
-  //     // }}
-  //   >
-  //   </div>
-  // )
+  customPaging: i => (
+    <div
+      // style={{
+      //   width: "30px",
+      //   height: "30px",
+      //   color: (i === carouselIndex ? "var(--primary)": "black")
+      // }}
+      style={{marginTop: "12px"}}
+      className={"pageButton " + (i === carouselIndex ? "active": "") }
+      
+    >
+    </div>
+  )
 };
 
 return(

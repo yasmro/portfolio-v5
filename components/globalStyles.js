@@ -110,7 +110,7 @@ export default createGlobalStyle`
     // }
 
     .japanese{
-      font-family: 'Noto Sans JP', sans-serif;
+      font-family: a-otf-ud-shin-go-pr6n, 'Noto Sans JP', sans-serif;
       font-style: normal !important;
     }
     
@@ -238,6 +238,24 @@ export default createGlobalStyle`
     .card-hover{
       transition: all 0.3s;
     }
+    .card-hover img{
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: grayscale(100%);
+      transition: all 0.3s;
+    }
+
+    .card-hover:hover img {
+      -webkit-filter: grayscale(0);
+      -moz-filter: grayscale(0);
+      -ms-filter: grayscale(0);
+      -o-filter: grayscale(0);
+      filter: grayscale(0);
+      transition: all 0.3s;
+      }
+
     .card-hover:hover{
       // border-color: var(--primary)!important;
       // background-color: var(--primary)!important;
@@ -294,11 +312,32 @@ export default createGlobalStyle`
       opacity: 1;
     }
 
+    .pageButton{
+      width: 9px; 
+      height: 9px;
+      transform: rotateZ(45deg);
+      background: #ffffff;
+      border: 1px solid #aaaaaa ;
+      transition: all 0.3s;
+    }
+
+    .pageButton:hover{
+      background: #aaaaaa;
+      transition: all 0.3s;
+    }
+
+    .pageButton.active{
+      background: var(--primary);
+      border: #ffffff ;
+      transform: rotateZ(90deg);
+      transition: all 0.3s;
+    }
+
     // .hover-page.hover-page-prev{
     //   transition: all 0.3s;
     // }
 
-    .hover-page.hover-page-prev :hover{
+    .hover-page.hover-page-prev:hover{
       // transform: translateY(-5px);
       // transition: all 0.3s;
       // background: red;
