@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 const WorkTitle2 = ({index=0, length=0, title, description="", category="", tags=[], abstract=""}) => (
   // style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}}
-  <div class="jumbotron jumbotron-fluid py-5 mb-5 bg-light"  >
-    <div class="container">
+  <div className="jumbotron jumbotron-fluid py-5 mb-5 bg-light"  >
+    <div className="container">
       
       <div className="row row-20">
         <div className="col-md-3 d-inline-flex d-md-inline mb-3">
@@ -16,7 +16,7 @@ const WorkTitle2 = ({index=0, length=0, title, description="", category="", tags
           </div>
 
           <div className="mt-0 mt-md-3">
-            <span class="badge bg-black shadow rounded-0"><span className="">{category}</span></span>
+            <span className="badge bg-black shadow rounded-0"><span className="">{category}</span></span>
         
               {tags.length > 0 &&
                 <>
@@ -24,7 +24,7 @@ const WorkTitle2 = ({index=0, length=0, title, description="", category="", tags
                   {
                     tags.map( tag =>
                     // <span className="mr-1 badge border border-white shadow  rounded-0"><span className="">{tag.fields.name}</span></span>
-                    <span className="mr-1 badge bg-light  shadow text-dark rounded-0"><span className="">{tag.fields.name}</span></span>
+                    <span key={`${tag}`} className="mr-1 badge bg-light  shadow text-dark rounded-0"><span className="">{tag.fields.name}</span></span>
                     )
                   }
                 </>
@@ -34,8 +34,8 @@ const WorkTitle2 = ({index=0, length=0, title, description="", category="", tags
         
         <div className="col-md-9">
 
-          <h1 class="display-2 text-shadow" >{title}</h1>
-          <p class="mt-3">{abstract}</p>
+          <h1 className="display-2 text-shadow" >{title}</h1>
+          <p className="mt-3">{abstract}</p>
         </div> 
       </div>
 

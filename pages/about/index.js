@@ -29,12 +29,12 @@ const About = (props) => {
                 <div className="container">
                     <div className="card border" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-0">
-                            <div className="col-lg-4 bg-dark position-relative">
+                            <div className="col-lg-4 bg-dark position-relative" key="shodo_name">
                                 <div className="w-100 hover-overlay ripple text-center" style={{minHeight: "300px", marginTop: "0%"}} >
                                     <img src="https://yasmro.github.io/portfolio/static/media/topName.eb906793.svg"   loading="lazy" alt="Yu Ohno" width={65} height={300} />
                                 </div>
                             </div>
-                            <div className="col-lg-8">
+                            <div className="col-lg-8" key="intro">
                                 <div className="card-body">
                                     <div className="h3 card-title">{myself.name}</div>
                                     <div className="card-text">
@@ -50,7 +50,7 @@ const About = (props) => {
                         <div className="row row-40">
                             {
                                 props.whatICanDo.map( (skill, index) =>
-                                    <div className="col-md-6 col-lg-6 g-3" key={`skill-${index}`}>
+                                    <div className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
                                         <div className="card border whatICanDo h-100">
                                             <div className="card-body">
                                                 <div className="card-title h3"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</div>

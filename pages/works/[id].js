@@ -75,8 +75,8 @@ return(
               <Slider {...settings}>
                 {
                   props.show.fields.photos.map( (photo, idx) => (
-                    <div className="w-100 mb-0" Style="padding:0 auto;" key={`slide-sm-${idx}`}>
-                      <div className="" Style="">
+                    <div className="w-100 mb-0" style={{padding:"0 auto"}} key={`slide-sm-${idx}`}>
+                      <div className="">
                         <img className="align-item-center img-fluid border" width={photo.fields.file.details.image.width} height={photo.fields.file.details.image.height} src={photo.fields.file.url ? photo.fields.file.url : "https://source.unsplash.com/random/1600x900/"} alt="" />
                       </div>
                     </div>
@@ -154,7 +154,7 @@ return(
               </div>
               {/* <div className="col-4 pt-1 g-3 text-center" onClick={() => setCarouselIndex(0)} >
                 <Link href="/works">
-                  <button type="button" class="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">All Works</button>
+                  <button type="button" className="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">All Works</button>
                 </Link>
               </div> */}
               <div className="offset-4 col-4  g-3" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
@@ -172,7 +172,7 @@ return(
 
           <div className="d-none mt-5 text-center">
             <Link href="/works">
-              <button type="button" class="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">View All Works</button>
+              <button type="button" className="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">View All Works</button>
             </Link>
           </div>
       </div>
