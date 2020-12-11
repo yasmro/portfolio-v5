@@ -40,29 +40,26 @@ const About = (props) => {
                                     <div className="card-text">
                                         <ReactMarkdown children={props.about[0].fields.about}/>
                                     </div>
-                            
                                 </div>
                             </div>
-                            
                         </div>
-                        
                     </div>
 
                     <div className="mt-4">
                         <h2 className="text-center square">What I Can Do</h2>
                         <div className="row row-40">
                             {
-                                props.whatICanDo.reverse().map( (skill, index) =>
+                                props.whatICanDo.map( (skill, index) =>
                                     <div className="col-md-6 col-lg-6 g-3" key={`skill-${index}`}>
                                         <div className="card border whatICanDo h-100">
                                             <div className="card-body">
-                                                <h3 className="card-title"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</h3>
+                                                <div className="card-title h3"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</div>
                                                 <div className="card-text">
                                                     <p>{skill.fields.description}</p>
                                                     {   
                                                         skill.fields.relatedSkills &&
                                                         skill.fields.relatedSkills.map( tag =>
-                                                        <span className="mr-2 badge border text-dark rounded-0"><span>{tag}</span></span>
+                                                        <span tag={`skill-${index}-${tag}`} className="mr-2 badge border text-dark rounded-0"><span>{tag}</span></span>
                                                         )
                                                     }
                                                      
@@ -82,11 +79,7 @@ const About = (props) => {
 
 About.getInitialProps = async function() {
     const resAbout = await getData("about");
-    const resWhatICanDo = await getData("whatICanDo");
-    // console.log(res2)
-    // console.log(`Show data fetched. Count: ${data.length}`);
-    console.log(resAbout);
-    console.log(resWhatICanDo)
+    const resWhatICanDo = await getData("whatICanDo","fields.order");
     return { about: resAbout, whatICanDo: resWhatICanDo};
 };
 

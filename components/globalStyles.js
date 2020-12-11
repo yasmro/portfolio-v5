@@ -5,7 +5,7 @@ import {　createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
     // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -38,13 +38,15 @@ export default createGlobalStyle`
       color: white;
     }
 
-    // .card{
-    //   background-color: rgba(255,255,255,0.7)!important;
-    //   border-radius: 0px;
-    //   -webkit-backdrop-filter: saturate(180%) blur(2.5px);
-    //   backdrop-filter: saturate(180%) blur(2.5px);
+    .card{
+      background-color: rgba(255,255,255,0.7)!important;
+      border-radius: 0px;
+      -webkit-backdrop-filter: saturate(180%) blur(2.5px);
+      backdrop-filter: saturate(180%) blur(2.5px);
       
-    // }
+    }
+
+    
 
     .home-jumbotron{
         // background-image:
@@ -88,7 +90,7 @@ export default createGlobalStyle`
 
     *{
         font-family: 'Karla', 'Noto Sans JP',  sans-serif;
-        // font-family: neue-haas-grotesk-text, ff-dax-pro,,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
+        // font-family: neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
         font-style: italic !important; 
         font-weight: 300;
     }
@@ -105,12 +107,12 @@ export default createGlobalStyle`
     }
 
     // .display-2, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
-    //   font-family: neue-haas-grotesk-display, ff-dax-pro, sans-serif;
+    //   font-family: a-otf-ud-shin-go-pr6n,  neue-haas-grotesk-display, ff-dax-pro, sans-serif;
     //   // corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron,
     // }
 
     .japanese{
-      font-family: a-otf-ud-shin-go-pr6n, 'Noto Sans JP', sans-serif;
+      font-family: 'Noto Sans JP', sans-serif;
       font-style: normal !important;
     }
     
@@ -328,7 +330,7 @@ export default createGlobalStyle`
 
     .pageButton.active{
       background: var(--primary);
-      border: #ffffff ;
+      border: var(--primary);
       transform: rotateZ(90deg);
       transition: all 0.3s;
     }

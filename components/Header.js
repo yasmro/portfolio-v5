@@ -18,13 +18,13 @@ const Header = ({ href, children }) => {
     return(
       <>
     <nav
-      className={"navbar navbar-expand-lg navbar-light position-fixed w-100 p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )} 
+      className={"navbar navbar-expand-lg navbar-light  position-fixed w-100 p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )} 
       style={{ zIndex: 1}}
       >
       <div className="container">
         <Link href="/">
             <a className="navbar-brand waves-effect pr-3">
-              <img src="https://yasmro.github.io/portfolio/static/media/name.53c4e24b.png" loading="lazy" alt="Yu Ohno" width={120}  />
+              <img src="https://yasmro.github.io/portfolio/static/media/name.53c4e24b.png" loading="lazy" alt="Yu Ohno" width={120} height={32} />
             </a>
         </Link>
         

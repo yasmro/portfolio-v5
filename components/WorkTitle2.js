@@ -23,7 +23,8 @@ const WorkTitle2 = ({index=0, length=0, title, description="", category="", tags
                   <br />
                   {
                     tags.map( tag =>
-                    <span className="mr-1 badge bg-light shadow text-dark rounded-0"><span className="">{tag.fields.name}</span></span>
+                    // <span className="mr-1 badge border border-white shadow  rounded-0"><span className="">{tag.fields.name}</span></span>
+                    <span className="mr-1 badge bg-light  shadow text-dark rounded-0"><span className="">{tag.fields.name}</span></span>
                     )
                   }
                 </>
