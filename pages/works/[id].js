@@ -85,7 +85,7 @@ return(
               </Slider>
             </div>
           }
-        <div className="mt-5 mt-lg-0">
+        <div className="mt-5 mt-lg-0 detailCms">
           <ReactMarkdown children={props.show.fields.description} />
         </div>
       </div>
@@ -206,7 +206,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <button
-      className={"btn  rounded-0"}
+      className={"btn rounded-0"}
       style={{ ...style, padding:"8px 14px", position: "absolute", top: "-53px", right: "45px" }}
       onClick={onClick}
       

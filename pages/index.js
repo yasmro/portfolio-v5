@@ -29,8 +29,8 @@ const Index = (props) => {
                         {props.shows ? 
                             props.shows.map((show, idx) => (
                                 
-                                <div className="col-md-4 col-lg-3 g-3" key={`card-${idx}`}>
-                                    <ListCard title={show.fields.title}  thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
+                                <div className="col-6 col-lg-4 g-3" key={`card-${idx}`}>
+                                    <ListCard title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                 </div>
                             
                             

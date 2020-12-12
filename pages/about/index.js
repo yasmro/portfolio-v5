@@ -14,7 +14,12 @@ import { motion } from "framer-motion"
 
 const variants = {
   hidden: { opacity: 0, y: 30, duration: 2},
-  visible: { opacity: 1, y: 0, duration: 2 },
+  visible: (custom) => ({
+    opacity: 1, 
+    y: 0, 
+    duration: 2,
+    transition: { delay: custom * 0.2 }
+  }),
   transition: { duration: 2 }
 }
 
@@ -27,7 +32,7 @@ const About = (props) => {
             <div>
                 <Title title="About" />
                 <div className="container">
-                    <div className="card border" initial="hidden" animate="visible" transition="transition" variants={variants}>
+                    <motion.div custom={0} className="card border" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-0">
                             <div className="col-lg-4 bg-dark position-relative" key="shodo_name">
                                 <div className="w-100 hover-overlay ripple text-center" style={{minHeight: "300px", marginTop: "0%"}} >
@@ -43,14 +48,14 @@ const About = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     <div className="mt-4">
                         <h2 className="text-center square">What I Can Do</h2>
                         <div className="row row-40">
                             {
                                 props.whatICanDo.map( (skill, index) =>
-                                    <div className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
+                                    <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
                                         <div className="card border whatICanDo h-100">
                                             <div className="card-body">
                                                 <div className="card-title h3"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</div>
@@ -66,7 +71,7 @@ const About = (props) => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 )
                             }
                         </div>     

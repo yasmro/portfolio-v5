@@ -23,7 +23,7 @@ const Header = ({ href, children }) => {
       >
       <div className="container">
         <Link href="/">
-            <a className="navbar-brand waves-effect pr-3">
+            <a className="navbar-brand waves-effect pr-3" style={{mixBlendMode: "multiply"}}>
               <img src="https://yasmro.github.io/portfolio/static/media/name.53c4e24b.png" loading="lazy" alt="Yu Ohno" width={120} height={32} />
             </a>
         </Link>

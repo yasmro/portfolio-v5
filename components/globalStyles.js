@@ -204,6 +204,13 @@ export default createGlobalStyle`
       background: var(--primary);
     }
 
+    .sq{
+      position: relative;
+      line-height: 1.4;
+      padding:0.5em 1em;
+      display: inline-block;
+    }
+
     .quotation{
       position: relative;
       line-height: 1.4;
@@ -343,6 +350,14 @@ export default createGlobalStyle`
       // transform: translateY(-5px);
       // transition: all 0.3s;
       // background: red;
+    }
+
+    .detailCms a{
+      color: var(--primary);
+    }
+    .detailCms a:hover{
+      
+      
     }
 
     /* button */
