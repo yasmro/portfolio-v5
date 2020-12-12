@@ -1,5 +1,10 @@
 var path = require('path');
-var {getAllPosts} = require('./lib');
+
+const client = require('contentful').createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+});
+
 
 module.exports = {
   exportTrailingSlash: true,
@@ -12,7 +17,11 @@ module.exports = {
       "/contact": { page: "/contact" },
     };
 
-    const res = await getAllPosts();
+    const res = await client.getEntries({
+      content_type: "portfolio",
+      order: "-fields.score",
+    });
+    
     res.forEach(post => {
       paths[`/works/${post.fields.slug}`] = {
         page: "/works/[id]",
