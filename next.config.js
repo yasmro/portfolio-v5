@@ -1,5 +1,5 @@
 var path = require('path');
-var lib = require('./lib');
+var {getAllPosts} = require('./lib');
 
 module.exports = {
   exportTrailingSlash: true,
@@ -12,7 +12,7 @@ module.exports = {
       "/contact": { page: "/contact" },
     };
 
-    const res = await lib.getAllPosts();
+    const res = await getAllPosts();
     res.forEach(post => {
       paths[`/works/${post.fields.slug}`] = {
         page: "/works/[id]",
