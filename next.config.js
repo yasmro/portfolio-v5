@@ -1,6 +1,28 @@
+import { getAllPosts } from './lib'
+
 var path = require('path');
 module.exports = {
   exportTrailingSlash: true,
+
+  exportPathMap: async function() {
+    const paths = {
+      "/": { page: "/" },
+      "/about": { page: "/about" },
+      "/works": { page: "/works" },
+      "/contact": { page: "/contact" },
+    };
+
+    const res = await getAllPosts();
+    res.forEach(post => {
+      paths[`/works/${post.fields.slug}`] = {
+        page: "/works/[id]",
+        query: { slug: post.fields.slug }
+      };
+    });
+
+    return paths;
+  },
+
   env: {
     NEXT_PUBLIC_CONTENTFUL_SPACE_ID:
       process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
