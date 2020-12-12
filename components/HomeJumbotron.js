@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 
 import { routes } from '../data/routes' 
 
-import ShuffleText from 'react-shuffle-text';
+// import ShuffleText from 'react-shuffle-text';
 
 const variants = {
   hidden: { opacity: 0, y: 20},
