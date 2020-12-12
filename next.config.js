@@ -21,8 +21,8 @@ module.exports = {
       content_type: "portfolio",
       order: "-fields.score",
     });
-    
-    res.forEach(post => {
+
+    res.items.forEach(post => {
       paths[`/works/${post.fields.slug}`] = {
         page: "/works/[id]",
         query: { slug: post.fields.slug }
