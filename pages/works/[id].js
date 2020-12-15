@@ -8,8 +8,18 @@ import ReactMarkdown from 'react-markdown'
 import Slider from "react-slick";
 
 import WorkTitle from '../../components/WorkTitle'
+import WorkTitle1 from '../../components/WorkTitle1'
 import WorkTitle2 from '../../components/WorkTitle2'
 import ListCard from '../../components/ListCard'
+
+import { motion, AnimatePresence } from "framer-motion"
+
+const variants = {
+  hidden: { opacity: 0, y: 5, duration: 2},
+  visible: { opacity: 1, y: 0, duration: 2 },
+  hide: { opacity: 0, y: 5, duration: 2},
+  transition: { duration: 2 }
+}
 
 
 import "slick-carousel/slick/slick.css"; 
@@ -61,8 +71,8 @@ return(
   <div>
 
     <WorkTitle2 index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} />
-    
-    <div className="container mt-5 ">
+    <AnimatePresence exitBeforeEnter>
+    <motion.div initial="hidden" animate="visible" exit="hide" transition="transition" variants={variants} className="container mt-5 ">
       <div className="row row-40">
       <div className={props.show.fields.description ? "col-lg-4" : "d-lg-none"}>
           {
@@ -85,8 +95,17 @@ return(
               </Slider>
             </div>
           }
-        <div className="mt-5 mt-lg-0 detailCms">
-          <ReactMarkdown children={props.show.fields.description} />
+        <div className="mt-5 mt-lg-0 detailCms position-sticky" style={{ top: "120px"}}>
+          {/* <WorkTitle1 index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
+          <div className=" mt-0 p-0">
+            {/* <div className="card active p-3 h4 text-center font-weight-light" style={{color:"var(--primary)"}}>
+              {props.show.fields.title}
+            </div> */}
+            <div className="h4">{props.show.fields.title}</div>
+            <hr />
+            <ReactMarkdown children={props.show.fields.description} />
+          </div>
+          
         </div>
       </div>
 
@@ -177,8 +196,8 @@ return(
           </div>
       </div>
 
-    </div>
-     
+    </motion.div>
+    </AnimatePresence>
   </div>
   </>
 )};

@@ -8,7 +8,7 @@ import { getAllPosts } from '../../lib'
 import { motion } from "framer-motion"
 
 const variants = {
-    hidden: { opacity: 0, y: 30, duration: 2},
+    hidden: { opacity: 0, y: 5, duration: 2},
     visible: (custom) => ({
       opacity: 1, 
       y: 0, 

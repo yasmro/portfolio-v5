@@ -36,7 +36,12 @@ const Contact = (props) => {
                                     <input type="text" name="name" className="form-control rounded-0 py-2" onChange={(e) => setName(e.target.value)} id="name" />
                                 </div>
                                 <div className="md-form mb-3">
-                                    <label htmlFor="email">Email{email==="" ? <span className="ml-3 text-danger">Empty Email</span> : !validateEmail(email) && <span className="ml-3 text-danger">Invalid Email</span>}</label>
+                                    <label htmlFor="email" className="d-flex">
+                                        <span className="mr-auto">Email</span>
+                                        <span className={email==="" || !validateEmail(email) ? "text-danger" : "text-success" }>
+                                            {email==="" ? "Empty Email" : !validateEmail(email) ? "Invalid Email" : "Valid Email"}
+                                        </span>
+                                    </label>
                                     <input type="email" name="email" className="form-control rounded-0 py-2" onChange={(e) => setEmail(e.target.value)} id="email" />
                                 </div>
                                 <div className="md-form ">

@@ -8,10 +8,10 @@ export default function Custom404() {
           <div className="row row-30">
             <div className="col-md-6">
               <div className="bg-light h-100 w-100">
-                <Image src="/static/images/notFound.jpg" loading="lazy" alt="404 NotFound" width={660} height={660} />
+                <img src="/static/images/notFound.jpg" loading="lazy" alt="404 NotFound" width={660} height={660} />
               </div>
             </div>
-            <div className="col-md-6 text-center text-md-left g-5">
+            <div className="col-md-5 offset-md-1 text-center text-md-left">
               <h1 className="display-1">404.</h1>
               <h1 className="display-6">Page Not Found</h1>
               <div className="mt-5">

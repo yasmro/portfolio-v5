@@ -3,7 +3,7 @@ import Link from "next/link";
 // import * as mdb from 'mdb-ui-kit'; // lib
 // import { Input } from 'mdb-ui-kit'; // module
 // import Button from '@material-ui/core/Button';
-import { getAllPosts } from '../lib'
+import { getAllPosts, getData } from '../lib'
 // import fetch from "isomorphic-unfetch";
 
 import { myself } from '../data/about'
@@ -26,17 +26,41 @@ const Index = (props) => {
                 {/* <Title title="Works" description="" /> */}
                 <div className="container">
                     <div className="row row-40">
+                        <div className="col-6 col-lg-4 g-3" key={`card-${0}`}>
+                            
+                            <div className="card h-100 active">
+                                <div className="display-2 text-center" style={{ margin: "auto 0"}}>Works</div>
+                            </div>
+                        </div>
                         {props.shows ? 
                             props.shows.map((show, idx) => (
-                                
                                 <div className="col-6 col-lg-4 g-3" key={`card-${idx}`}>
                                     <ListCard title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                 </div>
-                            
-                            
                         )) : <h1>null</h1>}
-                    
                     </div>
+
+                    <h2 className="text-center square">What I Can Do...?</h2>
+                    {props.whatICanDo ? 
+                            props.whatICanDo.map((skill, index) => (
+                                <div className="card border whatICanDo h-100" key={`${index}`}>
+                                    <div className="card-body">
+                                        <div className="card-title h3"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</div>
+                                        <div className="card-text">
+                                            <p>{skill.fields.description}</p>
+                                            {   
+                                                skill.fields.relatedSkills &&
+                                                skill.fields.relatedSkills.map( tag =>
+                                                <span tag={`skill-${index}-${tag}`} className="mr-2 badge border text-dark rounded-0"><span>{tag}</span></span>
+                                                )
+                                            }
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                        )) : <h1>null</h1>}
+
+                        
                 </div>
                 
             </div>
@@ -46,10 +70,8 @@ const Index = (props) => {
 
 Index.getInitialProps = async function() {
     const res2 = await getAllPosts();
-    console.log(res2)
-    // console.log(`Show data fetched. Count: ${data.length}`);
-
-    return { shows: res2};
+    const resWhatICanDo = await getData("whatICanDo","fields.order");
+    return { shows: res2, whatICanDo: resWhatICanDo};
 };
 
 export default Index;
