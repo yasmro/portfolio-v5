@@ -13,7 +13,7 @@ import Title from "../../components/Title"
 import { motion } from "framer-motion"
 
 const variants = {
-  hidden: { opacity: 0, y: 30, duration: 2},
+  hidden: { opacity: 0, y: 5, duration: 2},
   visible: (custom) => ({
     opacity: 1, 
     y: 0, 
@@ -34,8 +34,8 @@ const About = (props) => {
                 <div className="container">
                     <motion.div custom={0} className="card border" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-0">
-                            <div className="col-lg-4 bg-dark position-relative" key="shodo_name">
-                                <div className="w-100 hover-overlay ripple text-center" style={{minHeight: "300px", marginTop: "0%"}} >
+                            <div className="col-lg-4 bg-dark" key="shodo_name">
+                                <div className="w-100 text-center" style={{minHeight: "300px"}} >
                                     <img src="https://yasmro.github.io/portfolio/static/media/topName.eb906793.svg"   loading="lazy" alt="Yu Ohno" width={65} height={300} />
                                 </div>
                             </div>

@@ -3,13 +3,15 @@ import {　createGlobalStyle } from 'styled-components';
 
 
 export default createGlobalStyle`
-    // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@100;300;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
+   
 
     button:focus {
         outline:0;
@@ -89,8 +91,8 @@ export default createGlobalStyle`
     
 
     *{
-        font-family: 'Karla', 'Noto Sans JP',  sans-serif;
-        // font-family: neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
+        font-family: 'Noto Serif JP','Karla', 'Noto Sans JP',  sans-serif;
+        // font-family:  neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
         font-style: italic !important; 
         font-weight: 300;
     }
@@ -357,7 +359,6 @@ export default createGlobalStyle`
     }
     .detailCms a:hover{
       
-      
     }
 
     /* button */
@@ -377,20 +378,21 @@ export default createGlobalStyle`
 }
 .button_container.toggle-active .top {
   transform: translateY(11px) translateX(0) rotate(45deg);
-  background: #FFF;
+  // background: #FFF;
 }
 .button_container.toggle-active .middle {
   opacity: 0;
-  background: #FFF;
+  // background: #FFF;
 }
 .button_container.toggle-active .bottom {
   transform: translateY(-11px) translateX(0) rotate(-45deg);
-  background: #FFF;
+  // background: #FFF;
 }
 .button_container span {
   background: #343a40;
-  border: none;
-  height: 1px;
+  filter: invert(50%) grayscale(100%);
+  border: 1px solid black;
+  height: 2px;
   width: 100%;
   position: absolute;
   top: 0;

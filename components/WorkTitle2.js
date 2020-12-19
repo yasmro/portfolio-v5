@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 const variants = {
   hidden: { opacity: 0, x: 5, duration: 2},
   visible: { opacity: 1, x: 0, duration: 2 },
+  hide: { opacity: 0, x: 5, duration: 2},
   transition: { duration: 2 }
 }
 
@@ -14,11 +15,11 @@ const WorkTitle2 = ({index=0, length=0, title, description="", category="", tags
   // style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}}
   <div className="jumbotron jumbotron-fluid py-5 mb-5 bg-light"  >
     <AnimatePresence exitBeforeEnter>
-      <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="container">
+      <motion.div initial="hidden" animate="visible" transition="transition" exit="hide" variants={variants} className="container">
         
         <div className="row row-20">
           <div className="col-md-3 d-inline-flex d-md-inline mb-3">
-            <div className="rounded-0  position-relative shadow-lg mr-3 " style={{width: "70px", height: "70px", backgroundColor: "rgba(0,0,0, 0.0)"}}>
+            <div className="rounded-0  position-relative shadow-lg mr-3 " style={{width: "70px", height: "70px", backgroundColor: "rgba(0,0,0, 0)"}}>
               <span className="h1 position-absolute text-center text-light" style={{ fontSize:"50px", top: "-2px", left: "10px" }}>{index + 1}</span>
               <span className="position-absolute bottomRight" style={{bottom: "0px", right: "0px" }}></span>
               <span className="text-dark position-absolute text-right" style={{ bottom: "0px", right: "5px" }}>{length}</span>

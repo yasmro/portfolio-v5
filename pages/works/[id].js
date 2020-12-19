@@ -72,7 +72,7 @@ return(
 
     <WorkTitle2 index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} />
     <AnimatePresence exitBeforeEnter>
-    <motion.div initial="hidden" animate="visible" exit="hide" transition="transition" variants={variants} className="container mt-5 ">
+    <motion.div initial="hidden" animate="visible" exit="hide" transition="transition" variants={variants} key={props.show.fields.title} className="container mt-5 ">
       <div className="row row-40">
       <div className={props.show.fields.description ? "col-lg-4" : "d-lg-none"}>
           {
@@ -101,8 +101,11 @@ return(
             {/* <div className="card active p-3 h4 text-center font-weight-light" style={{color:"var(--primary)"}}>
               {props.show.fields.title}
             </div> */}
+            <div className="d-none d-lg-inline">
             <div className="h4">{props.show.fields.title}</div>
             <hr />
+            </div>
+
             <ReactMarkdown children={props.show.fields.description} />
           </div>
           

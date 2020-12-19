@@ -39,7 +39,7 @@ const Index = (props) => {
                                 // style={{breakInside:"avoid !important"}} 
                                 <>
                                 <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" Style="align-items: stretch;" key={`worklist-${show.fields.slug}`} >
-                                    <ListCard title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
+                                    <ListCard index={index} title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                 </motion.div>
                                 
                                 </>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import styled from 'styled-components'
 
-const ListCard = ({title, description="", thumbnail={}, category="", slug}) => (
+const ListCard = ({title, index=0, description="", thumbnail={}, category="", slug}) => (
     <Link href="/works/[id]" as={`/works/${slug}`}>
         <div className="card card-hover border waves-effect ripple">
             <div className="bg-light hover-overlay ripple position-relative" style={{ height: "250px"}}data-ripple-color="light">
@@ -19,6 +19,8 @@ const ListCard = ({title, description="", thumbnail={}, category="", slug}) => (
                 <span className="badge bg-black rounded-0 shadow position-absolute" style={{bottom:"10px", left: "10px"}}>
                     <span className="h6">{category}</span>
                 </span>
+
+                
                 
             </div>
             <div className="card-body">
@@ -26,7 +28,9 @@ const ListCard = ({title, description="", thumbnail={}, category="", slug}) => (
                 <p className="card-text">
                     
                 </p>
-            
+                {/* <span className="position-absolute" style={{bottom:"-60px", right: "0px"}}>
+                    <span style={{fontSize: "150px", filter: "invert(100%)", opacity: "0.5"}}>{('0' + (index + 1).toString()).slice(-2)}</span>
+                </span> */}
             </div>
         </div>
     </Link>
