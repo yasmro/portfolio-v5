@@ -13,13 +13,14 @@ import { routes } from '../data/routes'
 const Header = ({ href, children }) => {
     const router = useRouter();
     const [isToggle, setIsToggle] = useState(false);
+    // const [windowpageYOffset, setWindowpageYOffset] = useState(window.pageYOffset);
 
 
     return(
       <>
     <nav
-      className={"navbar navbar-expand-lg navbar-light  position-fixed w-100 p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )} 
-      style={{ zIndex: 1}}
+      className={"navbar navbar-expand-lg navbar-light position-sticky w-100 p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )}
+      style={{ zIndex: 1, top: 0, backgroundColor: "rgba(255,255,255, 0.25)"}}
       >
       <div className="container">
         <Link href="/">

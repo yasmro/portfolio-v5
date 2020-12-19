@@ -61,13 +61,25 @@ const About = (props) => {
                                                 <div className="card-title h3"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</div>
                                                 <div className="card-text">
                                                     <p>{skill.fields.description}</p>
+                                                    <div className="mb-4">
                                                     {   
                                                         skill.fields.relatedSkills &&
                                                         skill.fields.relatedSkills.map( tag =>
                                                         <span tag={`skill-${index}-${tag}`} className="mr-2 badge border text-dark rounded-0"><span>{tag}</span></span>
                                                         )
                                                     }
-                                                     
+                                                    </div>
+                                                    {
+                                                        skill.fields.relatedWork &&
+                                                        <div className="mt-3 link rounded-0 text-right position-absolute" style={{ bottom: "10px", "right": "10px"}}>
+                                                            <Link href="/works/[id]" as={`/works/${skill.fields.relatedWork.fields.slug}`}>
+                                                                <a className="btn btn-black rounded-0">
+                                                                    <div className="">&gt; View Work</div>
+                                                                    {/* <span>{skill.fields.relatedWork.fields.title}</span> */}
+                                                                </a>
+                                                            </Link>
+                                                        </div>    
+                                                    }           
                                                 </div>
                                             </div>
                                         </div>
@@ -85,6 +97,7 @@ const About = (props) => {
 About.getInitialProps = async function() {
     const resAbout = await getData("about");
     const resWhatICanDo = await getData("whatICanDo","fields.order");
+    console.log(resWhatICanDo)
     return { about: resAbout, whatICanDo: resWhatICanDo};
 };
 

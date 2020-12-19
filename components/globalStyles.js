@@ -150,7 +150,6 @@ export default createGlobalStyle`
     }
 
     nav.navbar{
-      background-color: rgba(255,255,255, 0.65);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
@@ -364,7 +363,7 @@ export default createGlobalStyle`
     /* button */
 .button_container {
   position: fixed;
-  top: 33px;
+  bottom: 33px;
   right: 40px;
   height: 27px;
   width: 35px;

@@ -13,8 +13,7 @@ const variants = {
 
 const Title = ({title, description}) => (
   <div className="jumbotron jumbotron-fluid py-5 text-center bg-light mb-5" >
-    <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="container">
-        
+    <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
         <h1 className="square display-2 text-shadow">
           {/* <ShuffleText content={title} charFrameTime={35} charFrames={21} /> */}
           {title}

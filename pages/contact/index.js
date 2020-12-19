@@ -7,12 +7,14 @@ import fetch from "isomorphic-unfetch";
 import { myself } from '../../data/about'
 import Title from "../../components/Title"
 
+import { motion, AnimatePresence } from "framer-motion"
+
 const variants = {
-    visible: (custom) => ({
-        opacity: 1,
-        transition: { delay: custom * 0.2 }
-    })
-}
+    hidden: { opacity: 0, y: 5, duration: 2},
+    visible: { opacity: 1, y: 0, duration: 2 },
+    hide: { opacity: 0, y: 5, duration: 2},
+    transition: { duration: 2 }
+  }
 
 const Contact = (props) => {
       const [name, setName] = useState("");
@@ -26,7 +28,7 @@ const Contact = (props) => {
             </Head>
             <div>
                 <Title title="Contact" />
-                <div className="container" >
+                <motion.div custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
                     <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true" style={{ margin: "0 auto", maxWidth: "540px" }}>
                         <div className="row row-30 g-3">
                             <input type="hidden" name="form-name" value="contact" />
@@ -57,7 +59,7 @@ const Contact = (props) => {
                             <div className="status"></div>
                         </div>
                     </form>
-               </div>
+               </motion.div>
             </div>
         </>
     )
