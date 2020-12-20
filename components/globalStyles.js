@@ -10,7 +10,7 @@ export default createGlobalStyle`
     // @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
    
 
     button:focus {
@@ -21,19 +21,29 @@ export default createGlobalStyle`
       --primary2: rgba(201, 0, 118, 1)!important;
       --primary1: rgba( 227, 66, 51, 1)!important;
       --primary: rgba(192, 12, 53, 1)!important;
+      --primary1: #BD3F32!important;
+      --primary:#CB356B!important;
+      // --primary1: #302b63!important;
+      // --primary:#24243e !important;
+      // --primary: #D31027!important;
+      // --primary1:#BD3F32 !important;
       // --primary: rgba(128, 39, 63, 1)!important;
-      --secondary: rgba(197,179,88, 1)!important;
+      // --secondary: rgba(197,179,88, 1)!important;
+      --secondary: rgba(219,180,0,1) !important;
     }
     
-    // html, body{
-    //   background-image:
-    //     repeating-linear-gradient(
-    //       -23.4deg,
-    //       #fafafa,#fafafa 10px,
-    //       rgba(0 0 0 / 0) 0,
-    //       rgba(0 0 0 / 0) 20px
-    //     );
-    // }
+    html, body{
+      // background-image:
+      //   repeating-linear-gradient(
+      //     -23.4deg,
+      //     #fafafa,#fafafa 10px,
+      //     rgba(0 0 0 / 0) 0,
+      //     rgba(0 0 0 / 0) 20px
+      //   );
+
+      background-image: linear-gradient(23.4deg,  rgba(255,255,255,0.99) 70%,  rgba(255,255,255,0.80)),
+      url( '/static/images/pattern_black.png');
+    }
 
     .jumbotron{
       background: -webkit-linear-gradient(45deg, var(--primary), var(--primary1)) !important;
@@ -150,9 +160,27 @@ export default createGlobalStyle`
     }
 
     nav.navbar{
-      backdrop-filter: blur(8px);
+      backdrop-filter: grayscale(0.33) blur(8px);
       -webkit-backdrop-filter: blur(8px);
+      background-image: linear-gradient(23.4deg,  rgba(255,255,255,0.80) 50%,  rgba(255,255,255,0.3)),
+      url( '/static/images/pattern_white.png');
+      // mistyrose
+      background-blend-mode:lighten;
     }
+
+    footer{
+      background-image: linear-gradient(156.6deg,  rgba(38,38,38,0.96) 80%,  rgba(38,38,38,0.9)),
+      url( '/static/images/pattern_black.png');
+      // mistyrose
+      background-blend-mode:lighten;
+    }
+
+    // .jumbotron{
+    //   background-image: linear-gradient(45deg,  rgba(255,255,255,0.8) 60%,  rgba(255,255,255,0.65)),
+    //   url( '/static/images/pattern_white.png');
+    //   // mistyrose
+    //   background-blend-mode:lighten;
+    // }
 
     footer .nav-link{
       opacity: 0.5;

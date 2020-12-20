@@ -74,7 +74,7 @@ const About = (props) => {
                                                         <div className="mt-3 link rounded-0 text-right position-absolute" style={{ bottom: "10px", "right": "10px"}}>
                                                             <Link href="/works/[id]" as={`/works/${skill.fields.relatedWork.fields.slug}`}>
                                                                 <a className="btn btn-black rounded-0">
-                                                                    <div className="">&gt; View Work</div>
+                                                                    <div className=""><i className="fas fa-arrow-right mr-2"></i>View Work</div>
                                                                     {/* <span>{skill.fields.relatedWork.fields.title}</span> */}
                                                                 </a>
                                                             </Link>

@@ -54,7 +54,10 @@ const Contact = (props) => {
 
                             <div className="text-center">
                                 {/* btn-outline-dark  */}
-                                <button type="submit" className={"mt-5 btn btn-lg rounded-0 " + (name==="" || email === "" || message === "" || validateEmail(email) === false ? "btn-light" : "active")} disabled={name==="" || email === "" || message === "" || validateEmail(email) === false} data-ripple-color="dark">Send</button>
+                                <button type="submit" className={"mt-5 btn btn-lg rounded-0 " + (name==="" || email === "" || message === "" || validateEmail(email) === false ? "btn-light" : "active")} disabled={name==="" || email === "" || message === "" || validateEmail(email) === false} data-ripple-color="dark">
+                                    <i className="far fa-paper-plane mr-2"></i>
+                                    <span className="">Send</span>
+                                </button>
                             </div>
                             <div className="status"></div>
                         </div>

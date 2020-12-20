@@ -18,23 +18,31 @@ const Header = ({ href, children }) => {
 
     return(
       <>
+      <nav
+      className={"navbar-common d-flex d-lg-none w-100 p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )}
+      style={{ zIndex: 1, top: 0}}
+      >
+        <div className="container">
+          <Link href="/">
+              <a className="navbar-brand waves-effect pr-3" style={{mixBlendMode: "multiply"}}>
+                <img src="https://yasmro.github.io/portfolio/static/media/name.53c4e24b.png" loading="lazy" alt="Yu Ohno" width={120} height={32} />
+              </a>
+          </Link>        
+
+        </div>
+      
+      </nav>
+
     <nav
-      className={"navbar navbar-expand-lg navbar-light position-sticky w-100 p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )}
-      style={{ zIndex: 1, top: 0, backgroundColor: "rgba(255,255,255, 0.25)"}}
+      className={"navbar-common navbar navbar-expand-lg navbar-light d-none d-lg-flex position-sticky w-100 p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )}
+      style={{ zIndex: 1, top: 0, backgroundColor: "rgba(255,255,255, 0.45)"}}
       >
       <div className="container">
         <Link href="/">
             <a className="navbar-brand waves-effect pr-3" style={{mixBlendMode: "multiply"}}>
               <img src="https://yasmro.github.io/portfolio/static/media/name.53c4e24b.png" loading="lazy" alt="Yu Ohno" width={120} height={32} />
             </a>
-        </Link>
-        
-        <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon text-dark"></span>
-        </button>
-
-        
+        </Link>        
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">

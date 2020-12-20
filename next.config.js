@@ -15,6 +15,7 @@ module.exports = {
       "/about": { page: "/about" },
       "/works": { page: "/works" },
       "/contact": { page: "/contact" },
+      "/contact/thankyou": { page: "/contact/thankyou" },
     };
 
     const res = await client.getEntries({
