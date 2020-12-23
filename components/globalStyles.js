@@ -159,10 +159,10 @@ export default createGlobalStyle`
       transform: skewY(-3deg);
     }
 
-    nav.navbar{
+    nav.navbar-common{
       backdrop-filter: grayscale(0.33) blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      background-image: linear-gradient(23.4deg,  rgba(255,255,255,0.80) 50%,  rgba(255,255,255,0.3)),
+      background-image: linear-gradient(23.4deg,  rgba(255,255,255,0.80) 0%,  rgba(255,255,255,0.3)),
       url( '/static/images/pattern_white.png');
       // mistyrose
       background-blend-mode:lighten;

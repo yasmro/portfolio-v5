@@ -80,7 +80,7 @@ return(
             <div className="d-inline d-lg-none">
               <div className="">
                   <span className="h3">{carouselIndex + 1}</span>/{props.show.fields.photos.length}
-                  <p className="japanese">{props.show.fields.photos[carouselIndex].fields.title} {props.show.fields.photos[carouselIndex].fields.description}</p>
+                  <p className="japanese"><span className="japanese font-weight-bold">{props.show.fields.photos[carouselIndex].fields.title}</span> {props.show.fields.photos[carouselIndex].fields.description}</p>
               </div>
               <Slider {...settings}>
                 {
