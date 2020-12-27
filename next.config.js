@@ -7,12 +7,12 @@ const client = require('contentful').createClient({
 
 
 module.exports = {
-  i18n: {
-    locales: ['en', 'ja'],
-    defaultLocale: 'en'
-  },
+  // i18n: {
+  //   locales: ['en', 'ja'],
+  //   defaultLocale: 'en'
+  // },
 
-  exportTrailingSlash: true,
+  trailingSlash: true,
 
   exportPathMap: async function() {
     const paths = {
