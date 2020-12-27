@@ -51,7 +51,7 @@ const Index = (props) => {
                                 
                 {/* <Title title="Works" description="" /> */}
                 <div className="container">
-                    <div className="row row-40">
+                    <div className="row row-40  d-none d-md-flex">
                         <div className="col-6 col-lg-4 g-3" key={`card-title`}>
                             
                             <div className="card shadow-0 h-100 align-items-center">
