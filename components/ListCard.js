@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const ListCard = ({title, index=0, description="", thumbnail={}, category="", slug}) => (
     <Link href="/works/[id]" as={`/works/${slug}`}>
-        <div className="card card-hover border waves-effect ripple">
+        <div className="card card-hover waves-effect ripple">
             <div className="bg-light hover-overlay ripple position-relative" style={{ height: "250px"}}data-ripple-color="light">
                 <img
                     src={thumbnail !== {} ? thumbnail.fields.file.url : "https://source.unsplash.com/random/1600x900/"}

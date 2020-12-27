@@ -20,16 +20,27 @@ export default createGlobalStyle`
     :root {
       --primary2: rgba(201, 0, 118, 1)!important;
       --primary1: rgba( 227, 66, 51, 1)!important;
-      --primary: rgba(192, 12, 53, 1)!important;
-      --primary1: #BD3F32!important;
-      --primary:#CB356B!important;
+      // --primary: rgba(192, 12, 53, 1)!important;
+      // --primary1: #BD3F32!important;
+      // --primary:#CB356B!important;
+      // --primary1: #d42968!important;
+      // --primary: #9b003f!important;
       // --primary1: #302b63!important;
       // --primary:#24243e !important;
       // --primary: #D31027!important;
       // --primary1:#BD3F32 !important;
       // --primary: rgba(128, 39, 63, 1)!important;
       // --secondary: rgba(197,179,88, 1)!important;
+      // --primary: #9b003f!important;
+      // --primary: #BD3F32!important;
+      // --primary: #CB356B!important;
+
+      --primary1: #f85032;
+      --primary: #BD3F32!important;
       --secondary: rgba(219,180,0,1) !important;
+
+      --gradient: -webkit-linear-gradient(45deg, var(--primary),  var(--primary1))!important;
+
     }
     
     html, body{
@@ -41,20 +52,20 @@ export default createGlobalStyle`
       //     rgba(0 0 0 / 0) 20px
       //   );
 
-      background-image: linear-gradient(23.4deg,  rgba(255,255,255,0.99) 70%,  rgba(255,255,255,0.80)),
+      background-image: linear-gradient(23.4deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.95) 80%),
       url( '/static/images/pattern_black.png');
     }
 
     .jumbotron{
-      background: -webkit-linear-gradient(45deg, var(--primary), var(--primary1)) !important;
+      background: var(--gradient);
       color: white;
     }
 
     .card{
       background-color: rgba(255,255,255,0.7)!important;
       border-radius: 0px;
-      -webkit-backdrop-filter: saturate(180%) blur(2.5px);
-      backdrop-filter: saturate(180%) blur(2.5px);
+      -webkit-backdrop-filter: saturate(180%) blur(1.5px);
+      backdrop-filter: saturate(180%) blur(1.5px);
       
     }
 
@@ -69,7 +80,7 @@ export default createGlobalStyle`
         //     rgba(0 0 0 / 0) 80px
         //   );
 
-        background: -webkit-linear-gradient(45deg, var(--primary), var(--primary1)) !important;
+        background: var(--gradient); 
         // background-color: var(--primary);
       //   background-image:
       // -webkit-linear-gradient(
@@ -95,7 +106,7 @@ export default createGlobalStyle`
       //   rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
       //   transparent 25%, transparent 75%,
       //   rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%);
-      background-size: 40px 40px;
+      // background-size: 40px 40px;
     }
 
     
@@ -194,7 +205,7 @@ export default createGlobalStyle`
 
     .active, .nav-link.active{
       // background-color: var(--primary)!important;
-      background: linear-gradient(45deg, var(--primary), var(--primary1))!important;
+      background: var(--gradient);
       color: white!important;
       font-weight: 700;
       // border-bottom: solid 2px var(--primary)!important;
@@ -297,7 +308,7 @@ export default createGlobalStyle`
     .card-hover:hover{
       // border-color: var(--primary)!important;
       // background-color: var(--primary)!important;
-      background: linear-gradient(45deg, var(--primary), var(--primary1))!important;
+      background: var(--gradient); 
       color: white;
       box-shadow: 0 10px 20px 0 rgba(202,12,53,.1);
       transform: translateY(-5px);

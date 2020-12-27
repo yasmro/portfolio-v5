@@ -72,7 +72,7 @@ const Index = (props) => {
                             {props.whatICanDo ? 
                                     props.whatICanDo.map((skill, index) => (
                                         <div className="col-md-6 col-lg-4 g-3">
-                                            <div className="card border whatICanDo h-100" key={`${index}`}>
+                                            <div className="card whatICanDo h-100" key={`${index}`}>
                                                 <div className="card-body">
                                                     <div className="card-title h3"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</div>
                                                     <div className="card-text">

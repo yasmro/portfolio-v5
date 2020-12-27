@@ -32,7 +32,7 @@ const About = (props) => {
             <div>
                 <Title title="About" />
                 <div className="container">
-                    <motion.div custom={0} className="card border" initial="hidden" animate="visible" transition="transition" variants={variants}>
+                    <motion.div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-0">
                             <div className="col-lg-4 bg-dark" key="shodo_name">
                                 <div className="w-100 text-center" style={{minHeight: "300px"}} >
@@ -56,7 +56,7 @@ const About = (props) => {
                             {
                                 props.whatICanDo.map( (skill, index) =>
                                     <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
-                                        <div className="card border whatICanDo h-100">
+                                        <div className="card whatICanDo h-100">
                                             <div className="card-body">
                                                 <div className="card-title h3"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</div>
                                                 <div className="card-text">
