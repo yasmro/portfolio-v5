@@ -51,7 +51,7 @@ const Index = (props) => {
                                 
                 {/* <Title title="Works" description="" /> */}
                 <div className="container">
-                    <div className="row row-40  d-none d-md-flex">
+                    {/* <div className="row row-40  d-none d-md-flex">
                         <div className="col-6 col-lg-4 g-3" key={`card-title`}>
                             
                             <div className="card shadow-0 h-100 align-items-center">
@@ -64,7 +64,7 @@ const Index = (props) => {
                                     <ListCard index={idx} title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                 </div>
                         )) : <h1>null</h1>}
-                    </div>
+                    </div> */}
                     
                     <div className="mt-4">
                         <h2 className="text-center square">What I Can Do</h2>
