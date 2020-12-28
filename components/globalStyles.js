@@ -42,6 +42,10 @@ export default createGlobalStyle`
       --gradient: -webkit-linear-gradient(45deg, var(--primary),  var(--primary1))!important;
 
     }
+
+    html {
+      -webkit-overflow-scrolling: touch;
+    }
     
     html, body{
       // background-image:
