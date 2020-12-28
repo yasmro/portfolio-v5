@@ -9,12 +9,13 @@ const ListCard = ({title, index=0, description="", thumbnail={}, category="", sl
         <div className="card card-hover waves-effect ripple">
             <div className="bg-light hover-overlay ripple position-relative" style={{ height: "250px"}}data-ripple-color="light">
                 <img
-                    src={thumbnail !== {} ? thumbnail.fields.file.url : "https://source.unsplash.com/random/1600x900/"}
+                    src={thumbnail !== {} ? thumbnail.fields.file.url : ""}
                     height={thumbnail !== {} ? thumbnail.fields.file.details.image.height : "0"}
                     width={thumbnail !== {} ? thumbnail.fields.file.details.image.width : "0"}
                     className="img-fluid"
                     style={{width: "100%", height: "100%", objectFit: "scale-down"}}
                     alt={title}
+                    loading="lazy"
                 />
                 <span className="badge bg-black rounded-0 shadow position-absolute" style={{bottom:"10px", left: "10px"}}>
                     <span className="h6">{category}</span>

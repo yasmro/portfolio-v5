@@ -1,16 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
 import { getAllPosts, getPostBySlug } from '../../lib'
 import ReactMarkdown from 'react-markdown'
 import Slider from "react-slick";
 
-import WorkTitle from '../../components/WorkTitle'
-import WorkTitle1 from '../../components/WorkTitle1'
+
 import WorkTitle2 from '../../components/WorkTitle2'
-import ListCard from '../../components/ListCard'
 
 import { motion, AnimatePresence } from "framer-motion"
 

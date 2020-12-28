@@ -36,7 +36,7 @@ const About = (props) => {
                         <div className="row g-0">
                             <div className="col-lg-4 bg-dark" key="shodo_name">
                                 <div className="w-100 text-center" style={{minHeight: "300px"}} >
-                                    <img src="https://yasmro.github.io/portfolio/static/media/topName.eb906793.svg"   loading="lazy" alt="Yu Ohno" width={65} height={300} />
+                                    <img src="/static/images/toplogo.svg"   loading="lazy" alt="Yu Ohno" width={65} height={300} />
                                 </div>
                             </div>
                             <div className="col-lg-8" key="intro">
