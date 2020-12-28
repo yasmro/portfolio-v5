@@ -52,8 +52,10 @@ export default createGlobalStyle`
       //     rgba(0 0 0 / 0) 20px
       //   );
 
-      background-image: linear-gradient(23.4deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.95) 80%),
-      url( '/static/images/pattern_black.png');
+      background: #fafafa;
+
+      // background-image: linear-gradient(23.4deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.95) 80%),
+      // url( '/static/images/pattern_black.png');
     }
 
     .jumbotron{
@@ -180,10 +182,10 @@ export default createGlobalStyle`
     }
 
     footer{
-      background-image: linear-gradient(156.6deg,  rgba(38,38,38,0.96) 80%,  rgba(38,38,38,0.9)),
-      url( '/static/images/pattern_black.png');
-      // mistyrose
-      background-blend-mode:lighten;
+      // background-image: linear-gradient(156.6deg,  rgba(38,38,38,0.96) 80%,  rgba(38,38,38,0.9)),
+      // url( '/static/images/pattern_black.png');
+      // // mistyrose
+      // background-blend-mode:lighten;
     }
 
     // .jumbotron{
