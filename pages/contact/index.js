@@ -1,10 +1,6 @@
 import {useState} from 'react'
 import Head from "next/head";
-import Link from "next/link";
-import { getAllPosts } from '../../lib'
-import fetch from "isomorphic-unfetch";
 
-import { myself } from '../../data/about'
 import Title from "../../components/Title"
 
 import { motion, AnimatePresence } from "framer-motion"

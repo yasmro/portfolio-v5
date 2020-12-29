@@ -561,22 +561,7 @@ export default createGlobalStyle`
     ::-webkit-scrollbar{
       display: none;
       width: 6px;
-      background: rgba(0,0,0,0);
-      
-    // }
-    // ::-webkit-scrollbar-track{
-    //   /* background: rgba(255,255,255,0.2); */
-    //   background: rgba(0,0,0,0);
-    //   border: none;
-    //   border-radius: 5px;
-    //   box-shadow: inset 0 0 2px #777; 
-    // }
-    // ::-webkit-scrollbar-thumb{
-    //   background: rgba(0,0,0,0.6);
-    //   border-radius: 0px;
-    //   box-shadow: none;
-    // }
-
-    
+      background: rgba(0,0,0,0); 
+    }
 
 `

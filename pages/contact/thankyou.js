@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getAllPosts } from '../../lib'
-import fetch from "isomorphic-unfetch";
 
 const ContactThankYou = (props) => {
     return(

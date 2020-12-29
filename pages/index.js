@@ -27,10 +27,10 @@ const Index = (props) => {
             <Head>
             <title>Home - Yu Ohno's site 2020</title>
             </Head>
-            <div className="">
+            <div style={{ marginBottom: "-96px"}}>
                 <div className="skewedArea">
                     {/* <HomeJumbotron name={myself.name} quickWord={myself.quickWord}/> */}
-                    <div  className="home-jumbotron jumbotron jumbotron-fluid py-4 mb-5 vh-100" style={{minHeight: "calc(100vh - 90px)", marginTop: "0px", minHeight: "540px", color: "white"}}>
+                    <div  className="home-jumbotron jumbotron jumbotron-fluid py-4 mb-5" style={{height: "calc(100vh - 90px)", marginTop: "0px", minHeight: "540px", color: "white"}}>
                         <div className="container" >
                             <div className="text-center" style={{marginTop: "18vh"}}>
                             <div className="quotation p-5 " style={{ margin: "auto 0"}}>
@@ -50,7 +50,7 @@ const Index = (props) => {
                 </div>
                                 
                 {/* <Title title="Works" description="" /> */}
-                <div className="container">
+                {/* <div className="container"> */}
                     {/* <div className="row row-40  d-none d-md-flex">
                         <div className="col-6 col-lg-4 g-3" key={`card-title`}>
                             
@@ -66,7 +66,7 @@ const Index = (props) => {
                         )) : <h1>null</h1>}
                     </div> */}
                     
-                    <div className="mt-4">
+                    {/* <div className="mt-4">
                         <h2 className="text-center square">What I Can Do</h2>
                         <div className="row row-40">
                             {props.whatICanDo ? 
@@ -91,12 +91,10 @@ const Index = (props) => {
                                                                 <Link href="/works/[id]" as={`/works/${skill.fields.relatedWork.fields.slug}`}>
                                                                     <a className="btn btn-black rounded-0">
                                                                         <div className=""><i className="fas fa-arrow-right mr-2"></i>View Work</div>
-                                                                        {/* <span>{skill.fields.relatedWork.fields.title}</span> */}
                                                                     </a>
                                                                 </Link>
                                                             </div>    
                                                         } 
-                                                            
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,9 +102,9 @@ const Index = (props) => {
                                         
                                 )) : <h1>null</h1>
                             }
-                        </div>
-                    </div>
-                </div>
+                        </div> */}
+                    {/* </div> */}
+                {/* </div> */}
                 
             </div>
         </>
