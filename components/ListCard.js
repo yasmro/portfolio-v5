@@ -13,7 +13,7 @@ const ListCard = ({title, index=0, description="", thumbnail={}, category="", sl
                     height={thumbnail !== {} ? thumbnail.fields.file.details.image.height : "0"}
                     width={thumbnail !== {} ? thumbnail.fields.file.details.image.width : "0"}
                     className="img-fluid"
-                    style={{width: "100%", height: "100%", objectFit: "scale-down"}}
+                    style={{height: "250px", objectFit: "scale-down"}}
                     alt={title}
                     loading="lazy"
                 />
