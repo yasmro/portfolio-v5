@@ -189,7 +189,6 @@ return(
         
           </div>
           
-
           <div className="d-none mt-5 text-center">
             <Link href="/works">
               <button type="button" className="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">View All Works</button>
@@ -212,13 +211,6 @@ function SampleNextArrow(props) {
       onClick={onClick}
       
     ><i className="fa fa-angle-right"></i></button>
-    // <div
-    //   className={className}
-    //   style={{ ...style, display: "inline", padding: '0px 0' }}
-    //   onClick={onClick}
-    // >
-    //   <p>NEXT</p>
-    // </div>
   );
 }
 
@@ -231,11 +223,6 @@ function SamplePrevArrow(props) {
       onClick={onClick}
       
     ><i className="fa fa-angle-left"></i></button>
-    // <div
-    //   className={className}
-    //   style={{ ...style, display: "block", padding: '40px 0' }}
-    //   onClick={onClick}
-    // />
   );
 }
 

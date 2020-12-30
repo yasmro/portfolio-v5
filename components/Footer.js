@@ -4,8 +4,6 @@ import Link from 'next/link'
 
 import { useRouter } from 'next/router'
 
-// import { AppBar, Toolbar, IconButton, MenuIcon, Typography, Button } from '@material-ui/core';
-
 import { myself } from '../data/about'
 
 import { socialMedia } from '../data/socialMedia'
@@ -36,7 +34,6 @@ const Footer = () => {
                                 socialMedia.map( media => (
                                     <li key={`footer-media-${media.name}`}>
                                         <a className="nav-link text-light" rel="noreferrer" href={`${media.href}`} aria-label={`${media.name}`} target="_blank"><i className={`${media.icon} fa-2x`}></i><span className="d-none">{`${media.href}`}</span></a>
-                                        {/* <a className="nav-link waves-effect" href="https://mdbootstrap.com/docs/angular/" target="_blank">Angular</a> */}
                                     </li>
                                 ))
                             }

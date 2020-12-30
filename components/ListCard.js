@@ -25,10 +25,13 @@ const ListCard = ({title, index=0, description="", thumbnail={}, category="", sl
                 
             </div>
             <div className="card-body">
-                <p className="h4 card-title text-center">{title}</p>
-                <p className="card-text">
-                    
-                </p>
+                <p className="h4 card-title">{title}</p>
+                <div className="d-flex d-md-none position-absolute" style={{bottom:"22px", right:"20px"}}>
+                    <Link href="/works/[id]" as={`/works/${slug}`}>
+                        <span><i className="mr-2 fa fa-angle-right"></i><span>To Detail</span></span>
+                    </Link>
+                </div>
+
                 {/* <span className="position-absolute" style={{bottom:"-60px", right: "0px"}}>
                     <span style={{fontSize: "150px", filter: "invert(100%)", opacity: "0.5"}}>{('0' + (index + 1).toString()).slice(-2)}</span>
                 </span> */}

@@ -13,7 +13,9 @@ module.exports = {
   // },
 
   trailingSlash: true,
-
+  experimental: {
+    optimizeFonts: true,
+  },
   exportPathMap: async function() {
     const paths = {
       "/": { page: "/" },
