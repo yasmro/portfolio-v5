@@ -1,21 +1,23 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import styled from 'styled-components'
 
 const ListCard = ({title, index=0, description="", thumbnail={}, category="", slug}) => (
     <Link href="/works/[id]" as={`/works/${slug}`}>
-        <div className="card card-hover waves-effect ripple">
+        <div className="card card-hover">
             <div className="bg-light hover-overlay ripple position-relative" style={{ height: "250px"}}data-ripple-color="light">
                 <img
                     src={thumbnail !== {} ? thumbnail.fields.file.url : ""}
-                    height={thumbnail !== {} ? thumbnail.fields.file.details.image.height : "0"}
+                    height={thumbnail !== {} ? 250 : "0"}
                     width={thumbnail !== {} ? thumbnail.fields.file.details.image.width : "0"}
                     className="img-fluid"
                     style={{height: "250px", objectFit: "scale-down"}}
                     alt={title}
                     loading="lazy"
+                    
                 />
                 <span className="badge bg-black rounded-0 shadow position-absolute" style={{bottom:"10px", left: "10px"}}>
                     <span className="h6">{category}</span>

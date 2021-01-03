@@ -55,7 +55,8 @@ export default function MyApp(props) {
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap" />
+        {/* <link rel="stylesheet" href="/static/css/style.css" /> */}
         <meta name="msapplication-TileColor" content="#b91d47" />
         <meta name="theme-color" content="#fafafa" />
         <meta name="description" content="This is the Yu Ohno's portfolio sites." />

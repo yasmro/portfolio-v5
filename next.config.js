@@ -55,7 +55,7 @@ module.exports = {
 
     images: {
       path: '/_next/image',
-      domains: ['yasmro.netlify.app'],
+      domains: ['yasmro.netlify.app', 'images.ctfassets.net'],
     },
     
 };

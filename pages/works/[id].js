@@ -209,7 +209,7 @@ function SampleNextArrow(props) {
       className={"btn rounded-0"}
       style={{ ...style, padding:"8px 14px", position: "absolute", top: "-53px", right: 0 }}
       onClick={onClick}
-      
+      aria-label="NEXT"
     ><i className="fa fa-angle-right"></i></button>
   );
 }
@@ -221,7 +221,7 @@ function SamplePrevArrow(props) {
       className={"btn rounded-0"}
       style={{ ...style, padding:"8px 14px", position: "absolute", top: "-53px", right: "45px" }}
       onClick={onClick}
-      
+      aria-label="PREVIOUS"
     ><i className="fa fa-angle-left"></i></button>
   );
 }
