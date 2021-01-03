@@ -17,6 +17,8 @@ export default createGlobalStyle`
         outline:0;
     }
 
+
+
     :root {
       --primary2: rgba(201, 0, 118, 1)!important;
       --primary1: rgba( 227, 66, 51, 1)!important;
@@ -41,6 +43,12 @@ export default createGlobalStyle`
 
       --gradient: -webkit-linear-gradient(45deg, var(--primary),  var(--primary1))!important;
 
+    }
+
+    .gradient_text{
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     html {
@@ -169,9 +177,9 @@ export default createGlobalStyle`
       height: 0;
       border-style: solid;
       border-width: 0 0 35px 35px;
-      border-color: transparent transparent #ffffff transparent;
+      border-color: transparent transparent #fafafa transparent;
       line-height: 0px;
-      _border-color: #000000 #000000 #ffffff #000000;
+      _border-color: #000000 #000000 #fafafa #000000;
       _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
     }
 
