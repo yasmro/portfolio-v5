@@ -45,7 +45,6 @@ const WorkTitle2 = ({index=0, length=0, title, description="", category="", tags
           </div>
           
           <div className="col-md-9">
-
             <h1 className="display-2 text-shadow" >{title}</h1>
             <p className="mt-3">{abstract}</p>
           </div> 
