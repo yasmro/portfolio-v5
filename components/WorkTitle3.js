@@ -16,33 +16,37 @@ const variants = {
 const WorkTitle3 = ({index=0, length=0, title, description="", category="", tags=[], abstract="", thumbnail={}}) => (
   <>
   {/* style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}} */}
-  <div className="jumbotron-fluid mb-5" style={{backgroundColor: "#ecf2f2", padding: "20px 0", height: "60vh", minHeight: "450px"}}>
+  <div className="jumbotron-fluid mb-5 py-0 py-md-4" style={{backgroundColor: "#ecf2f2", height: "40vh", minHeight: "400px"}}>
     <AnimatePresence exitBeforeEnter>
       <motion.div initial="hidden" animate="visible" transition="transition" exit="hide" variants={variants} className="container h-100">
         <div className="row row-20 d-flex h-100" >
           <div className="col-md-6 d-flex align-items-center">
             <div>
-            <div className="rounded-0  position-relative shadow-lg mr-3 active" style={{width: "70px", height: "70px", backgroundColor: "rgba(0,0,0, 0)"}}>
-              <span className="h1 text-shadow position-absolute text-center text-light" style={{ fontSize:"50px", top: "-2px", left: "10px" }}>{index + 1}</span>
-              <span className="position-absolute bottomRight " style={{bottom: "0px", right: "0px" }}></span>
-              <span className="text-dark position-absolute text-right " style={{ bottom: "0px", right: "5px" }}>{length}</span>
-            </div>
+              <div className="d-flex mb-2">
+                <div className="rounded-0  position-relative shadow-lg mr-3 active" style={{width: "70px", height: "70px", backgroundColor: "rgba(0,0,0, 0)"}}>
+                  <span className="h1 text-shadow position-absolute text-center text-light" style={{ fontSize:"50px", top: "-2px", left: "10px" }}>{index + 1}</span>
+                  <span className="position-absolute bottomRight " style={{bottom: "0px", right: "0px" }}></span>
+                  <span className="text-dark position-absolute text-right " style={{ bottom: "0px", right: "5px" }}>{length}</span>
+                </div>
 
-            <div className="mt-3 mt-md-3">
-              <span className="badge bg-black shadow rounded-0"><span className="">{category}</span></span>
-          
-                {tags.length > 0 &&
-                  <>
-                    <br />
-                    {
-                      tags.map( tag =>
-                      // <span className="mr-1 badge border border-white shadow  rounded-0"><span className="">{tag.fields.name}</span></span>
-                      <span key={`${tag}`} className="mr-1 badge bg-light  shadow text-dark rounded-0"><span className="">{tag.fields.name}</span></span>
-                      )
+                <div className="">
+                  <span className="badge bg-black shadow rounded-0"><span className="">{category}</span></span>
+              
+                    {tags.length > 0 &&
+                      <>
+                        <br />
+                        {
+                          tags.map( tag =>
+                          // <span className="mr-1 badge border border-white shadow  rounded-0"><span className="">{tag.fields.name}</span></span>
+                          <span key={`${tag}`} className="mr-1 badge bg-light  shadow text-dark rounded-0"><span className="">{tag.fields.name}</span></span>
+                          )
+                        }
+                      </>
                     }
-                  </>
-                }
-            </div>
+                </div>
+
+              </div>
+              
             <h1 className="display-3 gradient_text" >{title}</h1>
             <p className="mt-3 load">{abstract}</p>
             </div>
@@ -52,11 +56,10 @@ const WorkTitle3 = ({index=0, length=0, title, description="", category="", tags
             
             <img
                     src={thumbnail !== {} ? thumbnail.fields.file.url : ""}
-                    height={thumbnail !== {} ? 350 : "0"}
+                    height={thumbnail !== {} ? 320 : "0"}
                     width={thumbnail !== {} ? thumbnail.fields.file.details.image.width : "0"}
-                    className="img-fluid my-auto mx-auto text-shadow"
-                    style={{height: "350px", objectFit: "scale-down"}}
-                    alt={title}
+                    className="img-fluid my-auto mx-auto shadow"
+                    style={{maxHeight: "320px", width: thumbnail.fields.file.details.image.width * (320 /thumbnail.fields.file.details.image.height) }}
                     loading="lazy"
                     
                 />
