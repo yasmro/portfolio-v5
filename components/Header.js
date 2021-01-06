@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 
 // import { socialMedia } from '../data/socialMedia'
 import { routes } from '../data/routes'
+import { VisibilityAction } from 'framer-motion'
 
 
 const Header = ({ href, children }) => {
@@ -73,7 +74,7 @@ const Header = ({ href, children }) => {
         </div>
 
 
-        <div className={"overlay " + (isToggle ? "open" : "")}  id="overlay">
+        <div className={"overlay " + (isToggle ? "open" : "")} style={{visibility: (isToggle ? "visible" : "hidden")}}  id="overlay">
           <nav className="overlay-menu">
             <ul>
             {

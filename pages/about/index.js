@@ -62,8 +62,7 @@ const About = (props) => {
                                                     <p>{skill.fields.description}</p>
                                                     <div className="mb-4">
                                                     {   
-                                                        skill.fields.relatedSkills &&
-                                                        skill.fields.relatedSkills.map( tag =>
+                                                        skill.fields.relatedSkills?.map( tag =>
                                                         <span tag={`skill-${index}-${tag}`} className="mr-2 badge border text-dark rounded-0"><span>{tag}</span></span>
                                                         )
                                                     }
