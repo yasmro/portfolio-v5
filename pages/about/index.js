@@ -2,8 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from 'next/image'
 
-import { getData, getAllPosts } from '../../lib'
-import fetch from "isomorphic-unfetch";
+import { getData } from '../../lib'
 
 import ReactMarkdown from 'react-markdown'
 
@@ -97,7 +96,6 @@ const About = (props) => {
 About.getInitialProps = async function() {
     const resAbout = await getData("about");
     const resWhatICanDo = await getData("whatICanDo","fields.order");
-    console.log(resWhatICanDo)
     return { about: resAbout, whatICanDo: resWhatICanDo};
 };
 

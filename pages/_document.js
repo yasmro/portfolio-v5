@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 
 
 // import Footer from '../components/Footer'
-import { ServerStyleSheets } from "@material-ui/core/styles";
+import { ServerStyleSheets } from "mdbreact/node_modules/@material-ui/core/styles";
 import theme from "../theme";
 
 export default class MyDocument extends Document {
