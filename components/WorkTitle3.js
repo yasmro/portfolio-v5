@@ -18,7 +18,7 @@ const WorkTitle3 = ({index=0, length=0, title, description="", category="", tags
   {/* style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}} */}
   <div className="jumbotron-fluid mb-5 py-0 py-md-4" style={{backgroundColor: "#ecf2f2", height: "40vh", minHeight: "400px"}}>
     <AnimatePresence exitBeforeEnter>
-      <motion.div initial="hidden" animate="visible" transition="transition" exit="hide" variants={variants} className="container h-100">
+      <motion.div initial="hidden" animate="visible" transition="transition" exit="hide" variants={variants} key={`${title}-title`} className="container h-100">
         <div className="row row-20 d-flex h-100" >
           <div className="col-md-6 d-flex align-items-center">
             <div>
