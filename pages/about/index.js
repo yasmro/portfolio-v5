@@ -22,6 +22,13 @@ const variants = {
   transition: { duration: 2 }
 }
 
+import dynamic from 'next/dynamic'
+
+const DynamicComponentWithCustomLoading = dynamic(
+  () => import('../../components/Title'),
+  { loading: () => <div><h1>LOADING</h1></div>}
+)
+
 const About = (props) => {
     return(
         <>
@@ -29,7 +36,8 @@ const About = (props) => {
                 <title>About - Yu Ohno's site 2020</title>
             </Head>
             <div>
-                <Title title="About" />
+            <DynamicComponentWithCustomLoading title="About" />
+                {/* <Title title="About" /> */}
                 <div className="container">
                     <motion.div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-0">

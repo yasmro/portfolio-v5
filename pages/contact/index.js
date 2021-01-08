@@ -1,7 +1,13 @@
 import {useState} from 'react'
 import Head from "next/head";
 
-import Title from "../../components/Title"
+// import Title from "../../components/Title"
+import dynamic from 'next/dynamic'
+
+const Title = dynamic(
+  () => import('../../components/Title'),
+  { loading: () => <div><h1>LOADING</h1></div>}
+)
 
 import { motion, AnimatePresence } from "framer-motion"
 

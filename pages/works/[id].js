@@ -8,8 +8,9 @@ import ReactMarkdown from 'react-markdown'
 import Slider from "react-slick";
 
 
-import WorkTitle2 from '../../components/WorkTitle2'
-import WorkTitle3 from '../../components/WorkTitle3'
+// import WorkTitle2 from '../../components/WorkTitle2'
+// import WorkTitle3 from '../../components/WorkTitle3'
+import WorkTitle4 from '../../components/WorkTitle4'
 
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -71,7 +72,8 @@ return(
   <div>
 
     {/* <WorkTitle2 index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
-    <WorkTitle3 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} />
+    {/* <WorkTitle3 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
+    <WorkTitle4 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} />
     <AnimatePresence exitBeforeEnter>
     <motion.div initial="hidden" animate="visible" exit="hide" transition="transition" variants={variants} key={props.show.fields.title} className="container mt-5 ">
       <div className="row row-40">

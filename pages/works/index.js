@@ -1,5 +1,5 @@
 import Head from "next/head";
-// import Link from "next/link";
+import Link from "next/link";
 import { getAllPosts } from '../../lib'
 
 import { useState } from 'react';
@@ -7,7 +7,13 @@ import { useState } from 'react';
 import { motion } from "framer-motion"
 import Slider from "react-slick";
 
-import Title from "../../components/Title"
+import dynamic from 'next/dynamic'
+
+const Title = dynamic(
+  () => import('../../components/Title'),
+  { loading: () => <div><h1>LOADING</h1></div>}
+)
+
 import ListCard from "../../components/ListCard"
 
 import "slick-carousel/slick/slick.css"; 
@@ -72,10 +78,11 @@ const Index = (props) => {
                                 props.shows.map((show, index) => (
                                     // style={{breakInside:"avoid !important"}} 
                                     <>
-                                    <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" Style="align-items: stretch;" key={`worklist-${show.fields.slug}`} >
-                                        <ListCard index={index} title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
-                                    </motion.div>
-                                    
+                                        <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
+                                            <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" Style="align-items: stretch;" key={`worklist-${show.fields.slug}`} >
+                                                <ListCard index={index} title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
+                                            </motion.div>
+                                        </Link>
                                     </>
                             )) : <h1>null</h1>}
                         </div>
@@ -91,8 +98,9 @@ const Index = (props) => {
                                 props.shows.map((show, index) => (
                                     // style={{breakInside:"avoid !important"}} 
                                     <>
+                                    <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
                                         <ListCard key={`worklist-slide-${show.fields.slug}`} index={index} title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
-                                    
+                                        </Link>
                                     </>
                             )) : <h1>null</h1>}
                         </Slider>

@@ -6,7 +6,6 @@ import Image from 'next/image'
 import styled from 'styled-components'
 
 const ListCard = ({title, index=0, description="", thumbnail={}, category="", slug}) => (
-    <Link href="/works/[id]" as={`/works/${slug}`}>
         <div className="card card-hover">
             <div className="bg-light hover-overlay ripple position-relative" style={{ height: "250px"}}data-ripple-color="light">
                 <img
@@ -22,9 +21,6 @@ const ListCard = ({title, index=0, description="", thumbnail={}, category="", sl
                 <span className="badge bg-black rounded-0 shadow position-absolute" style={{bottom:"10px", left: "10px"}}>
                     <span className="h6">{category}</span>
                 </span>
-
-                
-                
             </div>
             <div className="card-body">
                 <p className="h4 card-title">{title}</p>
@@ -39,7 +35,6 @@ const ListCard = ({title, index=0, description="", thumbnail={}, category="", sl
                 </span> */}
             </div>
         </div>
-    </Link>
 )
 
 export default ListCard
