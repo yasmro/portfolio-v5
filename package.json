@@ -39,7 +39,7 @@
     "dev": "next",
     "build": "next build",
     "export": "next export",
-    "deploy": "npm run build && next build"
+    "deploy": "npm run build && yarn export && serve ./out"
   },
   "devDependencies": {}
 }
