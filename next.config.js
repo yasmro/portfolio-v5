@@ -7,10 +7,10 @@ const client = require('contentful').createClient({
 
 
 module.exports = {
-  // i18n: {
-  //   locales: ['en', 'ja'],
-  //   defaultLocale: 'en'
-  // },
+  i18n: {
+    locales: ['en-US', 'ja'],
+    defaultLocale: 'en-US'
+  },
 
   trailingSlash: true,
   experimental: {
