@@ -98,8 +98,10 @@ const Index = (props) => {
                                 props.shows.map((show, index) => (
                                     // style={{breakInside:"avoid !important"}} 
                                     <>
-                                    <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
-                                        <ListCard key={`worklist-slide-${show.fields.slug}`} index={index} title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
+                                        <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
+                                            <div className="col-md-6 col-lg-4 g-3" Style="align-items: stretch;" key={`worklist-${show.fields.slug}`} >
+                                                <ListCard index={index} title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
+                                            </div>
                                         </Link>
                                     </>
                             )) : <h1>null</h1>}
