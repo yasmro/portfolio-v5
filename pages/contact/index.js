@@ -89,7 +89,8 @@ const handleOnSubmit = async (e) => {
     const res = await fetch('/api/send', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        mode: 'cors',
       },
       body: JSON.stringify(bodyData)
     })
