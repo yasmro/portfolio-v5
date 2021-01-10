@@ -41,9 +41,9 @@ const About = (props) => {
                 <div className="container">
                     <motion.div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-0">
-                            <div className="col-lg-4 bg-dark" key="shodo_name">
-                                <div className="w-100 text-center" style={{minHeight: "300px"}} >
-                                    <img src="/static/images/toplogo.svg"   loading="lazy" alt="Yu Ohno" width={65} height={300} />
+                            <div className="col-lg-4 bg-dark" key="shodo_name" style={{height: "350px"}}>
+                                <div className="position-relative w-100 h-100" >
+                                    <img src="/static/images/toplogo.png"   loading="lazy" alt="Yu Ohno" width={71} height={245} className="position-absolute" style={{objectFit: "scale-down", top:"50%", left:"50%", transform: "translateY(-52%) translateX(-50%)"}} />
                                 </div>
                             </div>
                             <div className="col-lg-8" key="intro">

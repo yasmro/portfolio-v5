@@ -33,7 +33,7 @@ const Contact = (props) => {
                 <Title title="Contact" />
                 <motion.div custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
                     {/* <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true" style={{ margin: "0 auto", maxWidth: "540px" }}> */}
-                    <form name="contact" onSubmit={handleOnSubmit} style={{ margin: "0 auto", maxWidth: "540px" }}>
+                    <form name="contact"  action="/contact/thankyou" method="POST" netlify data-netlify="true" onSubmit={handleOnSubmit} style={{ margin: "0 auto", maxWidth: "540px" }}>
                         <div className="row row-30 g-3">
                             <input type="hidden" name="form-name" value="contact" />
                             <div className="col-md-12 g-3">
@@ -90,9 +90,9 @@ const handleOnSubmit = async (e) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        mode: 'cors',
       },
-      body: JSON.stringify(bodyData)
+      body: JSON.stringify(bodyData),
+      mode: 'cors',
     })
     const text = await res.text()
     if(text==='Message sent successfully.'){
