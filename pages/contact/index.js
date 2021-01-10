@@ -84,7 +84,6 @@ const validateEmail = (email) => {
 
 const handleOnSubmit = async (e) => {
     e.preventDefault();
-    const { decycle, encycle } = require('json-cyclic');
     var bodyData = {name: document.getElementById('name').value, email: email.value, message: message.value};
     const res = await fetch('/api/send', {
       method: 'POST',

@@ -49,6 +49,7 @@ export default createGlobalStyle`
       background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      // text-shadow: 0 .5rem .75rem var(--primary)!important;
     }
 
     html {

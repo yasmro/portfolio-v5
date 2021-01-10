@@ -23,7 +23,7 @@ const WorkTitle4 = ({index=0, length=0, title, description="", category="", tags
           <div className="col-lg-6 d-flex align-items-center justify-content-center" >
             <div>
               <div className="text-center text-lg-left">
-                <h1 className="display-2 gradient_text font-weight-bold" style={{letterSpacing: "-3px"}} >{title}</h1>
+                <h1 className="display-2 gradient_text text-shadow font-weight-bold" style={{letterSpacing: "-3px"}} >{title}</h1>
                 <p className="mb-5 load">{abstract}</p>
               </div>
               <div className="d-flex mb-2 justify-content-center justify-content-lg-start">
