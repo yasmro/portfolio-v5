@@ -74,6 +74,8 @@ export default createGlobalStyle`
       //   );
 
       background: #fafafa;
+      // background: #0a0a0a;
+      // color: #fafafa;
 
       // background-image: linear-gradient(23.4deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.95) 80%),
       // url( '/static/images/pattern_black.png');
