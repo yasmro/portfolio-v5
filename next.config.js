@@ -46,6 +46,7 @@ module.exports = {
       process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
     NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN:
       process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY
   },
 
   entry: './pages/index.js',

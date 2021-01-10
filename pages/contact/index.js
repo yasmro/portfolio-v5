@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import Head from "next/head";
+import Router from 'next/router'
 
 // import Title from "../../components/Title"
 import dynamic from 'next/dynamic'
@@ -31,13 +32,14 @@ const Contact = (props) => {
             <div>
                 <Title title="Contact" />
                 <motion.div custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
-                    <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true" style={{ margin: "0 auto", maxWidth: "540px" }}>
+                    {/* <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true" style={{ margin: "0 auto", maxWidth: "540px" }}> */}
+                    <form name="contact" onSubmit={handleOnSubmit} style={{ margin: "0 auto", maxWidth: "540px" }}>
                         <div className="row row-30 g-3">
                             <input type="hidden" name="form-name" value="contact" />
                             <div className="col-md-12 g-3">
                                 <div className="md-form mb-3">
                                     <label htmlFor="name">Name</label>
-                                    <input type="text" name="name" className="form-control rounded-0 py-2" onChange={(e) => setName(e.target.value)} id="name" />
+                                    <input type="text" name="name" value={name} className="form-control rounded-0 py-2" onChange={(e) => setName(e.target.value)} id="name" />
                                 </div>
                                 <div className="md-form mb-3">
                                     <label htmlFor="email" className="d-flex">
@@ -46,11 +48,11 @@ const Contact = (props) => {
                                             {email==="" ? "Empty Email" : !validateEmail(email) ? "Invalid Email" : "Valid Email"}
                                         </span>
                                     </label>
-                                    <input type="email" name="email" className="form-control rounded-0 py-2" onChange={(e) => setEmail(e.target.value)} id="email" />
+                                    <input type="email" name="email" value={email} className="form-control rounded-0 py-2" onChange={(e) => setEmail(e.target.value)} id="email" />
                                 </div>
                                 <div className="md-form ">
                                     <label htmlFor="message">Message</label>
-                                    <textarea name="message" className="form-control rounded-0 py-2" onChange={(e) => setMessage(e.target.value)} style={{height: "200px"}} id="message"></textarea>
+                                    <textarea name="message" value={message} className="form-control rounded-0 py-2" onChange={(e) => setMessage(e.target.value)} style={{height: "200px"}} id="message"></textarea>
                                 </div>
                             </div>
 
@@ -61,7 +63,7 @@ const Contact = (props) => {
                                     <span className="">Send</span>
                                 </button>
                             </div>
-                            <div className="status"></div>
+                            <div className="status" id="status"></div>
                         </div>
                     </form>
                </motion.div>
@@ -77,8 +79,26 @@ Contact.getInitialProps = async function() {
 const validateEmail = (email) => {
     // emailの正規表現
     const regexp = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
-    console.log(regexp.test(email));
     return regexp.test(email) ? true : false;
 }
+
+const handleOnSubmit = async (e) => {
+    e.preventDefault();
+    const { decycle, encycle } = require('json-cyclic');
+    var bodyData = {name: document.getElementById('name').value, email: email.value, message: message.value};
+    const res = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(bodyData)
+    })
+    const text = await res.text()
+    if(text==='Message sent successfully.'){
+        Router.push({pathname: '/contact/thankyou'})
+    }else{
+        document.getElementById('status').innerHTML = text;
+    }
+  }
 
 export default Contact;
