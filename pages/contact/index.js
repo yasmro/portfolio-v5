@@ -32,8 +32,14 @@ const Contact = (props) => {
             <div>
                 <Title title="Contact" />
                 <motion.div custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
+                    <div style={{ margin: "0 auto", padding:"100px 0", maxWidth: "540px" }}>
+                        <p>Thank you for visiting my portfolio site! If you are interesting in my works, please contact me freely! :)</p>
+                        <div className="text-center">
+                            <a className="btn btn-lg rounded-0 active" href="https://forms.gle/NSFgtwSNZqhtZXtn9"><span className="">Move to Google Form</span></a>
+                        </div>
+                    </div>
                     {/* <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true" style={{ margin: "0 auto", maxWidth: "540px" }}> */}
-                    <form name="contact"  action="/contact/thankyou" method="POST" netlify data-netlify="true" onSubmit={handleOnSubmit} style={{ margin: "0 auto", maxWidth: "540px" }}>
+                    {/* <form name="contact"  action="/contact/thankyou" method="POST" netlify data-netlify="true" onSubmit={handleOnSubmit} style={{ margin: "0 auto", maxWidth: "540px" }}>
                         <div className="row row-30 g-3">
                             <input type="hidden" name="form-name" value="contact" />
                             <div className="col-md-12 g-3">
@@ -57,7 +63,6 @@ const Contact = (props) => {
                             </div>
 
                             <div className="text-center">
-                                {/* btn-outline-dark  */}
                                 <button type="submit" className={"mt-5 btn btn-lg rounded-0 " + (name==="" || email === "" || message === "" || validateEmail(email) === false ? "btn-light" : "active")} disabled={name==="" || email === "" || message === "" || validateEmail(email) === false} data-ripple-color="dark">
                                     <i className="far fa-paper-plane mr-2"></i>
                                     <span className="">Send</span>
@@ -65,7 +70,7 @@ const Contact = (props) => {
                             </div>
                             <div className="status" id="status"></div>
                         </div>
-                    </form>
+                    </form> */}
                </motion.div>
             </div>
         </>
