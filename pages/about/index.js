@@ -61,7 +61,7 @@ const About = (props) => {
                         <h2 className="text-center square">What I Can Do</h2>
                         <div className="row row-40">
                             {
-                                props.whatICanDo.map( (skill, index) =>
+                                props.about[0].fields.whatICanDo.map( (skill, index) =>
                                     <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
                                         <div className="card whatICanDo h-100">
                                             <div className="card-body">
@@ -78,10 +78,9 @@ const About = (props) => {
                                                     {
                                                         skill.fields.relatedWork &&
                                                         <div className="mt-3 link rounded-0 text-right position-absolute" style={{ bottom: "10px", "right": "10px"}}>
-                                                            <Link href="/works/[id]" as={`/works/${skill.fields.relatedWork.fields.slug}`}>
+                                                            <Link href="/works/[id]" as={`/works/${skill.fields.workSlug}`}>
                                                                 <a className="btn btn-black rounded-0">
                                                                     <div className=""><i className="fas fa-arrow-right mr-2"></i>View Work</div>
-                                                                    {/* <span>{skill.fields.relatedWork.fields.title}</span> */}
                                                                 </a>
                                                             </Link>
                                                         </div>    
@@ -102,8 +101,8 @@ const About = (props) => {
 
 About.getInitialProps = async function() {
     const resAbout = await getData("about");
-    const resWhatICanDo = await getData("whatICanDo","fields.order");
-    return { about: resAbout, whatICanDo: resWhatICanDo};
+    // const resWhatICanDo = await getData("whatICanDo","fields.order");
+    return { about: resAbout};
 };
 
 export default About;

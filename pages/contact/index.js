@@ -35,7 +35,7 @@ const Contact = (props) => {
                     <div style={{ margin: "0 auto", padding:"100px 0", maxWidth: "540px" }}>
                         <p>Thank you for visiting my portfolio site! If you are interesting in my works, please contact me freely! :)</p>
                         <div className="text-center">
-                            <a className="btn btn-lg rounded-0 active" href="https://forms.gle/NSFgtwSNZqhtZXtn9"><span className="">Move to Google Form</span></a>
+                            <a className="btn btn-lg rounded-0 active font-weight-bold" href="https://forms.gle/NSFgtwSNZqhtZXtn9">Move to Google Form</a>
                         </div>
                     </div>
                     {/* <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true" style={{ margin: "0 auto", maxWidth: "540px" }}> */}

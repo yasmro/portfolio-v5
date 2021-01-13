@@ -3,15 +3,43 @@ import {　createGlobalStyle } from 'styled-components';
 
 
 export default createGlobalStyle`
-    // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@100;300;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
    
+    *{
+      font-family: 'Poppins', 'Noto Serif JP','Karla', 'Noto Sans JP',  sans-serif;
+      // font-family:  neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
+      font-style: italic !important; 
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
+    // .display-2, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    //   font-family: a-otf-ud-shin-go-pr6n,  neue-haas-grotesk-display, ff-dax-pro, sans-serif;
+    //   // corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron,
+    // }
+
+    .japanese{
+      font-family: 'Noto Sans JP', sans-serif;
+      font-style: normal !important;
+    }
+        
+    i, .slick-arrow, .slick-dots button, .form-control{
+      font-style: normal !important;
+    }
+
+    .badge span{
+      font-weight: 400;
+
+    }
+
 
     button:focus {
         outline:0;
@@ -136,34 +164,14 @@ export default createGlobalStyle`
 
     
 
-    *{
-        font-family: 'Noto Serif JP','Karla', 'Noto Sans JP',  sans-serif;
-        // font-family:  neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
-        font-style: italic !important; 
-        font-weight: 300;
-    }
-    
-    i, .slick-arrow, .slick-dots button, .form-control{
-      font-style: normal !important;
-    }
 
 
 
-    .badge span{
-      font-weight: 400;
 
-    }
+  
 
-    // .display-2, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
-    //   font-family: a-otf-ud-shin-go-pr6n,  neue-haas-grotesk-display, ff-dax-pro, sans-serif;
-    //   // corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron,
-    // }
 
-    .japanese{
-      font-family: 'Noto Sans JP', sans-serif;
-      font-style: normal !important;
-    }
-    
+ 
 
     
     .topLeft{
