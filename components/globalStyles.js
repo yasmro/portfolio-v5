@@ -65,11 +65,21 @@ export default createGlobalStyle`
       // --primary: #BD3F32!important;
       // --primary: #CB356B!important;
 
-      --primary1: #f85032;
+      --primary1: #eb3349!important;
       --primary: #BD3F32!important;
+
+      // --primary1: #cc2b5e!important;
+      // --primary: #753a88!important;
+
+      // --primary1: #36d1dc!important;
+      // --primary: #004e92!important;
+
+      // --primary1: #aa076b!important;
+      // --primary: #61045f!important;
+
       --secondary: rgba(219,180,0,1) !important;
 
-      --gradient: -webkit-linear-gradient(45deg, var(--primary),  var(--primary1))!important;
+      --gradient: -webkit-linear-gradient(135deg, var(--primary),  var(--primary1))!important;
 
     }
 
@@ -580,6 +590,7 @@ export default createGlobalStyle`
     ::selection{
       background: var(--primary)!important;
       color: #fff;
+      -webkit-text-fill-color: white;
     }
 
 

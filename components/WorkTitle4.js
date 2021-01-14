@@ -24,19 +24,19 @@ const WorkTitle4 = ({index=0, length=0, title, description="", category="", tags
             <div>
               <div className="text-center text-lg-left">
                 <h1 className="display-2 gradient_text text-shadow font-weight-bold" style={{letterSpacing: "-3px"}} >{title}</h1>
-                <p className="mb-5 load">{abstract}</p>
+                <p className="mb-5 lead">{abstract}</p>
               </div>
               <div className="d-flex mb-2 justify-content-center justify-content-lg-start">
                 <div>
                   <div className="rounded-0  position-relative shadow-lg mr-3 active" style={{width: "70px", height: "70px", backgroundColor: "rgba(0,0,0, 0)"}}>
-                    <span className="h1 text-shadow position-absolute text-center text-light" style={{ fontSize:"50px", top: "-2px", left: "10px" }}>{index + 1}</span>
+                    <span className="h1 text-shadow position-absolute  text-center text-light" style={{ fontSize:"50px", top: "-2px", left: "10px" }}>{index + 1}</span>
                     <span className="position-absolute bottomRight " style={{bottom: "0px", right: "0px" }}></span>
                     <span className="text-dark position-absolute text-right " style={{ bottom: "0px", right: "5px" }}>{length}</span>
                   </div>
                 </div>
 
                 <div className="">
-                  <span className="badge bg-black shadow rounded-0"><span className="">{category}</span></span>
+                  <span className="badge bg-black shadow rounded-0"><span className="font-weight-bold">{category}</span></span>
               
                     {tags.length > 0 &&
                       <>
