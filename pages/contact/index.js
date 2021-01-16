@@ -4,6 +4,7 @@ import Router from 'next/router'
 
 // import Title from "../../components/Title"
 import dynamic from 'next/dynamic'
+import {useRouter} from 'next/router'
 
 const Title = dynamic(
   () => import('../../components/Title'),
@@ -24,6 +25,32 @@ const Contact = (props) => {
       const [email, setEmail] = useState("");
       const [message, setMessage] = useState("");
 
+      const router = useRouter();
+      const { locale, locales, defaultLocale } = router
+
+      const sentence = {
+          description: {
+              'en': 'Thank you for visiting my portfolio site! If you are interesting in my works, please contact me freely! :)',
+              'ja': 'ご覧いただきありがとうございました！もし作品にご興味ありましたら、下記フォームよりお問い合わせください！'
+          },
+          ctaSentence: {
+              'en': 'Move to Google Form',
+              'ja': 'Googleフォームへ移動'
+          },
+          nameLabel:{
+            'en': 'Name',
+            'ja': 'お名前'
+          },
+          emailLabel:{
+            'en': 'Email',
+            'ja': 'メールアドレス'
+          },
+          messageLabel:{
+            'en': 'message',
+            'ja': 'お問い合わせ内容'
+          }
+      }
+
     return(
         <>
             <Head>
@@ -33,9 +60,11 @@ const Contact = (props) => {
                 <Title title="Contact" />
                 <motion.div custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
                     <div style={{ margin: "0 auto", padding:"100px 0", maxWidth: "540px" }}>
-                        <p>Thank you for visiting my portfolio site! If you are interesting in my works, please contact me freely! :)</p>
+                        <p className={locale==="ja" ? "japanese" : ""}>{sentence.description[locale]}</p>   
                         <div className="text-center">
-                            <a className="btn btn-lg rounded-0 active font-weight-bold" href="https://forms.gle/NSFgtwSNZqhtZXtn9">Move to Google Form</a>
+                            <a className="btn btn-lg rounded-0 active font-weight-bold" href="https://forms.gle/NSFgtwSNZqhtZXtn9">
+                                <span className={locale==="ja" ? "japanese" : ""}>{sentence.ctaSentence[locale]}</span>
+                            </a>
                         </div>
                     </div>
                     {/* <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true" style={{ margin: "0 auto", maxWidth: "540px" }}> */}

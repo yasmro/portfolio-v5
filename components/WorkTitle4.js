@@ -9,7 +9,7 @@ import Header from './Header'
 const variants = {
   hidden: { opacity: 0, x: 5, duration: 2},
   visible: { opacity: 1, x: 0, duration: 2 },
-  hide: { opacity: 0, x: 5, duration: 2},
+  hide: { opacity: 0, x: 0, duration: 2},
   transition: { duration: 2 }
 }
 

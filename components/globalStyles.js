@@ -3,19 +3,19 @@ import {　createGlobalStyle } from 'styled-components';
 
 
 export default createGlobalStyle`
-    // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@100;300;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,00;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
    
     *{
-      font-family: 'Poppins', 'Noto Serif JP','Karla', 'Noto Sans JP',  sans-serif;
-      // font-family:  neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
+      font-family: 'Karla','Noto Sans JP','Noto Serif JP',   sans-serif;
+      // font-family:  fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
       font-style: italic !important; 
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
@@ -77,6 +77,9 @@ export default createGlobalStyle`
       // --primary1: #aa076b!important;
       // --primary: #61045f!important;
 
+       --primary1: #cc2b5e!important;
+       --primary: #753a88!important;
+
       --secondary: rgba(219,180,0,1) !important;
 
       --gradient: -webkit-linear-gradient(135deg, var(--primary),  var(--primary1))!important;
@@ -123,6 +126,8 @@ export default createGlobalStyle`
       background: var(--gradient);
       color: white;
     }
+
+    
 
     .card{
       background-color: rgba(255,255,255,0.7)!important;
@@ -172,18 +177,7 @@ export default createGlobalStyle`
       // background-size: 40px 40px;
     }
 
-    
-
-
-
-
-
-  
-
-
- 
-
-    
+        
     .topLeft{
         background:
           linear-gradient(to top left, rgba(255,255,255,0) 50%, #f00 50.5%) no-repeat top left/100% 100%
@@ -588,7 +582,7 @@ export default createGlobalStyle`
 }
 
     ::selection{
-      background: var(--primary)!important;
+      background: var(--primary1)!important;
       color: #fff;
       -webkit-text-fill-color: white;
     }

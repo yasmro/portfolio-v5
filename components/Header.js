@@ -10,9 +10,10 @@ import { useRouter } from 'next/router'
 import { routes } from '../data/routes'
 import { VisibilityAction } from 'framer-motion'
 
-
 const Header = ({ href, children }) => {
     const router = useRouter();
+    const { locale, locales, defaultLocale } = router
+
     const [isToggle, setIsToggle] = useState(false);
     // const [windowpageYOffset, setWindowpageYOffset] = useState(window.pageYOffset);
 
@@ -58,12 +59,19 @@ const Header = ({ href, children }) => {
                     </li>
                 ))
               }
+              <li className="nav-item pl-4 align-items-stretch d-flex" key={`lang`}>
+                <Link href={router.asPath} locale="en">
+                  <a className={"nav-link waves-effect " + (router.locale === "en" ? "active" : "" )}>en</a>
+                </Link>
+                <span className={"nav-link waves-effect"} >/</span>
+                <Link href={router.asPath} locale="ja">
+                  <a className={"nav-link waves-effect " + (router.locale === "ja" ? "active" : "" )}>ja</a>
+                </Link>
+              </li>              
           </ul>
-
         </div>
 
       </div>
-      
     </nav>
 
       <div className="d-lg-none d-inline">

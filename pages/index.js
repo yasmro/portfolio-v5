@@ -12,6 +12,7 @@ import HomeJumbotron from '../components/HomeJumbotron'
 import Title from '../components/Title'
 import ListCard from '../components/ListCard'
 
+
 import { motion, AnimatePresence } from "framer-motion"
 
 const variants = {
@@ -28,26 +29,26 @@ const Index = (props) => {
             <title>Home - Yu Ohno's site 2020</title>
             </Head>
             <div style={{ marginBottom: "-96px"}}>
-                <div className="skewedArea">
-                    {/* <HomeJumbotron name={myself.name} quickWord={myself.quickWord}/> */}
-                    <div  className="home-jumbotron jumbotron jumbotron-fluid py-4 mb-5" style={{height: "calc(100vh - 90px)", marginTop: "0px", minHeight: "540px", color: "white"}}>
-                        <div className="container" >
-                            <div className="text-center" style={{marginTop: "18vh"}}>
-                            <div className="quotation p-5 " style={{ margin: "auto 0"}}>
-                                <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="text-shadow">
-                                <h1 className="display-1"><span className="font-weight-bold">{myself.name.split(' ')[0].toUpperCase()}</span><span style={{fontWeight:200, fontSize:"108%"}}>{myself.name.split(' ')[1].toUpperCase()}</span></h1>
-                                <span style={{fontWeight:200}} className="lead">I'm working as</span><br />
-                                <span style={{fontWeight:200}} className="display-6" >Engineer</span><br />
-                                <span style={{fontWeight:200}} className="display-6">Artist</span><span style={{fontWeight:200}} className="lead"> and <br /></span>
-                                <span style={{fontWeight:200}} className="display-6">Calligrapher.</span>
-                                </motion.div>
-                                {/* <img src={require('../data/images/Toplogo.svg')} className="" id="toplogo" alt="Yu-logo"/> */}
+                
+                {/* <HomeJumbotron name={myself.name} quickWord={myself.quickWord}/> */}
+                <div  className="home-jumbotron jumbotron jumbotron-fluid py-4 mb-5 d-flex" style={{height: "calc(100vh - 90px)", marginTop: "0px", minHeight: "540px", color: "white"}}>
+                    <div className="container text-center h-100" >
+                        <motion.div initial="hidden" animate="visible" transition="transition" variants={variants}  className="d-inline-block p-5" style={{ marginTop: "16vh"}} >
+                        <div className="quotation p-5 " style={{ margin: "auto 0"}}>
+                            <div className="text-shadow">
+                            <h1 className="display-1"><span className="font-weight-bold">{myself.name.split(' ')[0].toUpperCase()}</span><span style={{fontWeight:200, fontSize:"108%"}}>{myself.name.split(' ')[1].toUpperCase()}</span></h1>
+                            <span style={{fontWeight:200}} className="lead">I'm working as</span><br />
+                            <span style={{fontWeight:200}} className="display-6" >Engineer</span><br />
+                            <span style={{fontWeight:200}} className="display-6">Artist</span><span style={{fontWeight:200}} className="lead"> and <br /></span>
+                            <span style={{fontWeight:200}} className="display-6">Calligrapher.</span>
                             </div>
-                            </div>
+                            {/* <img src={require('../data/images/Toplogo.svg')} className="" id="toplogo" alt="Yu-logo"/> */}
                         </div>
-
+                        </motion.div>
                     </div>
+
                 </div>
+                
                                 
                 {/* <Title title="Works" description="" /> */}
                 {/* <div className="container"> */}
@@ -114,7 +115,6 @@ const Index = (props) => {
 Index.getInitialProps = async function() {
     const res2 = await getAllPosts();
     const resWhatICanDo = await getData("whatICanDo","fields.order");
-    console.log(resWhatICanDo)
     return { shows: res2, whatICanDo: resWhatICanDo};
 };
 
