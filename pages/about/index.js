@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from 'next/image'
+import {useRouter} from 'next/router'
 
-import { getData } from '../../lib'
+import { getAbout, getData } from '../../lib'
 
 import ReactMarkdown from 'react-markdown'
 
@@ -29,7 +30,11 @@ const DynamicComponentWithCustomLoading = dynamic(
   { loading: () => <div><h1>LOADING</h1></div>}
 )
 
+
+
 const About = (props) => {
+    const router = useRouter();
+    const { locale, locales, defaultLocale } = router
     return(
         <>
             <Head>
@@ -41,16 +46,16 @@ const About = (props) => {
                 <div className="container">
                     <motion.div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-0">
-                            <div className="col-lg-4 bg-dark" key="shodo_name" style={{height: "350px"}}>
+                            <div className="col-lg-4 bg-dark" key="shodo_name" style={{minHeight: "350px"}}>
                                 <div className="position-relative w-100 h-100" >
                                     <img src="/static/images/toplogo.png"   loading="lazy" alt="Yu Ohno" width={71} height={245} className="position-absolute" style={{objectFit: "scale-down", top:"50%", left:"50%", transform: "translateY(-52%) translateX(-50%)"}} />
                                 </div>
                             </div>
                             <div className="col-lg-8" key="intro">
                                 <div className="card-body">
-                                    <div className="h3 card-title">{myself.name}</div>
+                                    <div className={"h3 card-title " + (locale==="ja" ? "japanese" : "")}>{myself.name}</div>
                                     <div className="card-text">
-                                        <ReactMarkdown children={props.about[0].fields.about}/>
+                                        <ReactMarkdown className={locale==="ja" ? "japanese" : ""} children={props.about[0].fields.about}/>
                                     </div>
                                 </div>
                             </div>
@@ -58,15 +63,18 @@ const About = (props) => {
                     </motion.div>
 
                     <div className="mt-4">
-                        <h2 className="text-center square">What I Can Do</h2>
+                        <h2 className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>What I Can Do</h2>
                         <div className="row row-40">
                             {
                                 props.about[0].fields.whatICanDo.map( (skill, index) =>
                                     <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
                                         <div className="card whatICanDo h-100">
                                             <div className="card-body">
-                                                <div className="card-title h3"><span className="skillNumber black">{index + 1}</span>{skill.fields.title}</div>
-                                                <div className="card-text">
+                                                <div className="card-title h3">
+                                                    <span className="skillNumber black">{index + 1}</span>
+                                                    <span className={locale==="ja" ? "japanese" : ""}>{skill.fields.title}</span>
+                                                </div>
+                                                <div className={"card-text " + (locale==="ja" ? "japanese" : "")}>
                                                     <p>{skill.fields.description}</p>
                                                     <div className="mb-4">
                                                     {   
@@ -80,7 +88,7 @@ const About = (props) => {
                                                         <div className="mt-3 link rounded-0 text-right position-absolute" style={{ bottom: "10px", "right": "10px"}}>
                                                             <Link href="/works/[id]" as={`/works/${skill.fields.workSlug}`}>
                                                                 <a className="btn btn-black rounded-0">
-                                                                    <div className=""><i className="fas fa-arrow-right mr-2"></i>View Work</div>
+                                                                    <div className=""><i className="fas fa-arrow-right mr-2"></i><span>View Work</span></div>
                                                                 </a>
                                                             </Link>
                                                         </div>    
@@ -99,10 +107,22 @@ const About = (props) => {
     )
 };
 
-About.getInitialProps = async function() {
-    const resAbout = await getData("about");
-    // const resWhatICanDo = await getData("whatICanDo","fields.order");
-    return { about: resAbout};
+export async function getServerSideProps ({ locale })  {
+    locale = (locale==="en") ? "en-US" : locale;
+    const about = await getData("about", "", locale);
+    return { 
+        props: {
+            about,
+        },
+    };
 };
+
+// About.getInitialProps = async ({locales}) => {
+//     console.log("LOCAL")
+//     const resAbout = await getData("about", "", locale);
+//     console.log(resAbout)
+//     // const resWhatICanDo = await getData("whatICanDo","fields.order");
+//     return { about: resAbout};
+// };
 
 export default About;

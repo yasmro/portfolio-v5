@@ -6,7 +6,7 @@ export default createGlobalStyle`
     // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@100;300;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,00;1,300;1,400;1,700&display=swap');
@@ -14,7 +14,7 @@ export default createGlobalStyle`
     // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
    
     *{
-      font-family: 'Karla','Noto Sans JP','Noto Serif JP',   sans-serif;
+      font-family: 'Karla', 'Noto Sans JP','Noto Serif JP',   sans-serif;
       // font-family:  fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
       font-style: italic !important; 
       font-weight: 400;
@@ -26,9 +26,14 @@ export default createGlobalStyle`
     //   // corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron,
     // }
 
-    .japanese{
+    .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span{
       font-family: 'Noto Sans JP', sans-serif;
       font-style: normal !important;
+      letter-spacing: -0.25px;
+    }
+
+    .btn{
+      text-transform: none;
     }
         
     i, .slick-arrow, .slick-dots button, .form-control{

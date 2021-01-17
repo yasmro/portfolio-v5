@@ -10,8 +10,23 @@ import { socialMedia } from '../data/socialMedia'
 import { routes } from '../data/routes'
 
 
+
 const Footer = () => {
     const router = useRouter();
+    const { locale, locales, defaultLocale } = router
+
+
+    const sentence = {
+        socials: {
+            'en': 'SOCIALS',
+            'ja': 'SNS'
+        },
+        pages: {
+            'en': 'PAGES',
+            'ja': 'サイトマップ'
+        },
+    }
+
     return(
             <footer className="position-absolute w-100 page-footer text-light pink pt-4 skewedArea bg-dark">
                 <div className="container text-center text-md-left">
@@ -28,7 +43,7 @@ const Footer = () => {
 
                         <div className="col-md-6 mb-md-0 mb-3">
 
-                            <p className="h5 text-uppercase">Socials</p>
+                            <p className={(locale==="ja" ? "h6 japanese" : "h5")}>{sentence.socials[locale]}</p>
                             <ul className="d-inline-flex text-center list-unstyled">
                             {
                                 socialMedia.map( media => (
@@ -39,7 +54,7 @@ const Footer = () => {
                             }
                             </ul>
 
-                            <p className="h5 text-uppercase">PAGES</p>
+                            <p className={(locale==="ja" ? "h6 japanese" : "h5")}>{sentence.pages[locale]}</p>
                             <ul className="d-inline-flex list-unstyled">
                             {
                                 routes.map( route => (

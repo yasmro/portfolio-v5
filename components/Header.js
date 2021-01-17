@@ -24,13 +24,23 @@ const Header = ({ href, children }) => {
       className={"navbar-common d-flex d-lg-none w-100 p-4 " + (router.pathname.replace("/[id]", "") === "/" ? "" : "" )}
       style={{ zIndex: 1, top: 0}}
       >
-        <div className="container">
-          <Link href="/">
+        <div className="container d-flex">
+          <div className="mr-auto">
+          <Link href="/" >
               <a className="navbar-brand waves-effect pr-3" style={{mixBlendMode: "multiply"}}>
                 <img src="/static/images/name.png" loading="lazy" alt="Yu Ohno" width={120} height={32} />
               </a>
-          </Link>        
-
+          </Link>
+          </div>        
+          <li className="nav-item pl-4 align-items-stretch d-flex" key={`lang`}>
+              <Link href={router.asPath} locale="en">
+                <a className={"nav-link waves-effect " + (router.locale === "en" ? "active" : "" )}>en</a>
+              </Link>
+              <span className={"nav-link waves-effect"} >/</span>
+              <Link href={router.asPath} locale="ja">
+                <a className={"nav-link waves-effect " + (router.locale === "ja" ? "active" : "" )}>ja</a>
+              </Link>
+            </li>
         </div>
       
       </nav>
@@ -69,9 +79,11 @@ const Header = ({ href, children }) => {
                 </Link>
               </li>              
           </ul>
+          
         </div>
 
       </div>
+      
     </nav>
 
       <div className="d-lg-none d-inline">
