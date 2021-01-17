@@ -30,7 +30,12 @@ const DynamicComponentWithCustomLoading = dynamic(
   { loading: () => <div><h1>LOADING</h1></div>}
 )
 
-
+const sentence = {
+    whatICanDoTitle: {
+        'en-US': 'What I Can Do',
+        'ja': 'できること'
+    }
+}
 
 const About = (props) => {
     const router = useRouter();
@@ -63,7 +68,7 @@ const About = (props) => {
                     </motion.div>
 
                     <div className="mt-4">
-                        <h2 className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>What I Can Do</h2>
+                        <motion.h2 custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>{sentence.whatICanDoTitle[locale]}</motion.h2>
                         <div className="row row-40">
                             {
                                 props.about[0].fields.whatICanDo.map( (skill, index) =>
@@ -107,12 +112,12 @@ const About = (props) => {
     )
 };
 
-export async function getServerSideProps ({ locale })  {
-    locale = (locale==="en") ? "en-US" : locale;
+export async function getStaticProps ({ locale })  {
     const about = await getData("about", "", locale);
     return { 
         props: {
             about,
+            locale
         },
     };
 };

@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 import styled from 'styled-components'
 
-const ListCard = ({title, jptitle="", index=0, description="", thumbnail={}, category="", slug}) => (
+const ListCard = ({title, locale, jaTitle="", index=0, description="", thumbnail={}, category="", slug}) => (
         <div className="card card-hover">
             <div className="bg-light hover-overlay ripple position-relative" style={{ height: "250px"}}data-ripple-color="light">
                 <img
@@ -24,7 +24,9 @@ const ListCard = ({title, jptitle="", index=0, description="", thumbnail={}, cat
             </div>
             <div className="card-body">
                 <p className="h4 card-title">{title}</p>
-                <span className="japanese" style={{fontSize: "90%"}}>日本語タイトル{jptitle}</span>
+                { locale === "ja" &&
+                    <span className="japanese" style={{fontSize: "90%"}}>{jaTitle}</span>
+                }
                 <div className="d-flex d-md-none position-absolute" style={{bottom:"22px", right:"20px"}}>
                     <Link href="/works/[id]" as={`/works/${slug}`}>
                         <span><i className="mr-2 fa fa-angle-right"></i><span>To Detail</span></span>

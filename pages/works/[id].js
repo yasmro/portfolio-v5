@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-
+import {useRouter} from 'next/router'
 import {useState} from 'react'
 
 import { getAllPosts, getPostBySlug } from '../../lib'
@@ -29,6 +29,9 @@ const Post = props => {
   // var idx = props.index?.presence 
   const [carouselIndex, setCarouselIndex] = useState(0)
 const [length, setLength] = useState(0)
+
+const router = useRouter();
+    const { locale, locales, defaultLocale } = router
 
 var settings = {
   className: "",
@@ -73,7 +76,7 @@ return(
 
     {/* <WorkTitle2 index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
     {/* <WorkTitle3 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
-    <WorkTitle4 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} />
+    <WorkTitle4 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} jaTitle={props.show.fields.jaTitle} locale={locale} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} />
     <AnimatePresence exitBeforeEnter>
     <motion.div initial="hidden" animate="visible" exit="hide" transition="transition" variants={variants} key={props.show.fields.title} className="container mt-5 ">
       <div className="row row-40">
@@ -230,6 +233,27 @@ function SamplePrevArrow(props) {
     ><i className="fa fa-angle-left"></i></button>
   );
 }
+
+// export async function getServerSideProps ({ params, locale })  {
+//   const id = params.id;
+//   const shows = await getAllPosts();
+//   const show = await getPostBySlug(id);
+  
+//   const slugs = res.map( r => r.fields.slug)
+//   const presenceIndex = slugs.indexOf(id)
+//   const prevIndex = (presenceIndex - 1 + slugs.length) % (slugs.length) 
+//   const nextIndex = (presenceIndex + 1 + slugs.length) % (slugs.length)
+
+//   return { 
+//       props: {
+//           shows,
+//           show,
+//           index:{prev:prevIndex, presence:presenceIndex, next:nextIndex},
+//           prevShow: res[prevIndex], nextShow: res[nextIndex],
+//           locale
+//       },
+//   };
+// };
 
 Post.getInitialProps = async function(context) {
   const { id } = context.query;

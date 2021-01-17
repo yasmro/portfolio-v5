@@ -29,7 +29,7 @@ export default createGlobalStyle`
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span{
       font-family: 'Noto Sans JP', sans-serif;
       font-style: normal !important;
-      letter-spacing: -0.25px;
+      letter-spacing: -0.3px;
     }
 
     .btn{

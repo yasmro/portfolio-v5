@@ -18,11 +18,11 @@ const Footer = () => {
 
     const sentence = {
         socials: {
-            'en': 'SOCIALS',
+            'en-US': 'SOCIALS',
             'ja': 'SNS'
         },
         pages: {
-            'en': 'PAGES',
+            'en-US': 'PAGES',
             'ja': 'サイトマップ'
         },
     }

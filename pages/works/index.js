@@ -80,7 +80,7 @@ const Index = (props) => {
                                     <>
                                         <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
                                             <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" Style="align-items: stretch;" key={`worklist-${show.fields.slug}`} >
-                                                <ListCard index={index} title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
+                                                <ListCard index={index} locale={props.locale} title={show.fields.title} jaTitle={show.fields.jaTitle} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                             </motion.div>
                                         </Link>
                                     </>
@@ -137,14 +137,23 @@ function SamplePrevArrow(props) {
         ><i className="fa fa-angle-left"></i></button>
     );
 }
-  
 
-Index.getInitialProps = async function() {
-    const res = await getAllPosts();
-    console.log(res)
-    // console.log(`Show data fetched. Count: ${data.length}`);
-
-    return {shows: res};
+export async function getStaticProps ({ locale })  {
+    const shows = await getAllPosts();
+    return { 
+        props: {
+            shows,
+            locale
+        },
+    };
 };
+
+// Index.getInitialProps = async function() {
+//     const res = await getAllPosts();
+//     // console.log(res)
+//     // console.log(`Show data fetched. Count: ${data.length}`);
+
+//     return {shows: res};
+// };
 
 export default Index;

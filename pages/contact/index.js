@@ -30,23 +30,23 @@ const Contact = (props) => {
 
       const sentence = {
           description: {
-              'en': 'Thank you for visiting my portfolio site! If you are interesting in my works, please contact me freely! :)',
+              'en-US': 'Thank you for visiting my portfolio site! If you are interesting in my works, please contact me freely! :)',
               'ja': 'ご覧いただきありがとうございました！もし作品にご興味ありましたら、下記フォームよりお問い合わせください！'
           },
           ctaSentence: {
-              'en': 'Move to Google Form',
+              'en-US': 'Move to Google Form',
               'ja': 'Googleフォームへ移動'
           },
           nameLabel:{
-            'en': 'Name',
+            'en-US': 'Name',
             'ja': 'お名前'
           },
           emailLabel:{
-            'en': 'Email',
+            'en-US': 'Email',
             'ja': 'メールアドレス'
           },
           messageLabel:{
-            'en': 'message',
+            'en-US': 'message',
             'ja': 'お問い合わせ内容'
           }
       }

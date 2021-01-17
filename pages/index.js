@@ -113,9 +113,9 @@ const Index = (props) => {
 };
 
 Index.getInitialProps = async function() {
-    const res2 = await getAllPosts();
-    const resWhatICanDo = await getData("whatICanDo","fields.order");
-    return { shows: res2, whatICanDo: resWhatICanDo};
+    // const res2 = await getAllPosts();
+    // const resWhatICanDo = await getData("whatICanDo","fields.order");
+    return { res: ""};
 };
 
 export default Index;

@@ -33,8 +33,8 @@ const Header = ({ href, children }) => {
           </Link>
           </div>        
           <li className="nav-item pl-4 align-items-stretch d-flex" key={`lang`}>
-              <Link href={router.asPath} locale="en">
-                <a className={"nav-link waves-effect " + (router.locale === "en" ? "active" : "" )}>en</a>
+              <Link href={router.asPath} locale="en-US">
+                <a className={"nav-link waves-effect " + (router.locale === "en-US" ? "active" : "" )}>en</a>
               </Link>
               <span className={"nav-link waves-effect"} >/</span>
               <Link href={router.asPath} locale="ja">
@@ -70,8 +70,8 @@ const Header = ({ href, children }) => {
                 ))
               }
               <li className="nav-item pl-4 align-items-stretch d-flex" key={`lang`}>
-                <Link href={router.asPath} locale="en">
-                  <a className={"nav-link waves-effect " + (router.locale === "en" ? "active" : "" )}>en</a>
+                <Link href={router.asPath} locale="en-US">
+                  <a className={"nav-link waves-effect " + (router.locale === "en-US" ? "active" : "" )}>en</a>
                 </Link>
                 <span className={"nav-link waves-effect"} >/</span>
                 <Link href={router.asPath} locale="ja">
