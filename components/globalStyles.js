@@ -4,8 +4,8 @@ import {　createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
     // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@100;300;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+    // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
