@@ -47,8 +47,9 @@ const About = (props) => {
             </Head>
             <div>
             <DynamicComponentWithCustomLoading title="About" />
+                {/* <Title title="About" /> */}
                 <div className="container">
-                <motion.div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
+                    <motion.div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-0">
                             <div className="col-lg-4 bg-dark" key="shodo_name" style={{minHeight: "350px"}}>
                                 <div className="position-relative w-100 h-100" >
@@ -65,38 +66,37 @@ const About = (props) => {
                             </div>
                         </div>
                     </motion.div>
-                    
 
                     <div className="mt-4">
                         <motion.h2 custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>{sentence.whatICanDoTitle[locale]}</motion.h2>
                         <div className="row row-40">
                             {
-                                props.whatICanDo.map( (skill, index) =>
+                                props.about[0].fields.whatICanDo.map( (skill, index) =>
                                     <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
                                         <div className="card whatICanDo h-100">
                                             <div className="card-body">
                                                 <div className="card-title h3">
                                                     <span className="skillNumber black">{index + 1}</span>
-                                                    <span className={locale==="ja" ? "japanese" : ""}>{skill.title}</span>
+                                                    <span className={locale==="ja" ? "japanese" : ""}>{skill.fields.title}</span>
                                                 </div>
                                                 <div className={"card-text " + (locale==="ja" ? "japanese" : "")}>
-                                                    <p>{skill.description}</p>
+                                                    <p>{skill.fields.description}</p>
                                                     <div className="mb-4">
                                                     {   
-                                                        skill.relatedSkills?.map( tag =>
+                                                        skill.fields.relatedSkills?.map( tag =>
                                                         <span tag={`skill-${index}-${tag}`} className="mr-2 badge border text-dark rounded-0"><span>{tag}</span></span>
                                                         )
                                                     }
                                                     </div>
                                                     {
-                                                        skill.workSlug &&
+                                                        skill.fields.relatedWork &&
                                                         <div className="mt-3 link rounded-0 text-right position-absolute" style={{ bottom: "10px", "right": "10px"}}>
-                                                            <Link href="/works/[id]" as={`/works/${skill.workSlug}`}>
+                                                            <Link href="/works/[id]" as={`/works/${skill.fields.workSlug}`}>
                                                                 <a className="btn btn-black rounded-0">
                                                                     <div className=""><i className="fas fa-arrow-right mr-2"></i><span>View Work</span></div>
                                                                 </a>
                                                             </Link>
-                                                        </div>
+                                                        </div>    
                                                     }           
                                                 </div>
                                             </div>
@@ -112,20 +112,11 @@ const About = (props) => {
     )
 };
 
-export async function getServerSideProps ({ locale })  {
+export async function getStaticProps ({ locale })  {
     const about = await getData("about", "", locale);
-    const introduction = about[0].fields.about
-    const whatICanDo = about[0].fields.whatICanDo.map( skill => {
-        return(
-            {title: skill.fields.title, description:skill.fields.description, 
-                relatedSkills:skill.fields.relatedSkills, workSlug: (skill.fields.workSlug === undefined) ? "" : skill.fields.workSlug}
-        )
-    })
     return { 
         props: {
             about,
-            introduction,
-            whatICanDo,
             locale
         },
     };
