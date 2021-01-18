@@ -268,4 +268,15 @@ Post.getInitialProps = async function(context) {
   return { shows: res, index:{prev:prevIndex, presence:presenceIndex, next:nextIndex}, show: res2, prevShow: res[prevIndex], nextShow: res[nextIndex] };
 };
 
+
+// export async function getStaticPaths() {
+//   const res = await getAllPosts();
+//   const pathsJa = res.map((r) => ({pages: '/works/[id]', params: {  id: r.fields.slug }, locale: 'ja'}))
+//   const pathsEn = res.map((r) => ({pages: '/works/[id]', params:{ id: r.fields.slug }, locale: 'en-US'}))
+//   const paths =  [pathsJa, pathsEn]
+  
+//   return { paths, fallback: true }
+// }
+
+
 export default Post;

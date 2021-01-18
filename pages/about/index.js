@@ -112,6 +112,17 @@ const About = (props) => {
     )
 };
 
+// 最初に実行される。事前ビルドするパスを配列でreturnする。
+// export async function getStaticPaths() {
+
+//     const paths =  [
+//         { locale: 'en-US' },
+//         { locale: 'ja' },
+//       ]
+    
+//     return { paths, fallback: true }
+// }
+
 export async function getStaticProps ({ locale })  {
     const about = await getData("about", "", locale);
     const introduction = about[0].fields.about

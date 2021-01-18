@@ -4,7 +4,7 @@ import Router from 'next/router'
 
 // import Title from "../../components/Title"
 import dynamic from 'next/dynamic'
-import {useRouter} from 'next/router'
+// import {useRouter} from 'next/router'
 
 const Title = dynamic(
   () => import('../../components/Title'),
@@ -20,13 +20,13 @@ const variants = {
     transition: { duration: 2 }
   }
 
-const Contact = (props) => {
+const Contact = ({locale}) => {
       const [name, setName] = useState("");
       const [email, setEmail] = useState("");
       const [message, setMessage] = useState("");
 
-      const router = useRouter();
-      const { locale, locales, defaultLocale } = router
+    //   const router = useRouter();
+    //   const { locale, locales, defaultLocale } = router
 
       const sentence = {
           description: {
@@ -106,8 +106,26 @@ const Contact = (props) => {
     )
 };
 
-Contact.getInitialProps = async function() {
-    return { shows: ""};
+// export async function getStaticPaths() {
+//     const paths =  [
+//         { locale: 'en-US' },
+//         { locale: 'ja' },
+//       ]
+//     return { paths, fallback: true }
+// }
+
+// Contact.getInitialProps = async function() {
+//     return { shows: ""};
+// };
+
+export async function getStaticProps ({ locale })  {
+    const shows = ""
+    return { 
+        props: {
+            shows,
+            locale
+        },
+    };
 };
 
 const validateEmail = (email) => {

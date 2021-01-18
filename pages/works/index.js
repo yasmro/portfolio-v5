@@ -138,6 +138,17 @@ function SamplePrevArrow(props) {
     );
 }
 
+
+// export async function getStaticPaths() {
+
+//     const paths =  [
+//         { locale: 'en-US' },
+//         { locale: 'ja' },
+//       ]
+    
+//     return { paths, fallback: true }
+// }
+
 export async function getStaticProps ({ locale })  {
     const shows = await getAllPosts();
     return { 

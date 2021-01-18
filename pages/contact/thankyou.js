@@ -30,8 +30,28 @@ const ContactThankYou = (props) => {
     )
 };
 
-ContactThankYou.getInitialProps = async function() {
-    return { shows: ""};
+// ContactThankYou.getInitialProps = async function() {
+//     return { shows: ""};
+// };
+
+export async function getStaticProps ({ locale })  {
+    const shows = ""
+    return { 
+        props: {
+            shows,
+            locale
+        },
+    };
 };
+
+// export async function getStaticPaths() {
+
+//     const paths =  [
+//         { locale: 'en-US' },
+//         { locale: 'ja' },
+//       ]
+    
+//     return { paths, fallback: true }
+// }
 
 export default ContactThankYou;
