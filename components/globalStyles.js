@@ -1,8 +1,5 @@
 import {　createGlobalStyle } from 'styled-components';
 
-
-
-export default createGlobalStyle`
     // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@100;300;700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
@@ -12,6 +9,10 @@ export default createGlobalStyle`
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,00;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
+
+
+export default createGlobalStyle`
+
    
     *{
       font-family: 'Karla', 'Noto Sans JP','Noto Serif JP',   sans-serif;

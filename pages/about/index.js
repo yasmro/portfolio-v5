@@ -81,13 +81,13 @@ const About = (props) => {
                                                 </div>
                                                 <div className={"card-text " + (locale==="ja" ? "japanese" : "")}>
                                                     <p>{skill.description}</p>
-                                                    {/* <div className="mb-4">
+                                                    <div className="mb-4">
                                                     {   
                                                         skill.relatedSkills?.map( tag =>
                                                         <span tag={`skill-${index}-${tag}`} className="mr-2 badge border text-dark rounded-0"><span>{tag}</span></span>
                                                         )
                                                     }
-                                                    </div> */}
+                                                    </div>
                                                     {
                                                         skill.workSlug &&
                                                         <div className="mt-3 link rounded-0 text-right position-absolute" style={{ bottom: "10px", "right": "10px"}}>
@@ -112,13 +112,14 @@ const About = (props) => {
     )
 };
 
-export async function getServerSideProps ({ locale })  {
+export async function getStaticProps ({ locale })  {
     const about = await getData("about", "", locale);
     const introduction = about[0].fields.about
     const whatICanDo = about[0].fields.whatICanDo.map( skill => {
         return(
             {title: skill.fields.title, description:skill.fields.description, 
-                 workSlug: (skill.fields.workSlug === undefined) ? "" : skill.fields.workSlug}
+                 workSlug: (skill.fields.workSlug === undefined) ? "" : skill.fields.workSlug,
+                 relatedSkills:skill.fields.relatedSkills,}
         )
         // relatedSkills:skill.fields.relatedSkills,
     })
