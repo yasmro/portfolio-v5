@@ -11,7 +11,7 @@ export default async function(req, res) {
     from: senderEmail,
     subject: `New Message From - ${name} (${email})`,
     text: `New Message From - ${name} (${email}). \n ${message}`,
-    html: `<h1>ポートフォリオサイトよりメールです</h1>
+    html: `<h1>ポートフォリオサイトよりメールです </h1>
     <p>差出人名：${name}</p>
     <p>メールアドレス：${email}</p>
     <p>${message}</p>`
