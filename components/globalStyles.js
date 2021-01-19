@@ -102,6 +102,9 @@ export default createGlobalStyle`
     html {
       -webkit-overflow-scrolling: touch;
     }
+    html:focus-within {
+      scroll-behavior: smooth;
+    }
 
     // html {
     //   visibility: hidden;

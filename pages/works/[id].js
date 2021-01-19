@@ -70,8 +70,9 @@ var settings = {
 return(
   <>
   <Head>
-    <title>{props.show.fields.title} - Yu Ohno's site 2020</title>
+    <title>{props.show?.fields.title} - Yu Ohno's site 2020</title>
   </Head>
+  { props.show ?
   <div>
 
     {/* <WorkTitle2 index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
@@ -207,6 +208,7 @@ return(
     </motion.div>
     </AnimatePresence>
   </div>
+  : <p>{props.id}</p>}
   </>
 )};
 
@@ -234,10 +236,19 @@ function SamplePrevArrow(props) {
   );
 }
 
-// export async function getServerSideProps ({ params, locale })  {
+// export async function getStaticPaths() {
+//   const res = await getAllPosts();
+//   var paths = res.map((r) => ({ params: {id:`${r.fields.slug}`}, locale: 'en-US'}))
+//   console.log(paths)
+//   // res?.map((r) => `/works/${r.fields.slug}`) ?? []
+//   return { paths: paths, fallback: false }
+// }
+
+// export async function getStaticProps ({ params, locale })  {
 //   const id = params.id;
 //   const shows = await getAllPosts();
 //   const show = await getPostBySlug(id);
+//   console.log(id)
   
 //   const slugs = res.map( r => r.fields.slug)
 //   const presenceIndex = slugs.indexOf(id)
@@ -246,6 +257,7 @@ function SamplePrevArrow(props) {
 
 //   return { 
 //       props: {
+//           id,
 //           shows,
 //           show,
 //           index:{prev:prevIndex, presence:presenceIndex, next:nextIndex},
@@ -269,14 +281,7 @@ Post.getInitialProps = async function(context) {
 };
 
 
-// export async function getStaticPaths() {
-//   const res = await getAllPosts();
-//   const pathsJa = res.map((r) => ({pages: '/works/[id]', params: {  id: r.fields.slug }, locale: 'ja'}))
-//   const pathsEn = res.map((r) => ({pages: '/works/[id]', params:{ id: r.fields.slug }, locale: 'en-US'}))
-//   const paths =  [pathsJa, pathsEn]
-  
-//   return { paths, fallback: true }
-// }
+
 
 
 export default Post;

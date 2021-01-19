@@ -48,7 +48,7 @@ const About = (props) => {
             <div>
             <DynamicComponentWithCustomLoading title="About" />
                 <div className="container">
-                <motion.div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
+                <div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-0">
                             <div className="col-lg-4 bg-dark" key="shodo_name" style={{minHeight: "350px"}}>
                                 <div className="position-relative w-100 h-100" >
@@ -64,15 +64,15 @@ const About = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                     
 
                     <div className="mt-4">
-                        <motion.h2 custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>{sentence.whatICanDoTitle[locale]}</motion.h2>
+                        <h2 custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>{sentence.whatICanDoTitle[locale]}</h2>
                         <div className="row row-40">
                             {
                                 props.whatICanDo.map( (skill, index) =>
-                                    <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
+                                    <div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
                                         <div className="card whatICanDo h-100">
                                             <div className="card-body">
                                                 <div className="card-title h3">
@@ -101,7 +101,7 @@ const About = (props) => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 )
                             }
                         </div>     
