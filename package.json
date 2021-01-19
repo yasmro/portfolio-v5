@@ -10,7 +10,7 @@
     "@svgr/webpack": "^5.4.0",
     "contentful": "^7.14.8",
     "foundation-sites": "^6.6.3",
-    "framer-motion": "^2.9.4",
+    "framer-motion": "^2.9.5",
     "isomorphic-unfetch": "^3.1.0",
     "json-cyclic": "^1.0.2",
     "mdb-ui-kit": "^2.1.0",

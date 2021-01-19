@@ -42,6 +42,7 @@ export default class MyDocument extends Document {
           }
             `,
           }}></script>
+          <script> </script>
         </body>
       </Html>
     );
