@@ -59,5 +59,8 @@ module.exports = {
       path: '/_next/image',
       domains: ['yasmro.netlify.app', 'images.ctfassets.net'],
     },
+
+    mode: 'development', // 開発モード
+    devtool: 'source-map', // ソースマップファイル出力
     
 };

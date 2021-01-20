@@ -13,32 +13,7 @@ import {　createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 
-/* noto-sans-jp-regular - latin_japanese */
-@font-face {
-  font-family: 'Noto Sans JP';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/static/fonts/noto-sans-jp/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.svg#NotoSansJP') format('svg'); /* Legacy iOS */
-}
-/* noto-sans-jp-700 - latin_japanese */
-@font-face {
-  font-family: 'Noto Sans JP';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.svg#NotoSansJP') format('svg'); /* Legacy iOS */
-}
+
 
 /* karla-200 - latin */
 @font-face {
@@ -145,6 +120,33 @@ export default createGlobalStyle`
        url('/static/fonts/karla/karla-v14-latin-700italic.svg#Karla') format('svg'); /* Legacy iOS */
 }
 
+/* noto-sans-jp-regular - latin_japanese */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/static/fonts/noto-sans-jp/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.woff') format('woff'), /* Modern Browsers */
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.svg#NotoSansJP') format('svg'); /* Legacy iOS */
+}
+/* noto-sans-jp-700 - latin_japanese */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.woff') format('woff'), /* Modern Browsers */
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.svg#NotoSansJP') format('svg'); /* Legacy iOS */
+}
+
 
     *{
       font-family: 'Karla', 'Noto Sans JP','Noto Serif JP',   sans-serif;
@@ -216,8 +218,13 @@ export default createGlobalStyle`
       // --primary1: #aa076b!important;
       // --primary: #61045f!important;
 
-       --primary1: #cc2b5e!important;
-       --primary: #753a88!important;
+      // --primary: #060e6d!important;
+      // --primary1: #0041c3!important;
+
+      // --primary: #ED213A!important;
+      // --primary1: #93291E!important;
+
+      
 
       --secondary: rgba(219,180,0,1) !important;
 
