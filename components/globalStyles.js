@@ -278,14 +278,7 @@ export default createGlobalStyle`
 
     
 
-    .card{
-      background-color: rgba(255,255,255,0.7)!important;
-      border-radius: 0px;
-      -webkit-backdrop-filter: saturate(180%) blur(1.5px);
-      backdrop-filter: saturate(180%) blur(1.5px);
-      
-    }
-
+   
     
 
     .home-jumbotron{
@@ -466,9 +459,23 @@ export default createGlobalStyle`
       right: 0;
     }
 
-    .card{
-      text-align: justify;
-    }
+    // .card{
+      //   background-color: rgba(255,255,255,0.7)!important;
+      //   border-radius: 0px;
+      //   -webkit-backdrop-filter: saturate(180%) blur(1.5px);
+      //   backdrop-filter: saturate(180%) blur(1.5px);
+        
+      // }
+  
+      .card{
+        box-shadow: none;
+        border-radius: 0px;
+        background-color: rgba(255,255,255,0.7)!important;
+        filter: drop-shadow(10px 10px 10px rgba(0,0,0,.05));
+        // backdrop-filter: drop-shadow(0 10px 20px 0 rgba(0,0,0,.05);
+
+        text-align: justify;
+      }
 
     .card-hover{
       transition: all 0.3s;

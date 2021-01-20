@@ -48,7 +48,7 @@ const About = (props) => {
             <div>
             <DynamicComponentWithCustomLoading title="About" />
                 <div className="container">
-                <div custom={0} className="card1" initial="hidden" animate="visible" transition="transition" variants={variants}>
+                <div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-3">
                             <div className="col-lg-4 bg-dark" key="shodo_name" style={{minHeight: "350px"}}>
                                 <div className="position-relative w-100 h-100" >
@@ -72,14 +72,14 @@ const About = (props) => {
                         <div className="row row-40">
                             {
                                 props.whatICanDo.map( (skill, index) =>
-                                    <div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" key={`skill-${index}`}>
-                                        <div className="card1 whatICanDo1 h-100">
+                                    <div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
+                                        <div className="card p-3 h-100">
                                             <div className="card-body">
                                                 <div className="card-title h3">
-                                                    {/* <span className="skillNumber black">{index + 1}</span> */}
+                                                    <span className="mr-3">{index + 1}</span>
                                                     <span className={locale==="ja" ? "japanese" : ""}>{skill.title}</span>
                                                 </div>
-                                                <div className={"position-relative card-text " + (locale==="ja" ? "japanese" : "")}>
+                                                <div className={"card-text " + (locale==="ja" ? "japanese" : "")}>
                                                     <p>{skill.description}</p>
                                                     <div className="mb-4">
                                                     {   
@@ -90,7 +90,7 @@ const About = (props) => {
                                                     </div>
                                                     {
                                                         skill.workSlug &&
-                                                        <div className="mt-3 link rounded-0 text-right position-absolute" style={{ bottom: "-20px", "right": "0px"}}>
+                                                        <div className="mt-3 link rounded-0 text-right position-absolute" style={{ bottom: "20px", "right": "32px"}}>
                                                             <Link href="/works/[id]" as={`/works/${skill.workSlug}`}>
                                                                 <a className="btn btn-black rounded-0">
                                                                     <div className=""><i className="fas fa-arrow-right mr-2"></i><span>View Work</span></div>
