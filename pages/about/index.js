@@ -48,7 +48,7 @@ const About = (props) => {
             <div>
             <DynamicComponentWithCustomLoading title="About" />
                 <div className="container">
-                <div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
+                    <motion.div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
                         <div className="row g-3">
                             <div className="col-lg-4 bg-dark" key="shodo_name" style={{minHeight: "350px"}}>
                                 <div className="position-relative w-100 h-100" >
@@ -64,7 +64,7 @@ const About = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                     
 
                     <div className="mt-4">
@@ -72,11 +72,14 @@ const About = (props) => {
                         <div className="row row-40">
                             {
                                 props.whatICanDo.map( (skill, index) =>
-                                    <div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
+                                    <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
                                         <div className="card p-3 h-100">
                                             <div className="card-body">
-                                                <div className="card-title h3">
-                                                    <span className="mr-3">{index + 1}</span>
+                                                <div className="card-title h3 d-flex">
+                                                    <div className="bg-dark mr-3 text-white text-center"style={{width: "30px"}}>
+                                                        <span>{index + 1}</span>
+                                                    </div>
+                                                    
                                                     <span className={locale==="ja" ? "japanese" : ""}>{skill.title}</span>
                                                 </div>
                                                 <div className={"card-text " + (locale==="ja" ? "japanese" : "")}>
@@ -101,7 +104,7 @@ const About = (props) => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 )
                             }
                         </div>     

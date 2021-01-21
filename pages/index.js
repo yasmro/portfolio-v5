@@ -16,9 +16,9 @@ import ListCard from '../components/ListCard'
 import { motion, AnimatePresence } from "framer-motion"
 
 const variants = {
-  hidden: { opacity: 0, y: 5, duration: 2},
-  visible: { opacity: 1, y: 0, duration: 2 },
-  hide: { opacity: 0, y: 5, duration: 2},
+  hidden: { opacity: 0, duration: 2},
+  visible: { opacity: 1,  duration: 2 },
+  hide: { opacity: 0,  duration: 2},
   transition: { duration: 2 }
 }
 
@@ -33,17 +33,19 @@ const Index = (props) => {
                 {/* <HomeJumbotron name={myself.name} quickWord={myself.quickWord}/> */}
                 <div  className="home-jumbotron jumbotron jumbotron-fluid py-4 mb-5 d-flex" style={{height: "calc(100vh - 90px)", marginTop: "0px", minHeight: "540px", color: "white"}}>
                     <div className="container text-center h-100" >
-                        <motion.div initial="hidden" animate="visible" transition="transition" variants={variants}  className="d-inline-block p-5" style={{ marginTop: "16vh"}} >
-                        <div className="quotation p-5 " style={{ margin: "auto 0"}}>
-                            <div className="text-shadow">
-                            <h1 className="display-1"><span className="font-weight-bold">{myself.name.split(' ')[0].toUpperCase()}</span><span style={{fontWeight:200, fontSize:"108%"}}>{myself.name.split(' ')[1].toUpperCase()}</span></h1>
-                            <span style={{fontWeight:200}} className="lead">I'm working as</span><br />
-                            <span style={{fontWeight:200}} className="display-6" >Engineer</span><br />
-                            <span style={{fontWeight:200}} className="display-6">Artist</span><span style={{fontWeight:200}} className="lead"> and <br /></span>
-                            <span style={{fontWeight:200}} className="display-6">Calligrapher.</span>
+                        <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="center-middle p-5 mt-5">
+                
+                            <div className="quotation p-5 " style={{ margin: "auto 0"}}>
+                                <div className="text-shadow">
+                                <h1 className="display-1"><span className="font-weight-bold">{myself.name.split(' ')[0].toUpperCase()}</span><span style={{fontWeight:200, fontSize:"108%"}}>{myself.name.split(' ')[1].toUpperCase()}</span></h1>
+                                <span style={{fontWeight:200}} className="lead">I'm working as</span><br />
+                                <span style={{fontWeight:200}} className="display-6" >Engineer</span><br />
+                                <span style={{fontWeight:200}} className="display-6">Artist</span><span style={{fontWeight:200}} className="lead"> and <br /></span>
+                                <span style={{fontWeight:200}} className="display-6">Calligrapher.</span>
+                                </div>
+                                {/* <img src={require('../data/images/Toplogo.svg')} className="" id="toplogo" alt="Yu-logo"/> */}
                             </div>
-                            {/* <img src={require('../data/images/Toplogo.svg')} className="" id="toplogo" alt="Yu-logo"/> */}
-                        </div>
+              
                         </motion.div>
                     </div>
 

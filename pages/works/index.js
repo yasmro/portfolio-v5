@@ -100,7 +100,7 @@ const Index = (props) => {
                                     <>
                                         <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
                                             <div className="col-md-6 col-lg-4 g-3" Style="align-items: stretch;" key={`worklist-${show.fields.slug}`} >
-                                                <ListCard index={index} title={show.fields.title} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
+                                                <ListCard index={index} title={show.fields.title} jaTitle={show.fields.jaTitle} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
                                             </div>
                                         </Link>
                                     </>

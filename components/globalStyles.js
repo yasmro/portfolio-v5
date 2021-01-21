@@ -11,145 +11,145 @@ import {　createGlobalStyle } from 'styled-components';
     // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
 
 
+
+// /* karla-200 - latin */
+// @font-face {
+//   font-family: 'Karla';
+//   font-style: normal;
+//   font-weight: 200;
+//   src: url('/static/fonts/karla/karla-v14-latin-200.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/karla/karla-v14-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/karla/karla-v14-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-200.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/karla/karla-v14-latin-200.svg#Karla') format('svg'); /* Legacy iOS */
+// }
+// /* karla-300 - latin */
+// @font-face {
+//   font-family: 'Karla';
+//   font-style: normal;
+//   font-weight: 300;
+//   src: url('/static/fonts/karla/karla-v14-latin-300.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/karla/karla-v14-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/karla/karla-v14-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-300.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/karla/karla-v14-latin-300.svg#Karla') format('svg'); /* Legacy iOS */
+// }
+// /* karla-regular - latin */
+// @font-face {
+//   font-family: 'Karla';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url('/static/fonts/karla/karla-v14-latin-regular.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/karla/karla-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/karla/karla-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/karla/karla-v14-latin-regular.svg#Karla') format('svg'); /* Legacy iOS */
+// }
+// /* karla-700 - latin */
+// @font-face {
+//   font-family: 'Karla';
+//   font-style: normal;
+//   font-weight: 700;
+//   src: url('/static/fonts/karla/karla-v14-latin-700.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/karla/karla-v14-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/karla/karla-v14-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-700.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/karla/karla-v14-latin-700.svg#Karla') format('svg'); /* Legacy iOS */
+// }
+// /* karla-200italic - latin */
+// @font-face {
+//   font-family: 'Karla';
+//   font-style: italic;
+//   font-weight: 200;
+//   src: url('/static/fonts/karla/karla-v14-latin-200italic.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/karla/karla-v14-latin-200italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/karla/karla-v14-latin-200italic.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-200italic.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-200italic.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/karla/karla-v14-latin-200italic.svg#Karla') format('svg'); /* Legacy iOS */
+// }
+// /* karla-300italic - latin */
+// @font-face {
+//   font-family: 'Karla';
+//   font-style: italic;
+//   font-weight: 300;
+//   src: url('/static/fonts/karla/karla-v14-latin-300italic.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/karla/karla-v14-latin-300italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/karla/karla-v14-latin-300italic.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-300italic.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/karla/karla-v14-latin-300italic.svg#Karla') format('svg'); /* Legacy iOS */
+// }
+// /* karla-italic - latin */
+// @font-face {
+//   font-family: 'Karla';
+//   font-style: italic;
+//   font-weight: 400;
+//   src: url('/static/fonts/karla/karla-v14-latin-italic.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/karla/karla-v14-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/karla/karla-v14-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-italic.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/karla/karla-v14-latin-italic.svg#Karla') format('svg'); /* Legacy iOS */
+// }
+// /* karla-700italic - latin */
+// @font-face {
+//   font-family: 'Karla';
+//   font-style: italic;
+//   font-weight: 700;
+//   src: url('/static/fonts/karla/karla-v14-latin-700italic.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/karla/karla-v14-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/karla/karla-v14-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-700italic.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/karla/karla-v14-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/karla/karla-v14-latin-700italic.svg#Karla') format('svg'); /* Legacy iOS */
+// }
+
+// /* noto-sans-jp-regular - latin_japanese */
+// @font-face {
+//   font-family: 'Noto Sans JP';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url('/static/fonts/noto-sans-jp/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.svg#NotoSansJP') format('svg'); /* Legacy iOS */
+// }
+// /* noto-sans-jp-700 - latin_japanese */
+// @font-face {
+//   font-family: 'Noto Sans JP';
+//   font-style: normal;
+//   font-weight: 700;
+//   src: url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.woff') format('woff'), /* Modern Browsers */
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.svg#NotoSansJP') format('svg'); /* Legacy iOS */
+// }
+
+// filter: brightness(0.1) grayscale(100%) invert(1);
+
 export default createGlobalStyle`
 
-
-
-/* karla-200 - latin */
-@font-face {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 200;
-  src: url('/static/fonts/karla/karla-v14-latin-200.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/karla/karla-v14-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/karla/karla-v14-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-200.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/karla/karla-v14-latin-200.svg#Karla') format('svg'); /* Legacy iOS */
-}
-/* karla-300 - latin */
-@font-face {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 300;
-  src: url('/static/fonts/karla/karla-v14-latin-300.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/karla/karla-v14-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/karla/karla-v14-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-300.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/karla/karla-v14-latin-300.svg#Karla') format('svg'); /* Legacy iOS */
-}
-/* karla-regular - latin */
-@font-face {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/static/fonts/karla/karla-v14-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/karla/karla-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/karla/karla-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/karla/karla-v14-latin-regular.svg#Karla') format('svg'); /* Legacy iOS */
-}
-/* karla-700 - latin */
-@font-face {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/static/fonts/karla/karla-v14-latin-700.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/karla/karla-v14-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/karla/karla-v14-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/karla/karla-v14-latin-700.svg#Karla') format('svg'); /* Legacy iOS */
-}
-/* karla-200italic - latin */
-@font-face {
-  font-family: 'Karla';
-  font-style: italic;
-  font-weight: 200;
-  src: url('/static/fonts/karla/karla-v14-latin-200italic.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/karla/karla-v14-latin-200italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/karla/karla-v14-latin-200italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-200italic.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-200italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/karla/karla-v14-latin-200italic.svg#Karla') format('svg'); /* Legacy iOS */
-}
-/* karla-300italic - latin */
-@font-face {
-  font-family: 'Karla';
-  font-style: italic;
-  font-weight: 300;
-  src: url('/static/fonts/karla/karla-v14-latin-300italic.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/karla/karla-v14-latin-300italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/karla/karla-v14-latin-300italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-300italic.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/karla/karla-v14-latin-300italic.svg#Karla') format('svg'); /* Legacy iOS */
-}
-/* karla-italic - latin */
-@font-face {
-  font-family: 'Karla';
-  font-style: italic;
-  font-weight: 400;
-  src: url('/static/fonts/karla/karla-v14-latin-italic.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/karla/karla-v14-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/karla/karla-v14-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-italic.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/karla/karla-v14-latin-italic.svg#Karla') format('svg'); /* Legacy iOS */
-}
-/* karla-700italic - latin */
-@font-face {
-  font-family: 'Karla';
-  font-style: italic;
-  font-weight: 700;
-  src: url('/static/fonts/karla/karla-v14-latin-700italic.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/karla/karla-v14-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/karla/karla-v14-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-700italic.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/karla/karla-v14-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/karla/karla-v14-latin-700italic.svg#Karla') format('svg'); /* Legacy iOS */
-}
-
-/* noto-sans-jp-regular - latin_japanese */
-@font-face {
-  font-family: 'Noto Sans JP';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/static/fonts/noto-sans-jp/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-regular.svg#NotoSansJP') format('svg'); /* Legacy iOS */
-}
-/* noto-sans-jp-700 - latin_japanese */
-@font-face {
-  font-family: 'Noto Sans JP';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.woff') format('woff'), /* Modern Browsers */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/static/fonts/noto-sans-jp/noto-sans-jp-v28-latin_japanese-700.svg#NotoSansJP') format('svg'); /* Legacy iOS */
-}
-
-
     *{
-      font-family: 'Karla', 'Noto Sans JP','Noto Serif JP',   sans-serif;
+      font-family:  'Karla', 'Noto Sans JP','Noto Serif JP',   sans-serif;
       // font-family:  fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
       font-style: italic !important; 
       font-weight: 400;
@@ -162,8 +162,8 @@ export default createGlobalStyle`
     //   // corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron,
     // }
 
-    .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span{
-      font-family: 'Noto Sans JP', sans-serif;
+    .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a{
+      font-family:  dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, fot-rodin-pron,'Noto Sans JP', sans-serif;
       font-style: normal !important;
       letter-spacing: -0.3px;
     }
@@ -186,6 +186,12 @@ export default createGlobalStyle`
         outline:0;
     }
 
+    .center-middle{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+    }
 
 
     :root {
@@ -224,7 +230,8 @@ export default createGlobalStyle`
       // --primary: #ED213A!important;
       // --primary1: #93291E!important;
 
-      
+      --primary: #141e30!important;
+      --primary1: #243b55!important;
 
       --secondary: rgba(219,180,0,1) !important;
 
@@ -503,7 +510,7 @@ export default createGlobalStyle`
       // background-color: var(--primary)!important;
       background: var(--gradient); 
       color: white;
-      box-shadow: 0 10px 20px 0 rgba(202,12,53,.1);
+      filter: drop-shadow(0 10px 20px 0  var(--primary));
       transform: translateY(-5px);
       transition: all 0.3s;
       cursor: pointer;

@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 import styled from 'styled-components'
 
-const ListCard = ({title, locale, jaTitle="", index=0, description="", thumbnail={}, category="", slug}) => (
+const ListCard = ({title, locale, jaTitle="", index=0, description="", thumbnail={}, category="", slug=""}) => (
         <div className="card card-hover">
             <div className="bg-light hover-overlay ripple position-relative" style={{ height: "250px"}}data-ripple-color="light">
                 <img

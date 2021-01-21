@@ -27,7 +27,7 @@ const WorkTitle4 = ({index=0, length=0, title, locale="", jaTitle="", descriptio
                 {locale==="ja" && 
                 <h2 className="h4 gradient_text text-shadow font-weight-bold japanese">{jaTitle}</h2>
                 }
-                <p className="mb-5 lead">{abstract}</p>
+                <p className={"mb-5 lead1 " + (locale==="ja" ? "japanese" : "")}>{abstract}</p>
               </div>
               <div className="d-flex mb-2 justify-content-center justify-content-lg-start">
                 <div>
@@ -38,8 +38,8 @@ const WorkTitle4 = ({index=0, length=0, title, locale="", jaTitle="", descriptio
                   </div>
                 </div>
 
-                <div className="">
-                  <span className="badge bg-black shadow rounded-0"><span className="font-weight-bold">{category}</span></span>
+                <div className={(locale==="ja" ? "japanese" : "")}>
+                  <span className={"badge bg-black shadow rounded-0 " }><span className="font-weight-bold">{category}</span></span>
               
                     {tags.length > 0 &&
                       <>

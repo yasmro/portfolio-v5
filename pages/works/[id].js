@@ -77,7 +77,7 @@ return(
 
     {/* <WorkTitle2 index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
     {/* <WorkTitle3 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
-    <WorkTitle4 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} jaTitle={props.show.fields.jaTitle} locale={locale} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} />
+    <WorkTitle4 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} jaTitle={props.show.fields.jaTitle} locale={locale} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} locale={props.locale}/>
     <AnimatePresence exitBeforeEnter>
     <motion.div initial="hidden" animate="visible" exit="hide" transition="transition" variants={variants} key={props.show.fields.title} className="container mt-5 ">
       <div className="row row-40">
@@ -87,7 +87,7 @@ return(
             <div className="d-inline d-lg-none">
               <div className="">
                   <span className="h3">{carouselIndex + 1}</span>/{props.show.fields.photos.length}
-                  <p className="japanese"><span className="japanese font-weight-bold">{props.show.fields.photos[carouselIndex].fields.title}</span> {props.show.fields.photos[carouselIndex].fields.description}</p>
+                  <p className={props.locale==="ja" ? "japanese" : ""}><span className="japanese font-weight-bold">{props.show.fields.photos[carouselIndex].fields.title}</span> {props.show.fields.photos[carouselIndex].fields.description}</p>
               </div>
               <Slider {...settings}>
                 {
@@ -110,10 +110,13 @@ return(
             </div> */}
             <div className="d-none d-lg-inline">
             <div className="h4">{props.show.fields.title}</div>
+            {props.locale==="ja" &&
+              <p className="japanese">{props.show.fields.jaTitle}</p>
+            }
             <hr />
             </div>
 
-            <ReactMarkdown children={props.show.fields.description} />
+            <ReactMarkdown className={props.locale==="ja" ? "japanese" : ""} children={props.show.fields.description} />
           </div>
           
         </div>
@@ -130,8 +133,8 @@ return(
                   <span className="position-absolute text-right" style={{ bottom: "0px", right: "5px" }}>{props.show.fields.photos.length}</span>
                 </div>
                 <div className="position-absolute align-middle" style={{top: "1px", left: "75px"}}>
-                <span className="h4">{props.show.fields.photos[carouselIndex].fields.title}</span>
-                <p className="japanese">{props.show.fields.photos[carouselIndex].fields.description}</p>
+                <span className={"h4 " + (props.locale==="ja" ? "japanese" : "")}>{props.show.fields.photos[carouselIndex].fields.title}</span>
+                <p className={ (props.locale==="ja" ? "japanese" : "")}>{props.show.fields.photos[carouselIndex].fields.description}</p>
                 </div>
                 
               </div>
@@ -208,7 +211,7 @@ return(
     </motion.div>
     </AnimatePresence>
   </div>
-  : <p>{props.id}</p>}
+  : <p>...</p>}
   </>
 )};
 
@@ -236,49 +239,60 @@ function SamplePrevArrow(props) {
   );
 }
 
-// export async function getStaticPaths() {
-//   const res = await getAllPosts();
-//   var paths = res.map((r) => ({ params: {id:`${r.fields.slug}`}, locale: 'en-US'}))
-//   console.log(paths)
-//   // res?.map((r) => `/works/${r.fields.slug}`) ?? []
-//   return { paths: paths, fallback: false }
-// }
+export async function getStaticPaths({ locales }) {
+  const res = await getAllPosts();
 
-// export async function getStaticProps ({ params, locale })  {
-//   const id = params.id;
-//   const shows = await getAllPosts();
-//   const show = await getPostBySlug(id);
-//   console.log(id)
+  const paths = locales.reduce(
+    (acc, next) => [
+      ...acc,
+      ...res.map((r) => ({
+        params: {
+          id:`${r.fields.slug}`,
+        },
+        locale: next,
+      })),
+    ],
+    []
+  );
+
+  console.log(paths)
+  // res?.map((r) => `/works/${r.fields.slug}`) ?? []
+  return { paths: paths, fallback: false }
+}
+
+export async function getStaticProps ({params={id:""}, locale=""})  {
+  const id = params.id;
+
+  const shows = await getAllPosts();
+  const show = await getPostBySlug(id, locale);
+  
+  const slugs = shows.map( r => r.fields.slug)
+  const presenceIndex = slugs.indexOf(id)
+  const prevIndex = (presenceIndex - 1 + slugs.length) % (slugs.length) 
+  const nextIndex = (presenceIndex + 1 + slugs.length) % (slugs.length)
+  return { 
+      props: {
+          shows,
+          show,
+          index:{prev:prevIndex, presence:presenceIndex, next:nextIndex},
+          prevShow: shows[prevIndex], nextShow: shows[nextIndex],
+          locale
+      },
+  };
+};
+
+// Post.getInitialProps = async function(context) {
+//   const { id } = context.query;
+//   const res = await getAllPosts();
+//   const res2 = await getPostBySlug(id);
   
 //   const slugs = res.map( r => r.fields.slug)
 //   const presenceIndex = slugs.indexOf(id)
 //   const prevIndex = (presenceIndex - 1 + slugs.length) % (slugs.length) 
-//   const nextIndex = (presenceIndex + 1 + slugs.length) % (slugs.length)
+//   const nextIndex = (presenceIndex + 1 + slugs.length) % (slugs.length) 
 
-//   return { 
-//       props: {
-//           id,
-//           shows,
-//           show,
-//           index:{prev:prevIndex, presence:presenceIndex, next:nextIndex},
-//           prevShow: res[prevIndex], nextShow: res[nextIndex],
-//           locale
-//       },
-//   };
+//   return { shows: res, index:{prev:prevIndex, presence:presenceIndex, next:nextIndex}, show: res2, prevShow: res[prevIndex], nextShow: res[nextIndex] };
 // };
-
-Post.getInitialProps = async function(context) {
-  const { id } = context.query;
-  const res = await getAllPosts();
-  const res2 = await getPostBySlug(id);
-  
-  const slugs = res.map( r => r.fields.slug)
-  const presenceIndex = slugs.indexOf(id)
-  const prevIndex = (presenceIndex - 1 + slugs.length) % (slugs.length) 
-  const nextIndex = (presenceIndex + 1 + slugs.length) % (slugs.length) 
-
-  return { shows: res, index:{prev:prevIndex, presence:presenceIndex, next:nextIndex}, show: res2, prevShow: res[prevIndex], nextShow: res[nextIndex] };
-};
 
 
 
