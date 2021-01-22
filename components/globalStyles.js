@@ -476,7 +476,7 @@ export default createGlobalStyle`
       border-right: solid 3px var(--secondary);
       border-bottom: solid 3px var(--secondary);
       bottom:0;
-      right: 0;
+      right:0;
     }
   
       .card{
