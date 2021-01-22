@@ -485,13 +485,13 @@ export default createGlobalStyle`
         // background-color: rgba(255,255,255,0.6)!important;
         // background: linear-gradient(23.4deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) )!important;
         background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
-        border: 1px solid rgba(180,180,180,0.2);
+        // border: 1px solid rgba(180,180,180,0.2);
         
-        // filter: drop-shadow(10px 10px 5px rgba(0,0,0,.15));
-        -webkit-filter: drop-shadow(10px 10px 5px rgba(0,0,0,.2));
+        filter: drop-shadow(10px 10px 5px rgba(0,0,0,.15));
+        -webkit-filter: drop-shadow(10px 10px 5px rgba(0,0,0,.15));
 
-        backdrop-filter: saturate(180%) blur(1.5px);
-        -webkit-backdrop-filter: saturate(180%) blur(1.5px);
+        // backdrop-filter: saturate(180%) blur(1.5px);
+        // -webkit-backdrop-filter: saturate(180%) blur(1.5px);
         text-align: justify;
       }
 
