@@ -162,8 +162,8 @@ export default createGlobalStyle`
     //   // corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron,
     // }
 
-    .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a{
-      font-family:  dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, fot-rodin-pron,'Noto Sans JP', sans-serif;
+    .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
+      font-family: kozuka-gothic-pro, dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, fot-rodin-pron,'Noto Sans JP', sans-serif;
       font-style: normal !important;
       letter-spacing: -0.3px;
     }
@@ -218,8 +218,9 @@ export default createGlobalStyle`
       // --primary1: #cc2b5e!important;
       // --primary: #753a88!important;
 
-      // --primary1: #36d1dc!important;
-      // --primary: #004e92!important;
+      --primary2:purple !important;
+      --primary: #36d1dc!important;
+      --primary1: #004e92!important;
 
       // --primary1: #aa076b!important;
       // --primary: #61045f!important;
@@ -230,12 +231,19 @@ export default createGlobalStyle`
       // --primary: #ED213A!important;
       // --primary1: #93291E!important;
 
-      --primary: #141e30!important;
-      --primary1: #243b55!important;
+      // --primary: #141e30!important;
+      // --primary1: #243b55!important;
 
+      // --primary: #AA076B!important;
+      // --primary1: #fd1d1d!important;
+
+      --primary: #d3381c !important;
+      --primary2: #b94047!important;
+      // --primary1:#640125!important;
+      --primary1: #b30050 !important;
       --secondary: rgba(219,180,0,1) !important;
 
-      --gradient: -webkit-linear-gradient(135deg, var(--primary),  var(--primary1))!important;
+      --gradient: -webkit-linear-gradient(135deg,  var(--primary1),  var(--primary))!important;
 
     }
 
@@ -243,7 +251,8 @@ export default createGlobalStyle`
       background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      // text-shadow: 0 .5rem .75rem var(--primary)!important;
+      // filter: drop-shadow(0.25rem .25rem 2rem var(--primary))!important;
+      // text-shadow: 0.25rem .25rem 10rem var(--primary)!important;
     }
 
     html {
@@ -270,12 +279,16 @@ export default createGlobalStyle`
       //     rgba(0 0 0 / 0) 20px
       //   );
 
-      background: #fafafa;
+      // background: #fafafa;
+      // background: #262626!important;
+      // color: white;
+      
+
       // background: #0a0a0a;
       // color: #fafafa;
 
-      // background-image: linear-gradient(23.4deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.95) 80%),
-      // url( '/static/images/pattern_black.png');
+      background-image: linear-gradient(23.4deg, rgba(250,250,250,0.9) 0%, rgba(250,250,250,0.99) 80%),
+      url( '/static/images/pattern_black.png');
     }
 
     .jumbotron{
@@ -465,22 +478,20 @@ export default createGlobalStyle`
       bottom:0;
       right: 0;
     }
-
-    // .card{
-      //   background-color: rgba(255,255,255,0.7)!important;
-      //   border-radius: 0px;
-      //   -webkit-backdrop-filter: saturate(180%) blur(1.5px);
-      //   backdrop-filter: saturate(180%) blur(1.5px);
-        
-      // }
   
       .card{
         box-shadow: none;
         border-radius: 0px;
-        background-color: rgba(255,255,255,0.7)!important;
-        filter: drop-shadow(10px 10px 10px rgba(0,0,0,.05));
-        // backdrop-filter: drop-shadow(0 10px 20px 0 rgba(0,0,0,.05);
+        // background-color: rgba(255,255,255,0.6)!important;
+        // background: linear-gradient(23.4deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) )!important;
+        background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
+        border: 1px solid rgba(180,180,180,0.2);
+        
+        // filter: drop-shadow(10px 10px 5px rgba(0,0,0,.15));
+        -webkit-filter: drop-shadow(10px 10px 5px rgba(0,0,0,.2));
 
+        backdrop-filter: saturate(180%) blur(1.5px);
+        -webkit-backdrop-filter: saturate(180%) blur(1.5px);
         text-align: justify;
       }
 
@@ -508,8 +519,10 @@ export default createGlobalStyle`
     .card-hover:hover{
       // border-color: var(--primary)!important;
       // background-color: var(--primary)!important;
-      background: var(--gradient); 
+      border: none;
+      background: var(--gradient)!important; 
       color: white;
+      
       filter: drop-shadow(0 10px 20px 0  var(--primary));
       transform: translateY(-5px);
       transition: all 0.3s;
@@ -630,7 +643,7 @@ export default createGlobalStyle`
   background: #343a40;
   filter: invert(50%) grayscale(100%);
   border: 1px solid black;
-  height: 2px;
+  height: 3px;
   width: 100%;
   position: absolute;
   top: 0;

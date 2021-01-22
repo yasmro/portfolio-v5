@@ -16,7 +16,7 @@ const variants = {
 const WorkTitle4 = ({index=0, length=0, title, locale="", jaTitle="", description="", category="", tags=[], abstract="", thumbnail={}}) => (
   <>
   {/* style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}} */}
-  <div className="jumbotron-fluid mb-5 py-0 py-lg-0" style={{backgroundColor: "#ecf2f2", height: "40vh", minHeight: "500px"}}>
+  <div className="jumbotron-fluid mb-5 py-0 py-lg-0 " style={{backgroundColor: "#ecf2f2", height: "40vh", minHeight: "500px"}}>
     <AnimatePresence exitBeforeEnter>
       <motion.div initial="hidden" animate="visible" transition="transition" exit="hide" variants={variants} key={`${title}-title`} className="container h-100">
         <div className="row row-20 d-flex h-100" >
@@ -27,7 +27,7 @@ const WorkTitle4 = ({index=0, length=0, title, locale="", jaTitle="", descriptio
                 {locale==="ja" && 
                 <h2 className="h4 gradient_text text-shadow font-weight-bold japanese">{jaTitle}</h2>
                 }
-                <p className={"mb-5 lead1 " + (locale==="ja" ? "japanese" : "")}>{abstract}</p>
+                <p className={"mb-5 " + (locale==="ja" ? "japanese" : "")}>{abstract}</p>
               </div>
               <div className="d-flex mb-2 justify-content-center justify-content-lg-start">
                 <div>

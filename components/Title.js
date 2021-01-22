@@ -11,12 +11,13 @@ const variants = {
   transition: { duration: 2 }
 }
 
-const Title = ({title, description}) => (
+const Title = ({title, description, locale="", jaTitle="日本語テスト"}) => (
   <div className="jumbotron jumbotron-fluid py-5 text-center bg-light mb-5" >
     <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
         <h1 className="quotation display-2 text-shadow">
           {/* <ShuffleText content={title} charFrameTime={35} charFrames={21} /> */}
           {title}
+          {/* <span className="japanese h4" style={{marginTop: "-40px"}}>{jaTitle}</span> */}
         </h1>
         <p className="lead">{description}</p>
         {/* <h1 className="display-2 position-relative">

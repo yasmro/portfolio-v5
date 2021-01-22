@@ -87,12 +87,13 @@ const Header = ({ href, children }) => {
     </nav>
 
       <div className="d-lg-none d-inline">
-        <div className={" button_container " + (isToggle ? "toggle-active" : "")} id="toggle" onClick={() => setIsToggle(!isToggle)}>
-          <span className="top"></span>
-          <span className="middle"></span>
-          <span className="bottom"></span>
+        <div className="menu-button">
+          <div className={"button_container " + (isToggle ? "toggle-active" : "")} id="toggle" onClick={() => setIsToggle(!isToggle)}>
+            <span className="top"></span>
+            <span className="middle"></span>
+            <span className="bottom"></span>
+          </div>
         </div>
-
 
         <div className={"overlay " + (isToggle ? "open" : "")} style={{visibility: (isToggle ? "visible" : "hidden")}}  id="overlay">
           <nav className="overlay-menu">

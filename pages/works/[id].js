@@ -254,8 +254,6 @@ export async function getStaticPaths({ locales }) {
     ],
     []
   );
-
-  console.log(paths)
   // res?.map((r) => `/works/${r.fields.slug}`) ?? []
   return { paths: paths, fallback: false }
 }

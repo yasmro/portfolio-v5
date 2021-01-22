@@ -19,7 +19,7 @@ const ListCard = ({title, locale, jaTitle="", index=0, description="", thumbnail
                     
                 />
                 <span className="badge bg-black rounded-0 shadow position-absolute" style={{bottom:"10px", left: "10px"}}>
-                    <span className="h6">{category}</span>
+                    <span className={"font-weight-bold " + (locale==="ja" ? "japanese" : "h6")}>{category}</span>
                 </span>
             </div>
             <div className="card-body">
