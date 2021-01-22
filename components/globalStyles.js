@@ -279,7 +279,7 @@ export default createGlobalStyle`
       //     rgba(0 0 0 / 0) 20px
       //   );
 
-      // background: #fafafa;
+      background: #fafafa;
       // background: #262626!important;
       // color: white;
       
@@ -287,8 +287,8 @@ export default createGlobalStyle`
       // background: #0a0a0a;
       // color: #fafafa;
 
-      background-image: linear-gradient(23.4deg, rgba(250,250,250,0.9) 0%, rgba(250,250,250,0.99) 80%),
-      url( '/static/images/pattern_black.png');
+      // background-image: linear-gradient(23.4deg, rgba(250,250,250,0.9) 0%, rgba(250,250,250,0.99) 80%),
+      // url( '/static/images/pattern_black.png');
     }
 
     .jumbotron{
