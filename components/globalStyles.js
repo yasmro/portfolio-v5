@@ -483,21 +483,31 @@ export default createGlobalStyle`
       bottom:0;
       right:0;
     }
-  
+
       .card{
         box-shadow: none;
         border-radius: 0px;
         // background-color: rgba(255,255,255,0.6)!important;
         // background: linear-gradient(23.4deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) )!important;
-        background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
+        // background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
+        background: rgba(0,0,0,0);
         border: 1px solid rgba(180,180,180,0.2);
         
-        filter: drop-shadow(10px 10px 5px rgba(0,0,0,.15));
-        -webkit-filter: drop-shadow(10px 10px 5px rgba(0,0,0,.15));
-
-        backdrop-filter: saturate(180%) blur(1.5px);
-        -webkit-backdrop-filter: saturate(180%) blur(1.5px);
+        filter: drop-shadow(10px 10px 5px rgba(0,0,0,.2));
+        -webkit-filter: drop-shadow(10px 10px 5px rgba(0,0,0,.2));
         text-align: justify;
+      }
+
+      .card::after{
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: -1;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
+        filter: blur(15px);
       }
 
     .card-hover{
