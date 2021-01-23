@@ -495,8 +495,8 @@ export default createGlobalStyle`
         filter: drop-shadow(10px 10px 5px rgba(0,0,0,.15));
         -webkit-filter: drop-shadow(10px 10px 5px rgba(0,0,0,.15));
 
-        // backdrop-filter: saturate(180%) blur(1.5px);
-        // -webkit-backdrop-filter: saturate(180%) blur(1.5px);
+        backdrop-filter: saturate(180%) blur(1.5px);
+        -webkit-backdrop-filter: saturate(180%) blur(1.5px);
         text-align: justify;
       }
 
