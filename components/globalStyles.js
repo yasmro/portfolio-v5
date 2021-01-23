@@ -149,9 +149,9 @@ import {　createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
 
     *{
-      font-family:  'Karla', 'Noto Sans JP','Noto Serif JP',   sans-serif;
+      font-family:  TsukuOldGothicStd-B, 'Noto Sans JP',  'Karla','Noto Serif JP',   sans-serif;
       // font-family:  fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
-      font-style: italic !important; 
+      // font-style: italic !important; 
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -160,12 +160,14 @@ export default createGlobalStyle`
     // .display-2, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     //   font-family: a-otf-ud-shin-go-pr6n,  neue-haas-grotesk-display, ff-dax-pro, sans-serif;
     //   // corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron,
-    // }
+    // }UDKakugoC80Pro-B,
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family: kozuka-gothic-pro, dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, fot-rodin-pron,'Noto Sans JP', sans-serif;
+      font-family: TsukuOldGothicStd-B, fot-udkakugo-large-pr6n,fot-rodin-pron,'Noto Sans JP', sans-serif;
       font-style: normal !important;
-      letter-spacing: -0.3px;
+      // letter-spacing: -0.3px;kozuka-gothic-pro, dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, 
+      font-feature-settings: "palt";
+      // transform: scale(1, 1.1) skew(-0deg);
     }
 
     .btn{
@@ -257,18 +259,20 @@ export default createGlobalStyle`
 
     html {
       -webkit-overflow-scrolling: touch;
-      will-change: transform;
+      // will-change: transform;
     }
     html:focus-within {
       scroll-behavior: smooth;
     }
 
-    // html {
-    //   visibility: hidden;
-    // }
+    html {
+      visibility: hidden;
+    }
 
     html.wf-active, html.loading-delay {
+
       visibility: visible;
+      transition: 0.3s;
     }
     
     html, body{
@@ -610,7 +614,8 @@ export default createGlobalStyle`
       color: var(--primary);
     }
     .detailCms a:hover{
-      
+      background: var(--primary);
+      color: white;
     }
 
     /* button */
