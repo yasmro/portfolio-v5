@@ -266,7 +266,7 @@ export default createGlobalStyle`
     }
 
     html {
-      visibility: hidden;
+      // visibility: hidden;
     }
 
     html.wf-active, html.loading-delay {
