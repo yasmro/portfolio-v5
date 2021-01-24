@@ -160,10 +160,10 @@ export default createGlobalStyle`
     // .display-2, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     //   font-family: a-otf-ud-shin-go-pr6n,  neue-haas-grotesk-display, ff-dax-pro, sans-serif;
     //   // corporate-a, din-2014, astoria-sans, toppan-bunkyu-mincho-pr6n, fot-rodin-pron,
-    // }UDKakugoC80Pro-B,
+    // }
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family: fot-udkakugo-large-pr6n,fot-rodin-pron,'Noto Sans JP', sans-serif;
+      font-family: fot-udkakugo-large-pr6n,'Noto Sans JP', sans-serif;
       font-style: normal !important;
       // letter-spacing: -0.3px;kozuka-gothic-pro, dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, 
       font-feature-settings: "palt";
@@ -489,12 +489,12 @@ export default createGlobalStyle`
         border-radius: 0px;
         // background-color: rgba(255,255,255,0.6)!important;
         // background: linear-gradient(23.4deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) )!important;
-        // background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
+        background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
         background: rgba(0,0,0,0);
         border: 1px solid rgba(180,180,180,0.2);
         
-        filter: drop-shadow(10px 10px 5px rgba(0,0,0,.2));
-        -webkit-filter: drop-shadow(10px 10px 5px rgba(0,0,0,.2));
+        filter: drop-shadow(10px 10px 5px rgba(0,0,0,.1));
+        -webkit-filter: drop-shadow(10px 10px 5px rgba(0,0,0,.1));
         text-align: justify;
       }
 
@@ -508,6 +508,8 @@ export default createGlobalStyle`
         height: 100%;
         background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
         filter: blur(15px);
+        -webkit-filter: blur(15px);
+        will-change: filter, -webkit-filter;
       }
 
     .card-hover{
@@ -532,16 +534,30 @@ export default createGlobalStyle`
       }
 
     .card-hover:hover{
-      // border-color: var(--primary)!important;
+      // border:  1px solid rgba(180,180,180,0.2);!important;
       // background-color: var(--primary)!important;
       border: none;
       background: var(--gradient)!important; 
       color: white;
       
-      filter: drop-shadow(0 10px 20px 0  var(--primary));
-      transform: translateY(-5px);
+      // filter: drop-shadow(0 10px 20px 0  var(--primary));
+      transform: translateY(-10px);
       transition: all 0.3s;
       cursor: pointer;
+    }
+
+    @media (max-width: 767px) { 
+      .card-hover img{
+        -webkit-filter: grayscale(0%);
+        -moz-filter: grayscale(0%);
+        -ms-filter: grayscale(0%);
+        -o-filter: grayscale(0%);
+        filter: grayscale(0%);
+      }
+
+      .card-hover:hover{
+        transform: translateY(0px);
+      }
     }
 
 
@@ -786,6 +802,10 @@ export default createGlobalStyle`
       display: none;
       width: 6px;
       background: rgba(0,0,0,0); 
+    }
+
+    #fontplus-trial-banner{
+      display: none;
     }
 
 `
