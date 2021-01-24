@@ -87,7 +87,7 @@ const About = (props) => {
                                                     <div className="mb-4">
                                                     {   
                                                         skill.relatedSkills?.map( tag =>
-                                                        <span tag={`skill-${index}-${tag}`} className="mr-2 badge border text-dark rounded-0"><span>{tag}</span></span>
+                                                        <span tag={`skill-${index}-${tag}`} className="mr-2 badge border border-dark text-dark rounded-0"><span>{tag}</span></span>
                                                         )
                                                     }
                                                     </div>

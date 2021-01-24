@@ -148,10 +148,11 @@ import {　createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 
+
     *{
-      font-family:  'Karla','Noto Sans JP',  'Noto Serif JP',   sans-serif;
+      font-family:  TsukuOldGothicStd-B,'Karla','Noto Sans JP',  'Noto Serif JP',   sans-serif;
       // font-family:  fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
-      font-style: italic !important; 
+      // font-style: italic !important; 
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -163,10 +164,11 @@ export default createGlobalStyle`
     // }
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family: fot-udkakugo-large-pr6n,'Noto Sans JP', sans-serif;
+      font-family: TsukuOldGothicStd-B,'Noto Sans JP', sans-serif;
       font-style: normal !important;
-      // letter-spacing: -0.3px;kozuka-gothic-pro, dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, 
       font-feature-settings: "palt";
+
+      // letter-spacing: -0.3px; fot-udkakugo-large-pr6n,kozuka-gothic-pro, dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, 
       // transform: scale(1, 1.1) skew(-0deg);
     }
 
@@ -490,30 +492,29 @@ export default createGlobalStyle`
         // background-color: rgba(255,255,255,0.6)!important;
         // background: linear-gradient(23.4deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) )!important;
         background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
-        background: rgba(0,0,0,0);
-        border: 1px solid rgba(180,180,180,0.2);
+        border: 1px solid rgba(200,200,200,0.2);
         
-        filter: drop-shadow(10px 10px 5px rgba(0,0,0,.1));
-        -webkit-filter: drop-shadow(10px 10px 5px rgba(0,0,0,.1));
+        filter: drop-shadow(10px 10px 5px rgba(0,0,0,.2));
+        -webkit-filter: drop-shadow(10px 10px 5px rgba(120,120,120,.45));
         text-align: justify;
       }
 
-      .card::after{
-        position: absolute;
-        top:0;
-        left: 0;
-        z-index: -1;
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
-        filter: blur(15px);
-        -webkit-filter: blur(15px);
-        will-change: filter, -webkit-filter;
-      }
+      // .card::after{
+      //   position: absolute;
+      //   top:0;
+      //   left: 0;
+      //   z-index: -1;
+      //   content: "";
+      //   width: 100%;
+      //   height: 100%;
+      //   background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
+      //   filter: blur(15px);
+      //   -webkit-filter: blur(15px);
+      //   will-change: filter, -webkit-filter;
+      // }
 
     .card-hover{
-      transition: all 0.3s;
+      transition: ease 0.3s;
     }
     .card-hover img{
       -webkit-filter: grayscale(100%);
@@ -541,8 +542,9 @@ export default createGlobalStyle`
       color: white;
       
       // filter: drop-shadow(0 10px 20px 0  var(--primary));
-      transform: translateY(-10px);
-      transition: all 0.3s;
+      transform: translateY(-5px);
+      z-index: 100;
+      transition: ease 0.3s;
       cursor: pointer;
     }
 
