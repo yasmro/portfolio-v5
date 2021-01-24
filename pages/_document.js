@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
           {/* <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?QMuq206N5yA%3D&box=pSd-Pe6CAmY%3D&delay=2&timeout=3&pm=1&aa=1&ab=2" charset="utf-8"></script> */}
-          <script dangerouslySetInnerHTML={{
+          {/* <script dangerouslySetInnerHTML={{
             __html: `(function(d) {
               var config = {
                 kitId: 'kka2nss',
@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
               h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
             })(document);`,
           }}>
-          </script>
+          </script> */}
           <script type="text/javascript" dangerouslySetInnerHTML={{
             __html: `(function(w,s){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://cdn.pagesense.io/js/desksamplelab/f4bc4d4426ae46e1b835c8ddfef3fa96.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(e,x);})(window,"script");`,
           }}></script>
