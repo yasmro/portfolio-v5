@@ -109,7 +109,7 @@ return(
               {props.show.fields.title}
             </div> */}
             <div className="d-none d-lg-inline">
-            <div className="h4">{props.show.fields.title}</div>
+            <div className={"h4 " + (props.locale==="ja" && "japanese")}>{props.show.fields.title}</div>
             {props.locale==="ja" &&
               <p className="japanese">{props.show.fields.jaTitle}</p>
             }

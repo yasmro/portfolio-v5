@@ -9,10 +9,9 @@ import {　createGlobalStyle } from 'styled-components';
     // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,00;1,300;1,400;1,700&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
     // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
-
+ // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
+ //  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
 export default createGlobalStyle`
-
-
     *{
       font-family: 'Karla','Noto Sans JP',  'Noto Serif JP',   sans-serif;
       // font-family:  fot-rodin-pron,fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
@@ -36,8 +35,15 @@ export default createGlobalStyle`
       // transform: scale(1, 1.1) skew(-0deg);
     }
 
-    .japanese p, .japanese a, .japanese ul, .japanese li{
-      font-size: 0.95rem;
+
+    @media (max-width: 767px) { 
+      .japanese p, .japanese a, .japanese ul, .japanese li{
+        font-size: 0.9rem;
+      }
+
+       .japanese h4, .japanese h5, .japanese h6{
+        font-weight: bold;
+      }
     }
 
     .btn{
@@ -247,7 +253,8 @@ export default createGlobalStyle`
     nav.navbar-common{
       backdrop-filter: grayscale(0.33) blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      background-image: linear-gradient(23.4deg,  rgba(255,255,255,0.80) 0%,  rgba(255,255,255,0.3)),
+      // background-image: linear-gradient(23.4deg,  rgba(255,255,255,0.80) 0%,  rgba(255,255,255,0.3)),
+      background-image: linear-gradient(23.4deg,  rgba(247,227,224, 0.1),rgba(247,227,224, 0.65) ),
       url( '/static/images/pattern_white.png');
       // mistyrose
       background-blend-mode:lighten;
@@ -354,17 +361,30 @@ export default createGlobalStyle`
       right:0;
     }
 
+
       .card{
-        box-shadow: none;
+        // box-shadow: none;
         border-radius: 0px;
         // background-color: rgba(255,255,255,0.6)!important;
         // background: linear-gradient(23.4deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) )!important;
-        background: linear-gradient(23.4deg, rgba(147,163,207,0.1) 0%, rgba(228,239,233,0.1) )!important;
-        border: 1px solid rgba(200,200,200,0.2);
+        background: linear-gradient(23.4deg, rgba(147,163,207,0.2) 0%, rgba(228,239,233,0.2) )!important;
+        // background-color:rgba(228,239,233,0.2)!important;
+        // border: 1px solid rgba(200,200,200,0.2);
         
-        filter: drop-shadow(10px 10px 5px rgba(0,0,0,.2));
-        -webkit-filter: drop-shadow(10px 10px 5px rgba(120,120,120,.45));
+        --cardShadow: 10px 10px 3px rgba(147,163,207,.45);
+
+        -webkit-filter: drop-shadow(var(--cardShadow));
+        -moz-filter: drop-shadow(var(--cardShadow));
+        -ms-filter: drop-shadow(var(--cardShadow));
+        -o-filter: drop-shadow(var(--cardShadow));
+        filter: drop-shadow(var(--cardShadow));
         text-align: justify;
+
+        // backdrop-filter: blur(0.9px);
+      }
+
+      .card .badge{
+        border-color: #aaa !important;
       }
 
       // .card::after{

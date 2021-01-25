@@ -27,13 +27,17 @@ import dynamic from 'next/dynamic'
 
 const DynamicComponentWithCustomLoading = dynamic(
   () => import('../../components/Title'),
-  { loading: () => <div><h1>LOADING</h1></div>}
+  { loading: () => <div>...</div>}
 )
 
 const sentence = {
     whatICanDoTitle: {
         'en-US': 'What I Can Do',
         'ja': 'できること'
+    },
+    whatIWantTitle: {
+        'en-US': 'What I Want',
+        'ja': 'やりたいこと'
     }
 }
 
@@ -75,12 +79,12 @@ const About = (props) => {
                                     <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
                                         <div className="card p-3 h-100">
                                             <div className="card-body">
-                                                <div className="card-title h3 d-flex align-items-center">
-                                                    <div className={"bg-dark d-flex align-items-center justify-content-center mr-3 text-white text-center " +(locale==="ja" ? "japanese" : "")} style={{width: "33px", height: "33px"}}>
+                                                <div className={"card-title h3 d-flex align-items-center " + (locale==="ja" ? "japanese" : "")}>
+                                                    <div className={"bg-dark d-flex align-items-center justify-content-center mr-3 text-white text-center " } style={{width: "33px", height: "33px"}}>
                                                         <span>{index + 1}</span>
                                                     </div>
                                                     
-                                                    <span className={locale==="ja" ? "japanese" : ""}>{skill.title}</span>
+                                                    <span>{skill.title}</span>
                                                 </div>
                                                 <div className={"card-text " + (locale==="ja" ? "japanese" : "")}>
                                                     <p>{skill.description}</p>
@@ -109,26 +113,35 @@ const About = (props) => {
                             }
                         </div>     
                     </div>
+
+                    <div className="mt-5">
+                    <h2 custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>{sentence.whatIWantTitle[locale]}</h2>
+                        <motion.div custom={0} className="card p-3" style={{ margin: "0 auto", maxWidth: "768px"}} initial="hidden" animate="visible" transition="transition" variants={variants}>
+                            <div className="row align-items-center" >
+                                {/* <div className="col-lg-4 " key="shodo_name" style={{minHeight: "350px"}}>
+                                    
+                                </div> */}
+                                <div className="col-12 " key="intro">
+                                    <div className={"card-body " + (locale==="ja" ? "japanese" : "")}>
+                                        <div className="card-text">
+                                            <ReactMarkdown  children={props.whatIWant}/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                </div>
                </div>
         </>
     )
 };
 
-// 最初に実行される。事前ビルドするパスを配列でreturnする。
-// export async function getStaticPaths() {
-
-//     const paths =  [
-//         { locale: 'en-US' },
-//         { locale: 'ja' },
-//       ]
-    
-//     return { paths, fallback: true }
-// }
-
 export async function getStaticProps ({ locale })  {
     const about = await getData("about", "", locale);
     const introduction = about[0].fields.about
+    const whatIWant = about[0].fields.whatIWant
+
     const whatICanDo = about[0].fields.whatICanDo.map( skill => {
         return(
             {title: skill.fields.title, description:skill.fields.description, 
@@ -141,6 +154,7 @@ export async function getStaticProps ({ locale })  {
         props: {
             introduction,
             whatICanDo,
+            whatIWant,
             locale,
         },
     };
