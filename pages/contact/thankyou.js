@@ -3,23 +3,36 @@ import Link from "next/link";
 import { getAllPosts } from '../../lib'
 
 const ContactThankYou = (props) => {
+    const sentence = {
+        description: {
+            'en-US': 'I will confirm your queries and reply to you. Please wait for my reply.',
+            'ja': 'お問い合わせいただきありがとうございました！返信内容を確認の上，後日返信させていただきます．'
+        },
+        moveToHome: {
+            'en-US': 'Move to Home',
+            'ja': 'ホームへ戻る'
+        },
+    }
+
     return(
         <>
             <Head>
                 <title>Contact - Yu Ohno's site 2020</title>
             </Head>
             <div>
-                <div className="container mt-5">
-                    <div className="row row-30">
-                        <div className="col-md-6">
+                <div className="container vh-100">
+                    <div className="d-flex center-middle" >
+                        {/* <div className="col-md-6">
                         <div className="bg-light h-100 w-100"></div>
-                        </div>
-                        <div className="col-md-6 text-center text-md-left">
+                        </div> */}
+                        <div className="col-12 text-center">
                         <h1 className="display-1">Thank you!</h1>
-                        <p>I will confirm your queries and reply to you. Please wait for my reply.</p>
+                        <p className={props.locale==="ja" ? "japanese" : ""}>{sentence.description[props.locale]}</p>
                         <div className="mt-5">
-                            <Link href="/">
-                                <button type="button" class="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">Move to Home</button>
+                            <Link href="/" locale={props.locale}>
+                                <button type="button" class="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">
+                                    <span className={props.locale==="ja" ? "japanese" : ""}>{sentence.moveToHome[props.locale]}</span>
+                                    </button>
                             </Link>
                         </div>
                         </div>

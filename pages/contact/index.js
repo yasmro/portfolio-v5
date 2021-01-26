@@ -59,16 +59,16 @@ const Contact = ({locale}) => {
             <div>
                 <Title title="Contact" />
                 <motion.div custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
-                    <div style={{ margin: "0 auto", padding:"100px 0", maxWidth: "540px" }}>
+                    <div style={{ margin: "0 auto", padding:"30px 0", maxWidth: "540px" }}>
                         <p className={locale==="ja" ? "japanese" : ""}>{sentence.description[locale]}</p>   
-                        <div className="text-center">
+                        {/* <div className="text-center">
                             <a className="btn btn-lg rounded-0 active font-weight-bold" href="https://forms.gle/NSFgtwSNZqhtZXtn9">
                                 <span className={locale==="ja" ? "japanese" : ""}>{sentence.ctaSentence[locale]}</span>
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                     {/* <form name="contact" action="/contact/thankyou" method="POST" netlify data-netlify="true" style={{ margin: "0 auto", maxWidth: "540px" }}> */}
-                    {/* <form name="contact"  action="/contact/thankyou" method="POST" netlify data-netlify="true" onSubmit={handleOnSubmit} style={{ margin: "0 auto", maxWidth: "540px" }}>
+                    <form name="contact"  action="/contact/thankyou" method="POST" onSubmit={handleOnSubmit} style={{ margin: "0 auto", maxWidth: "540px" }}>
                         <div className="row row-30 g-3">
                             <input type="hidden" name="form-name" value="contact" />
                             <div className="col-md-12 g-3">
@@ -99,7 +99,7 @@ const Contact = ({locale}) => {
                             </div>
                             <div className="status" id="status"></div>
                         </div>
-                    </form> */}
+                    </form>
                </motion.div>
             </div>
         </>
