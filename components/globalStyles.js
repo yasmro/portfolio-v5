@@ -11,9 +11,11 @@ import {　createGlobalStyle } from 'styled-components';
     // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
  // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
  //  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
+//  @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@200;400&display=swap');
 export default createGlobalStyle`
+
     *{
-      font-family: 'Karla','Noto Sans JP',  'Noto Serif JP',   sans-serif;
+      font-family:'Karla','Noto Sans JP',  'Noto Serif JP',   sans-serif;
       // font-family:  fot-rodin-pron,fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
       font-style: italic !important; 
       font-weight: 400;
