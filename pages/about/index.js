@@ -116,7 +116,7 @@ const About = (props) => {
 
                     <div className="mt-5">
                     <h2 custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>{sentence.whatIWantTitle[locale]}</h2>
-                        <motion.div custom={0} className="card p-3" style={{ margin: "0 auto", maxWidth: "768px"}} initial="hidden" animate="visible" transition="transition" variants={variants}>
+                        <motion.div custom={0} className="card card-black p-3" style={{ margin: "0 auto", maxWidth: "768px"}} initial="hidden" animate="visible" transition="transition" variants={variants}>
                             <div className="row align-items-center" >
                                 {/* <div className="col-lg-4 " key="shodo_name" style={{minHeight: "350px"}}>
                                     

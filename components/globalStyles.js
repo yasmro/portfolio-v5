@@ -12,6 +12,7 @@ import {　createGlobalStyle } from 'styled-components';
  // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
  //  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
 //  @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@200;400&display=swap');
+// @import url("https://use.typekit.net/qxv3ojo.css");
 export default createGlobalStyle`
 
     *{
@@ -29,12 +30,13 @@ export default createGlobalStyle`
     // }
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family: 'Noto Sans JP', sans-serif;
+      font-family:  HiraginoSans-W3,'Noto Sans JP', sans-serif;
       font-style: normal !important;
       font-feature-settings: "palt";
 
       // letter-spacing: -0.3px; fot-udkakugo-large-pr6n,kozuka-gothic-pro, dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, 
       // transform: scale(1, 1.1) skew(-0deg);
+      // 
     }
 
 
@@ -48,8 +50,9 @@ export default createGlobalStyle`
       }
     }
 
-    .btn{
+    .btn, .btn span{
       text-transform: none;
+      font-weight: bold;
     }
         
     i, .slick-arrow, .slick-dots button, .form-control{
@@ -369,9 +372,10 @@ export default createGlobalStyle`
         border-radius: 0px;
         // background-color: rgba(255,255,255,0.6)!important;
         // background: linear-gradient(23.4deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) )!important;
-        background: linear-gradient(23.4deg, rgba(147,163,207,0.2) 0%, rgba(228,239,233,0.2) )!important;
         // background-color:rgba(228,239,233,0.2)!important;
         // border: 1px solid rgba(200,200,200,0.2);
+
+        background: linear-gradient(23.4deg, rgba(147,163,207,0.2) 0%, rgba(228,239,233,0.2) )!important;
         
         --cardShadow: 10px 10px 3px rgba(147,163,207,.45);
 
@@ -383,6 +387,12 @@ export default createGlobalStyle`
         text-align: justify;
 
         // backdrop-filter: blur(0.9px);
+      }
+
+      .card-black{
+        background: linear-gradient(23.4deg, rgba(67,67,67,0.8) 0%, rgba(0,0,0,0.4) )!important;
+        color: white!important;
+        --cardShadow: 10px 10px 3px rgba(147,163,207,.85);
       }
 
       .card .badge{

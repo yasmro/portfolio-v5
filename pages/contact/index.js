@@ -48,7 +48,19 @@ const Contact = ({locale}) => {
           messageLabel:{
             'en-US': 'message',
             'ja': 'お問い合わせ内容'
-          }
+          },
+          emptyEmail:{
+            'en-US': 'Email',
+            'ja': 'メールアドレス'
+          },
+          invalidEmail:{
+            'en-US': 'Invalid Email',
+            'ja': 'メールアドレスが有効ではありません'
+          },
+          emptyEmail:{
+            'en-US': 'Empty Email',
+            'ja': 'メールアドレスを入力して下さい'
+          },
       }
 
     return(
@@ -73,20 +85,24 @@ const Contact = ({locale}) => {
                             <input type="hidden" name="form-name" value="contact" />
                             <div className="col-md-12 g-3">
                                 <div className="md-form mb-3">
-                                    <label htmlFor="name">Name</label>
+                                    <label htmlFor="name">
+                                    <span className={"mr-auto " + (locale==="ja" ? "japanese" : "")}>{sentence.nameLabel[locale]}</span>
+                                    </label>
                                     <input type="text" name="name" value={name} className="form-control rounded-0 py-2" onChange={(e) => setName(e.target.value)} id="name" />
                                 </div>
                                 <div className="md-form mb-3">
-                                    <label htmlFor="email" className="d-flex">
-                                        <span className="mr-auto">Email</span>
+                                    <label htmlFor="email" className={"d-flex "+(locale==="ja" ? "japanese" : "")}>
+                                        <span className="mr-auto">{sentence.emailLabel[locale]}</span>
                                         <span className={email==="" || !validateEmail(email) ? "text-danger" : "text-success" }>
-                                            {email==="" ? "Empty Email" : !validateEmail(email) ? "Invalid Email" : "Valid Email"}
+                                            {email==="" ? sentence.emptyEmail[locale] : !validateEmail(email) ? sentence.invalidEmail[locale] : ""}
                                         </span>
                                     </label>
                                     <input type="email" name="email" value={email} className="form-control rounded-0 py-2" onChange={(e) => setEmail(e.target.value)} id="email" />
                                 </div>
                                 <div className="md-form ">
-                                    <label htmlFor="message">Message</label>
+                                    <label htmlFor="message">
+                                        <span className={"mr-auto " + (locale==="ja" ? "japanese" : "")}>{sentence.messageLabel[locale]}</span>
+                                    </label>
                                     <textarea name="message" value={message} className="form-control rounded-0 py-2" onChange={(e) => setMessage(e.target.value)} style={{height: "200px"}} id="message"></textarea>
                                 </div>
                             </div>
