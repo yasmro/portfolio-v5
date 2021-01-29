@@ -32,10 +32,8 @@ const Footer = () => {
                 <div className="container text-center text-md-left">
                     <div className="row">
                         <div className="col-md-6 mt-md-0 mt-3">
-                            {/* <div className="mb-2" style={{marginLeft: "-10px", mixBlendMode: "multiply"}}>
-                                <img src="https://yasmro.github.io/portfolio/static/media/name.53c4e24b.png" style={{filter:"grayscale(100%) invert(35%)"}}loading="lazy" alt="Yu Ohno" width={120} height={32} />
-                            </div> */}
-                            <p className="h5 text-uppercase">{myself.name}</p>
+                            <img src="/static/images/name.png" className="mb-2" style={{filter: "invert(1)", webkitFilter: "invert(1)"}} loading="lazy" alt="Yu Ohno" width={120} height={32} />
+                            <p className="h5 text-uppercase mb-2">{myself.name}</p>
                             <p>{myself.quickWord}</p>
                         </div>
                         

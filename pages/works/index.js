@@ -20,14 +20,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const variants = {
-    hidden: { opacity: 0, y: 5, duration: 2},
+    hidden: { opacity: 0, y: 0, duration: 2},
     visible: (custom) => ({
       opacity: 1, 
       y: 0, 
-      duration: 2,
-      transition: { delay: custom * 0.1 }
+      transition: { delay: 0.5 + custom * 0.1 }
     }),
-    transition: { duration: 2 }
   }
 
 const Index = (props) => {
@@ -79,9 +77,9 @@ const Index = (props) => {
                                     // style={{breakInside:"avoid !important"}} 
                                     <>
                                         <Link href="/works/[id]" as={`/works/${show.fields.slug}`}>
-                                            <div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" Style="align-items: stretch;" key={`worklist-${show.fields.slug}`} >
+                                            <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-md-6 col-lg-4 g-3" Style="align-items: stretch;" key={`worklist-${show.fields.slug}`} >
                                                 <ListCard index={index} locale={props.locale} title={show.fields.title} jaTitle={show.fields.jaTitle} category={show.fields.category.fields.name} thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
-                                            </div>
+                                            </motion.div>
                                         </Link>
                                     </>
                             )) : <h1>null</h1>}

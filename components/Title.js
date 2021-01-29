@@ -6,8 +6,8 @@ import { motion } from "framer-motion"
 // import ShuffleText from 'react-shuffle-text';
 
 const variants = {
-  hidden: { opacity: 0, y: 5, duration: 20},
-  visible: { opacity: 1, y: 0, duration: 20 },
+  hidden: { opacity: 0, y: 5},
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7 }},
   transition: { duration: 2 }
 }
 

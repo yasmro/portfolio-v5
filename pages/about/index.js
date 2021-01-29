@@ -13,14 +13,12 @@ import Title from "../../components/Title"
 import { motion } from "framer-motion"
 
 const variants = {
-  hidden: { opacity: 0, y: 5, duration: 2},
+  hidden: { opacity: 0, y: 5},
   visible: (custom) => ({
     opacity: 1, 
     y: 0, 
-    duration: 2,
-    transition: { delay: custom * 0.2 }
+    transition: {duration: 0.4,  delay: 0.5 + custom * 0.2 }
   }),
-  transition: { duration: 2 }
 }
 
 import dynamic from 'next/dynamic'
@@ -52,7 +50,7 @@ const About = (props) => {
             <div>
             <DynamicComponentWithCustomLoading title="About" />
                 <div className="container">
-                    <motion.div custom={0} className="card" initial="hidden" animate="visible" transition="transition" variants={variants}>
+                    <motion.div custom={0} className="card" initial="hidden" animate="visible" variants={variants}>
                         <div className="row align-items-center">
                             <div className="col-lg-4 " key="shodo_name" style={{minHeight: "350px"}}>
                                 <div className="position-relative w-100 h-100" >
@@ -72,11 +70,14 @@ const About = (props) => {
                     
 
                     <div className="mt-4">
-                        <h2 custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>{sentence.whatICanDoTitle[locale]}</h2>
+                        <motion.h2 custom={1} initial="hidden" animate="visible" transition="transition" variants={variants} 
+                            className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>
+                            {sentence.whatICanDoTitle[locale]}
+                        </motion.h2>
                         <div className="row row-40">
                             {
                                 props.whatICanDo.map( (skill, index) =>
-                                    <motion.div initial="hidden" animate="visible" transition="transition" custom={index} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
+                                    <motion.div initial="hidden" animate="visible" transition="transition" custom={index+2} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
                                         <div className="card p-3 h-100">
                                             <div className="card-body">
                                                 <div className={"card-title h3 d-flex align-items-center " + (locale==="ja" ? "japanese" : "")}>
@@ -115,8 +116,11 @@ const About = (props) => {
                     </div>
 
                     <div className="mt-5">
-                    <h2 custom={0} initial="hidden" animate="visible" transition="transition" variants={variants} className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>{sentence.whatIWantTitle[locale]}</h2>
-                        <motion.div custom={0} className="card card-black p-3" style={{ margin: "0 auto", maxWidth: "768px"}} initial="hidden" animate="visible" transition="transition" variants={variants}>
+                        <motion.h2 custom={5} initial="hidden" animate="visible" transition="transition" variants={variants} 
+                            className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>
+                            {sentence.whatIWantTitle[locale]}
+                        </motion.h2>
+                        <motion.div custom={6} className="card card-black p-3" style={{ margin: "0 auto", maxWidth: "768px"}} initial="hidden" animate="visible" transition="transition" variants={variants}>
                             <div className="row align-items-center" >
                                 {/* <div className="col-lg-4 " key="shodo_name" style={{minHeight: "350px"}}>
                                     

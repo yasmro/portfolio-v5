@@ -16,7 +16,7 @@ import {　createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
 
     *{
-      font-family:'Karla','Noto Sans JP',  'Noto Serif JP',   sans-serif;
+      font-family:  'Karla','Noto Sans JP',  'Noto Serif JP',   sans-serif;
       // font-family:  fot-rodin-pron,fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
       font-style: italic !important; 
       font-weight: 400;
@@ -38,7 +38,6 @@ export default createGlobalStyle`
       // transform: scale(1, 1.1) skew(-0deg);
       // 
     }
-
 
     @media (max-width: 767px) { 
       .japanese p, .japanese a, .japanese ul, .japanese li{
@@ -124,6 +123,10 @@ export default createGlobalStyle`
       --primary2: #b94047!important;
       // --primary1:#640125!important;
       --primary1: #b30050 !important;
+
+      --primary: rgba(211,56,28,0.9) !important;
+      --primary1: rgba(178,10,4,0.9) !important;
+
       --secondary: rgba(219,180,0,1) !important;
 
       --gradient: -webkit-linear-gradient(135deg,  var(--primary1),  var(--primary))!important;
@@ -184,47 +187,9 @@ export default createGlobalStyle`
 
     
 
-   
-    
-
-    .home-jumbotron{
-        // background-image:
-        //   repeating-linear-gradient(
-        //     -23.4deg,
-        //     rgba(0,0,0,0.1), rgba(0,0,0,0.1), 40px,
-        //     rgba(0 0 0 / 0) 0,
-        //     rgba(0 0 0 / 0) 80px
-        //   );
-
-        background: var(--gradient); 
-        // background-color: var(--primary);
-      //   background-image:
-      // -webkit-linear-gradient(
-      // 45deg,
-      // rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
-      // transparent 25%, transparent 75%,
-      // rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%),
-      
-      // -webkit-linear-gradient(
-      // 135deg,
-      // rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
-      // transparent 25%, transparent 75%,
-      // rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%);
-      
-      // background-image:
-      //   linear-gradient(
-      //   45deg,
-      //   rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
-      //   transparent 25%, transparent 75%,
-      //   rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%),
-      //   linear-gradient(
-      //   -45deg,
-      //   rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 25%,
-      //   transparent 25%, transparent 75%,
-      //   rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15) 75%);
-      // background-size: 40px 40px;
+    .home-jumbotron{        
+        background: linear-gradient(23.4deg, rgba(147,163,207,0.2) 0%, rgba(228,239,233,0.2) )!important;
     }
-
         
     .topLeft{
         background:
@@ -387,12 +352,21 @@ export default createGlobalStyle`
         text-align: justify;
 
         // backdrop-filter: blur(0.9px);
+        will-change: filter;
       }
 
       .card-black{
         background: linear-gradient(23.4deg, rgba(67,67,67,0.8) 0%, rgba(0,0,0,0.4) )!important;
         color: white!important;
         --cardShadow: 10px 10px 3px rgba(147,163,207,.85);
+      }
+
+      .card-primary{
+        background: var(--gradient)!important;
+        
+        color: white!important;
+        --cardShadow: 10px 10px 2.5px rgba(147,163,207,.95);
+        
       }
 
       .card .badge{
