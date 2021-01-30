@@ -17,7 +17,7 @@ const variants = {
   visible: (custom) => ({
     opacity: 1, 
     y: 0, 
-    transition: {duration: 0.4,  delay: 0.5 + custom * 0.2 }
+    transition: {duration: 0.3,  delay:  0}
   }),
 }
 

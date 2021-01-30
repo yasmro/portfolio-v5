@@ -127,8 +127,8 @@ export default createGlobalStyle`
       --primary: rgba(211,56,28,0.9) !important;
       --primary1: rgba(178,10,4,0.9) !important;
 
-      --primary1: #991B1B !important;
-      --primary: #BE185D !important;
+      --primary1: #9F1239 !important;
+      --primary: #BE123C !important;
 
       // --primary: #14B8A6 !important;
       // --primary1: #0E7490 !important;

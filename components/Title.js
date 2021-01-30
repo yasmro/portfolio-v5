@@ -7,13 +7,13 @@ import { motion } from "framer-motion"
 
 const variants = {
   hidden: { opacity: 0, y: 5},
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7 }},
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 }},
   transition: { duration: 2 }
 }
 
 const Title = ({title, description, locale="", jaTitle="日本語テスト"}) => (
   <div className="jumbotron jumbotron-fluid py-5 text-center bg-light mb-5" >
-    <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
+    <div initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
         <h1 className="quotation display-2 text-shadow">
           {/* <ShuffleText content={title} charFrameTime={35} charFrames={21} /> */}
           {title}
@@ -25,7 +25,7 @@ const Title = ({title, description, locale="", jaTitle="日本語テスト"}) =>
           <span className="shadow font-weight-bold px-4 text-white position-absolute" Style="background: linear-gradient(45deg, var(--primary), var(--primary1))!important" >{title}</span>
         </h1> */}
         
-    </motion.div>
+    </div>
   </div>
 )
 

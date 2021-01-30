@@ -15,7 +15,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const variants = {
     hidden: { opacity: 0, y: 5, duration: 2},
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.5 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
     hide: { opacity: 0, y: 5, duration: 2},
     transition: { duration: 2 }
   }
