@@ -18,7 +18,7 @@ module.exports = {
       {
         // this matches '/' since `en` is the defaultLocale
         source: '/en-US',
-        destination: '/en-US/another',
+        destination: '/en-US/',
         locale: false,
         permanent: true,
       },
