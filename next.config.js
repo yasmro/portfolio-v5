@@ -10,7 +10,19 @@ module.exports = {
   i18n: {
     locales: ['en-US', 'ja'],
     defaultLocale: 'en-US',
-    localeDetection: true,
+    localeDetection: false,
+  },
+
+  async redirects() {
+    return [
+      {
+        // this matches '/' since `en` is the defaultLocale
+        source: '/en-US',
+        destination: '/en-US/another',
+        locale: false,
+        permanent: true,
+      },
+    ]
   },
 
   trailingSlash: true,
@@ -49,7 +61,7 @@ module.exports = {
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY
   },
 
-  entry: './pages/index.js',
+    entry: './pages/index.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')

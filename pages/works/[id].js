@@ -67,6 +67,13 @@ var settings = {
   )
 };
 
+const sentence = {
+  abstract:{
+    'en-US': 'Abstract',
+    'ja': '概要'
+  }
+}
+
 return(
   <>
   <Head>
@@ -102,21 +109,17 @@ return(
               </Slider>
             </div>
           }
-        <div className="mt-5 mt-lg-0 detailCms position-sticky" style={{ top: "120px"}}>
+        <div className="mt-5 mt-lg-0 detailCms position-sticky" style={{  top: "120px"}}>
           {/* <WorkTitle1 index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
-          <div className=" mt-0 p-0">
-            {/* <div className="card active p-3 h4 text-center font-weight-light" style={{color:"var(--primary)"}}>
-              {props.show.fields.title}
-            </div> */}
+          <div className="mt-0 p-0">
             <div className="d-none d-lg-inline">
-            <div className={"h4 " + (props.locale==="ja" && "japanese")}>{props.show.fields.title}</div>
-            {props.locale==="ja" &&
-              <p className="japanese">{props.show.fields.jaTitle}</p>
-            }
-            <hr />
+              <div className={"h4 " + (props.locale==="ja" && "japanese")}>{props.show.fields.title}</div>
+              {props.locale==="ja" && <p className="japanese">{props.show.fields.jaTitle}</p>}
+              <hr />
             </div>
-
-            <ReactMarkdown className={props.locale==="ja" ? "japanese" : ""} children={props.show.fields.description} />
+            {/* <div className={"h4 " + (props.locale==="ja" && "japanese")}>{sentence.abstract[props.locale]}</div> */}
+            {/* <p className={props.locale==="ja" && "japanese"}>{props.show.fields.abstract}</p> */}
+            <ReactMarkdown className={props.locale==="ja" && "japanese"} children={props.show.fields.description} />
           </div>
           
         </div>
@@ -157,24 +160,7 @@ return(
       <hr className="my-5"/>
 
       <div className="mt-3">
-          {/* <h2 className="square">Other Works</h2> */}
           <div className="row row-40">
-            {/* {props.shows ? 
-                  props.shows.map((show, idx) => (
-                      
-                      <div className="col-md-4 col-lg-3 g-3" onClick={() => setCarouselIndex(0)} key={`worklist-${show.fields.slug}`}>
-                          <ListCard title={show.fields.title}  thumbnail={show.fields.thumbnail} slug={show.fields.slug} />
-                      </div>
-                  
-                  
-              )) : <h1>null</h1>} */}
-              {/* <div className="col-6 g-3" onClick={() => setCarouselIndex(0)} key={`worklist-${props.prevShow.fields.slug}`}>
-                <ListCard title={`< PREV ${props.prevShow.fields.title}`}  thumbnail={props.prevShow.fields.thumbnail} slug={props.prevShow.fields.slug} />
-              </div>
-              <div className="col-6 g-3" onClick={() => setCarouselIndex(0)} key={`worklist-${props.nextShow.fields.slug}`}>
-                <ListCard title={`${props.nextShow.fields.title} NEXT >`}  thumbnail={props.nextShow.fields.thumbnail} slug={props.nextShow.fields.slug} />
-              </div> */}
-
               <div className="col-4 g-3 hover-page hover-page-prev" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
                 <Link href="/works/[id]" as={`/works/${props.prevShow.fields.slug}`}>
                   <div className="w-100 position-relative ">
@@ -184,11 +170,7 @@ return(
                   </div>
                 </Link>
               </div>
-              {/* <div className="col-4 pt-1 g-3 text-center" onClick={() => setCarouselIndex(0)} >
-                <Link href="/works">
-                  <button type="button" className="btn btn-outline-dark btn-lg rounded-0" data-ripple-color="dark">All Works</button>
-                </Link>
-              </div> */}
+
               <div className="offset-4 col-4  g-3" onClick={() => setCarouselIndex(0)} style={{ cursor: "pointer"}}>
                 <Link href="/works/[id]" as={`/works/${props.nextShow.fields.slug}`} >
                     <div className="position-relative text-right hover-page hover-page-next">

@@ -49,8 +49,8 @@ const About = (props) => {
             </Head>
             <div>
             <DynamicComponentWithCustomLoading title="About" />
-                <div className="container">
-                    <motion.div custom={0} className="card" initial="hidden" animate="visible" variants={variants}>
+                <motion.div className="container" custom={0} initial="hidden" animate="visible" variants={variants}>
+                    <div custom={0} className="card" initial="hidden" animate="visible" variants={variants}>
                         <div className="row align-items-center">
                             <div className="col-lg-4 " key="shodo_name" style={{minHeight: "350px"}}>
                                 <div className="position-relative w-100 h-100" >
@@ -66,18 +66,18 @@ const About = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                     
 
                     <div className="mt-4">
-                        <motion.h2 custom={1} initial="hidden" animate="visible" transition="transition" variants={variants} 
+                        <h2 custom={1} initial="hidden" animate="visible" transition="transition" variants={variants} 
                             className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>
                             {sentence.whatICanDoTitle[locale]}
-                        </motion.h2>
+                        </h2>
                         <div className="row row-40">
                             {
                                 props.whatICanDo.map( (skill, index) =>
-                                    <motion.div initial="hidden" animate="visible" transition="transition" custom={index+2} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
+                                    <div initial="hidden" animate="visible" transition="transition" custom={index+2} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
                                         <div className="card p-3 h-100">
                                             <div className="card-body">
                                                 <div className={"card-title h3 d-flex align-items-center " + (locale==="ja" ? "japanese" : "")}>
@@ -98,7 +98,7 @@ const About = (props) => {
                                                     </div>
                                                     {
                                                         skill.workSlug &&
-                                                        <div className="mt-3 link rounded-0 text-right position-absolute" style={{ bottom: "20px", "right": "32px"}}>
+                                                        <div className="mt-3 link rounded-0 text-right " >
                                                             <Link href="/works/[id]" as={`/works/${skill.workSlug}`}>
                                                                 <a className="btn btn-black rounded-0">
                                                                     <div className=""><i className="fas fa-arrow-right mr-2"></i><span>View Work</span></div>
@@ -109,18 +109,18 @@ const About = (props) => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 )
                             }
                         </div>     
                     </div>
 
                     <div className="mt-5">
-                        <motion.h2 custom={5} initial="hidden" animate="visible" transition="transition" variants={variants} 
+                        <h2 custom={5} initial="hidden" animate="visible" transition="transition" variants={variants} 
                             className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>
                             {sentence.whatIWantTitle[locale]}
-                        </motion.h2>
-                        <motion.div custom={6} className="card card-black p-3" style={{ margin: "0 auto", maxWidth: "768px"}} initial="hidden" animate="visible" transition="transition" variants={variants}>
+                        </h2>
+                        <div custom={6} className="card card-black p-3" style={{ margin: "0 auto", maxWidth: "768px"}} initial="hidden" animate="visible" transition="transition" variants={variants}>
                             <div className="row align-items-center" >
                                 {/* <div className="col-lg-4 " key="shodo_name" style={{minHeight: "350px"}}>
                                     
@@ -133,9 +133,9 @@ const About = (props) => {
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
-               </div>
+               </motion.div>
                </div>
         </>
     )

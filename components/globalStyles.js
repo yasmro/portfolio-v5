@@ -30,7 +30,7 @@ export default createGlobalStyle`
     // }
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family:  HiraginoSans-W3,'Noto Sans JP', sans-serif;
+      font-family:  HiraginoSans-W3, 'Noto Sans JP', sans-serif;
       font-style: normal !important;
       font-feature-settings: "palt";
 
@@ -127,6 +127,12 @@ export default createGlobalStyle`
       --primary: rgba(211,56,28,0.9) !important;
       --primary1: rgba(178,10,4,0.9) !important;
 
+      --primary1: #991B1B !important;
+      --primary: #BE185D !important;
+
+      // --primary: #14B8A6 !important;
+      // --primary1: #0E7490 !important;
+
       --secondary: rgba(219,180,0,1) !important;
 
       --gradient: -webkit-linear-gradient(135deg,  var(--primary1),  var(--primary))!important;
@@ -188,7 +194,16 @@ export default createGlobalStyle`
     
 
     .home-jumbotron{        
-        background: linear-gradient(23.4deg, rgba(147,163,207,0.2) 0%, rgba(228,239,233,0.2) )!important;
+        background: #fafafa;
+        // background: linear-gradient(23.4deg, rgba(147,163,207,0.2) 0%, rgba(228,239,233,0.2) )!important;
+        
+        // background-image:
+        //   repeating-linear-gradient(
+        //     -23.400001deg,
+        //     #eee,#eee 20px,
+        //     rgba(0 0 0 / 0) 0,
+        //     rgba(0 0 0 / 0) 40px
+        //   );
     }
         
     .topLeft{
