@@ -120,12 +120,12 @@ const About = (props) => {
                             className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>
                             {sentence.whatIWantTitle[locale]}
                         </h2>
-                        <div custom={6} className="card card-black p-3" style={{ margin: "0 auto", maxWidth: "768px"}} initial="hidden" animate="visible" transition="transition" variants={variants}>
-                            <div className="row align-items-center" >
-                                {/* <div className="col-lg-4 " key="shodo_name" style={{minHeight: "350px"}}>
-                                    
-                                </div> */}
-                                <div className="col-12 " key="intro">
+                        <div custom={6} className="card card-black p-3" initial="hidden" animate="visible" transition="transition" variants={variants}>
+                            <div className="row align-items-center g-4" >
+                                <div className="col-lg-4 position-relative" key="kh" style={{minHeight: "350px"}}>
+                                    <img src='/static/images/kyo_shin_do_haku.png' style={{position: "absolute", objectFit: "scale-down", top:"50%", left:"50%", transform: "translateY(-50%) translateX(-50%)", }} height="270" width="240" id="kyoshindohaku" alt="Yu-logo"/>
+                                </div>
+                                <div className="col-lg-8 " key="kh_intro">
                                     <div className={"card-body " + (locale==="ja" ? "japanese" : "")}>
                                         <div className="card-text">
                                             <ReactMarkdown  children={props.whatIWant}/>

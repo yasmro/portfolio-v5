@@ -20,9 +20,9 @@ const Title = ({name="", quickWord=""}) => {
   const router = useRouter();
     return(
     <>
-    <div  className="home-jumbotron jumbotron jumbotron-fluid py-4 mb-5 d-flex position-relative" style={{height: "calc(100vh - 80px)", marginTop: "0px", minHeight: "540px"}}>
+    <div  className="home-jumbotron jumbotron jumbotron-fluid py-4 mb-5 d-flex position-relative" style={{height:"calc(100vh - 80px)", marginTop: "0px", minHeight: "540px"}}>
         <div className="container text-center h-100" >
-            <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="card card-primary p-5" style={{ position: "absolute", top: "50%", left:"50%", transform:"translate(-50%,-50%)"}}>
+            <motion.div initial="hidden" animate="visible" transition="transition" variants={variants} className="card card-primary p-5" style={{ position: "absolute", top: "45vh", left:"50%", transform:"translate(-50%,-50%)"}}>
                 <div className="quotation p-5" >
                     <div className="text-shadow text-light">
                     <h1 className="display-1"><span className="font-weight-bold">{name.split(' ')[0].toUpperCase()}</span><span style={{fontWeight:200, fontSize:"108%"}}>{name.split(' ')[1].toUpperCase()}</span></h1>
@@ -31,10 +31,13 @@ const Title = ({name="", quickWord=""}) => {
                     <span style={{fontWeight:400}} className="display-6">Artist</span><span style={{fontWeight:400}} className="lead"> and <br /></span>
                     <span style={{fontWeight:400}} className="display-6">Calligrapher.</span>
                     </div>
-                    {/* <img src={require('../data/images/Toplogo.svg')} className="" id="toplogo" alt="Yu-logo"/> */}
+                    
                 </div>
+                
             </motion.div>
+            {/* <img src='/static/images/kyo_shin_do_haku_color.png' height="450" width="400" id="kyoshindohaku" alt="Yu-logo"/> */}
         </div>
+        
 
     </div> 
     </>

@@ -133,11 +133,34 @@ export default createGlobalStyle`
       // --primary: #14B8A6 !important;
       // --primary1: #0E7490 !important;
 
-      --secondary: rgba(219,180,0,1) !important;
+      // --primary1: rgba(255,215,0,1) !important;
+      // --primary: rgba(212,175,55,1) !important;
+
+      --secondary: rgba(255,215,0,1) !important;
 
       --gradient: -webkit-linear-gradient(135deg,  var(--primary1),  var(--primary))!important;
 
     }
+
+    #kyoshindohaku{
+      
+      
+      --cardShadow: 10px 10px 3px rgba(147,163,207,.15);
+
+      -webkit-filter: invert(95%) drop-shadow(var(--cardShadow));
+      -moz-filter: invert(95%) drop-shadow(var(--cardShadow));
+      -ms-filter: invert(95%) drop-shadow(var(--cardShadow));
+      -o-filter:invert(95%)  drop-shadow(var(--cardShadow));
+      filter: invert(95%)  drop-shadow(var(--cardShadow));
+
+      // background: ;
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+      
+      will-change: filter;
+    }
+
+    
 
     .gradient_text{
       background: var(--gradient);
@@ -190,6 +213,8 @@ export default createGlobalStyle`
       background: var(--gradient);
       color: white;
     }
+
+    
 
     
 
