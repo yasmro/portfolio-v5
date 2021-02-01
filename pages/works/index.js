@@ -115,7 +115,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
       <button
-        className={"btn rounded-0"}
+        className={"btn  btn-outline-dark rounded-0"}
         style={{ ...style, padding:"8px 14px", position: "absolute", top: "-53px", right: 0 }}
         onClick={onClick}
         aria-label="NEXT"
@@ -127,7 +127,7 @@ function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <button
-        className={"btn rounded-0"}
+        className={"btn btn-outline-dark  rounded-0"}
         style={{ ...style, padding:"8px 14px", position: "absolute", top: "-53px", right: "45px" }}
         onClick={onClick}
         aria-label="PREVIOUS"
