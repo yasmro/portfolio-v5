@@ -58,7 +58,7 @@ const Footer = () => {
                                 routes.map( route => (
                                     <li className="nav-item" key={`footer-route-${route.name}`}>
                                         <Link href={route.link}>
-                                            <a className={"nav-link waves-effect link-hover text-white " + (router.pathname.replace("/[id]", "") === route.link ? "active" : "" )}>{route.name}</a>
+                                            <a className={"nav-link waves-effect link-hover text-white " + (router.pathname.replace("/[id]", "") === route.link ? "active shadow shadow-white " : "" )}>{route.name}</a>
                                         </Link>
                                     </li>
                                 ))

@@ -13,10 +13,11 @@ import {　createGlobalStyle } from 'styled-components';
  //  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
 //  @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@200;400&display=swap');
 // @import url("https://use.typekit.net/qxv3ojo.css");
+
 export default createGlobalStyle`
 
     *{
-      font-family:  'Karla','Noto Sans JP',  'Noto Serif JP',   sans-serif;
+      font-family: 'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
       // font-family:  fot-rodin-pron,fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
       font-style: italic !important; 
       font-weight: 400;
@@ -30,7 +31,7 @@ export default createGlobalStyle`
     // }
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family:  HiraginoSans-W3, 'Noto Sans JP', sans-serif;
+      font-family: FP-HiraginoUDSansStdN-W3,TsukuGoPro-M,TsukuOldGothicStd-B,HiraginoSans-W3, 'Noto Sans JP', sans-serif;
       font-style: normal !important;
       font-feature-settings: "palt";
 
@@ -136,6 +137,20 @@ export default createGlobalStyle`
       // --primary1: rgba(255,215,0,1) !important;
       // --primary: rgba(212,175,55,1) !important;
 
+      // --primary1: #C02425 !important;
+      // --primary: #F0CB35 !important;
+      // --primary1: #141E30 !important;
+      // --primary: #243B55 !important;
+
+      // --primary1: #24243e !important;
+      // --primary: #302b63 !important;
+
+      --primary1: #690000 !important;
+      // --primary: #990444 !important;
+
+      // --primary1:#61045F !important;
+      // --primary:#AA076B !important;
+
       --secondary: rgba(255,215,0,1) !important;
 
       --gradient: -webkit-linear-gradient(135deg,  var(--primary1),  var(--primary))!important;
@@ -143,8 +158,6 @@ export default createGlobalStyle`
     }
 
     #kyoshindohaku{
-      
-      
       --cardShadow: 10px 10px 3px rgba(147,163,207,.15);
 
       -webkit-filter: invert(95%) drop-shadow(var(--cardShadow));
@@ -152,6 +165,7 @@ export default createGlobalStyle`
       -ms-filter: invert(95%) drop-shadow(var(--cardShadow));
       -o-filter:invert(95%)  drop-shadow(var(--cardShadow));
       filter: invert(95%)  drop-shadow(var(--cardShadow));
+      
 
       // background: ;
       // -webkit-background-clip: text;
@@ -382,7 +396,7 @@ export default createGlobalStyle`
 
         background: linear-gradient(23.4deg, rgba(147,163,207,0.2) 0%, rgba(228,239,233,0.2) )!important;
         
-        --cardShadow: 10px 10px 3px rgba(147,163,207,.45);
+        --cardShadow: 10px 10px 2px rgba(147,163,207,.4);
 
         -webkit-filter: drop-shadow(var(--cardShadow));
         -moz-filter: drop-shadow(var(--cardShadow));

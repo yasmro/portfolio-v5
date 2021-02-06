@@ -55,7 +55,7 @@ const Contact = ({locale}) => {
           },
           invalidEmail:{
             'en-US': 'Invalid Email',
-            'ja': 'メールアドレスが有効ではありません'
+            'ja': '不正なメールアドレスです'
           },
           emptyEmail:{
             'en-US': 'Empty Email',

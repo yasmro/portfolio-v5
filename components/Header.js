@@ -32,15 +32,7 @@ const Header = ({ href, children }) => {
               </a>
           </Link>
           </div>        
-          {/* <li className="nav-item pl-4 align-items-stretch d-flex" key={`lang`}>
-              <Link href={router.asPath} locale="en-US">
-                <a className={"nav-link waves-effect " + (router.locale === "en-US" ? "active" : "" )}>en</a>
-              </Link>
-              <span className={"nav-link waves-effect"} >/</span>
-              <Link href={router.asPath} locale="ja">
-                <a className={"nav-link waves-effect " + (router.locale === "ja" ? "active" : "" )}>ja</a>
-              </Link>
-          </li> */}
+          
           <div className="ml-4 btn-group shadow-none" role="group">
             <Link href={router.asPath} locale="en-US">
               <button type="button" className={"btn  rounded-0 " + (router.locale === "en-US" ? "active font-weight-bold " : "" )}><span className="h6">EN</span></button>
