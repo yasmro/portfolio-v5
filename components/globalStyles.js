@@ -17,12 +17,13 @@ import {　createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
 
     *{
-      font-family: 'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
+      font-family:'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
       // font-family:  fot-rodin-pron,fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
       font-style: italic !important; 
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      ont-feature-settings: "salt";
     }
 
     // .display-2, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
@@ -31,7 +32,7 @@ export default createGlobalStyle`
     // }
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family: FP-HiraginoUDSansStdN-W3,TsukuGoPro-M,TsukuOldGothicStd-B,HiraginoSans-W3, 'Noto Sans JP', sans-serif;
+      font-family:  HiraginoSans-W3, 'Noto Sans JP', sans-serif;
       font-style: normal !important;
       font-feature-settings: "palt";
 
@@ -388,7 +389,6 @@ export default createGlobalStyle`
 
       .card{
         // box-shadow: none;
-        border-radius: 0px;
         // background-color: rgba(255,255,255,0.6)!important;
         // background: linear-gradient(23.4deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) )!important;
         // background-color:rgba(228,239,233,0.2)!important;
@@ -398,6 +398,8 @@ export default createGlobalStyle`
         
         --cardShadow: 10px 10px 2px rgba(147,163,207,.4);
 
+        --cardShadow: 5px 5px 2px rgba(147,163,207,.3);
+
         -webkit-filter: drop-shadow(var(--cardShadow));
         -moz-filter: drop-shadow(var(--cardShadow));
         -ms-filter: drop-shadow(var(--cardShadow));
@@ -405,14 +407,21 @@ export default createGlobalStyle`
         filter: drop-shadow(var(--cardShadow));
         text-align: justify;
 
-        // backdrop-filter: blur(0.9px);
         will-change: filter;
+
+        border-radius: 10px;
+        box-shadow: var(--cardShadow);
+        // border: 2px rgba(255,255,255,0.4) solid;
+        // border-bottom: 2px rgba(40,40,40,0.35) solid;
+        // border-right: 2px rgba(40,40,40,0.35) solid;
       }
 
       .card-black{
         background: linear-gradient(23.4deg, rgba(67,67,67,0.8) 0%, rgba(0,0,0,0.4) )!important;
         color: white!important;
-        --cardShadow: 10px 10px 3px rgba(147,163,207,.85);
+        --cardShadow: 5px 5px 2px rgba(147,163,207,.85);
+        
+        box-shadow:none;
       }
 
       .card-primary{
@@ -420,7 +429,7 @@ export default createGlobalStyle`
         
         color: white!important;
         --cardShadow: 10px 10px 2.5px rgba(147,163,207,.95);
-        
+        box-shadow:none;
       }
 
       .card .badge{
@@ -465,7 +474,7 @@ export default createGlobalStyle`
     .card-hover:hover{
       // border:  1px solid rgba(180,180,180,0.2);!important;
       // background-color: var(--primary)!important;
-      border: none;
+      // border: none;
       background: var(--gradient)!important; 
       color: white;
       
