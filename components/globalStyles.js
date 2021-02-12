@@ -13,9 +13,9 @@ import {　createGlobalStyle } from 'styled-components';
  //  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
 //  @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@200;400&display=swap');
 // @import url("https://use.typekit.net/qxv3ojo.css");
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
 
 export default createGlobalStyle`
-
     *{
       font-family:'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
       // font-family:  fot-rodin-pron,fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
@@ -23,7 +23,8 @@ export default createGlobalStyle`
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      ont-feature-settings: "salt";
+      font-feature-settings: "salt";
+      
     }
 
     // .display-2, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
@@ -32,17 +33,17 @@ export default createGlobalStyle`
     // }
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family:  HiraginoSans-W3, 'Noto Sans JP', sans-serif;
+      font-family: HiraginoSans-W3, 'Noto Sans JP', sans-serif;
       font-style: normal !important;
       font-feature-settings: "palt";
-
+      
       // letter-spacing: -0.3px; fot-udkakugo-large-pr6n,kozuka-gothic-pro, dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, 
-      // transform: scale(1, 1.1) skew(-0deg);
+      // transform: scale(1) skew(-0deg);
       // 
     }
 
     @media (max-width: 767px) { 
-      .japanese p, .japanese a, .japanese ul, .japanese li{
+      p.japanese, .japanese p, .japanese a, .japanese ul, .japanese li{
         font-size: 0.9rem;
       }
 
@@ -50,6 +51,9 @@ export default createGlobalStyle`
         font-weight: bold;
       }
     }
+
+
+
 
     .btn, .btn span{
       text-transform: none;
@@ -68,6 +72,10 @@ export default createGlobalStyle`
 
     button:focus {
         outline:0;
+    }
+
+    [class*=btn-outline-]{
+      border-width: .1rem;
     }
 
     .center-middle{
@@ -220,8 +228,8 @@ export default createGlobalStyle`
       // background: #0a0a0a;
       // color: #fafafa;
 
-      // background-image: linear-gradient(23.4deg, rgba(250,250,250,0.9) 0%, rgba(250,250,250,0.99) 80%),
-      // url( '/static/images/pattern_black.png');
+      background-image: linear-gradient(23.4deg, rgba(250,250,250,0.95) 0%, rgba(250,250,250,0.99) 80%),
+      url( '/static/images/pattern_black.png');
     }
 
     .jumbotron{
@@ -573,6 +581,11 @@ export default createGlobalStyle`
       // transition: all 0.3s;
       // background: red;
     }
+
+    .detailCms h4{
+      margin-top: 30px;
+    }
+    
 
     .detailCms a{
       color: var(--primary);

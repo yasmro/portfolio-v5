@@ -50,7 +50,7 @@ const About = (props) => {
             <div>
             <DynamicComponentWithCustomLoading title="About" />
                 <motion.div className="container" custom={0} initial="hidden" animate="visible" variants={variants}>
-                    <div custom={0} className="card" initial="hidden" animate="visible" variants={variants}>
+                    <div custom={0} className="card px-3" initial="hidden" animate="visible" variants={variants}>
                         <div className="row align-items-center">
                             <div className="col-lg-4 " key="shodo_name" style={{minHeight: "350px"}}>
                                 <div className="position-relative w-100 h-100" >

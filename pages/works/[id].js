@@ -11,6 +11,7 @@ import Slider from "react-slick";
 // import WorkTitle2 from '../../components/WorkTitle2'
 // import WorkTitle3 from '../../components/WorkTitle3'
 import WorkTitle4 from '../../components/WorkTitle4'
+import WorkTitle5 from '../../components/WorkTitle5'
 
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -31,7 +32,7 @@ const Post = props => {
 const [length, setLength] = useState(0)
 
 const router = useRouter();
-    const { locale, locales, defaultLocale } = router
+const { locale, locales, defaultLocale } = router
 
 var settings = {
   className: "",
@@ -81,14 +82,12 @@ return(
   </Head>
   { props.show ?
   <div>
-
-    {/* <WorkTitle2 index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
-    {/* <WorkTitle3 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} /> */}
-    <WorkTitle4 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} jaTitle={props.show.fields.jaTitle} locale={locale} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} locale={props.locale}/>
+    {/* <WorkTitle4 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} jaTitle={props.show.fields.jaTitle} locale={locale} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} locale={props.locale}/> */}
+    <WorkTitle5 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} jaTitle={props.show.fields.jaTitle} locale={locale} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} locale={props.locale}/>
     <AnimatePresence exitBeforeEnter>
     <motion.div initial="hidden" animate="visible" exit="hide" transition="transition" variants={variants} key={props.show.fields.title} className="container mt-5 ">
       <div className="row row-40">
-      <div className={props.show.fields.description ? "col-lg-4" : "d-lg-none"}>
+      <div className={props.show.fields.description ? "col-lg-4" : "col-lg-6"}>
           {
             (props.show.fields.photos) &&
             <div className="d-inline d-lg-none">
@@ -118,19 +117,19 @@ return(
               <hr />
             </div>
             {/* <div className={"h4 " + (props.locale==="ja" && "japanese")}>{sentence.abstract[props.locale]}</div> */}
-            {/* <p className={props.locale==="ja" && "japanese"}>{props.show.fields.abstract}</p> */}
+            <p className={props.locale==="ja" && "japanese"}>{props.show.fields.abstract}</p>
             <ReactMarkdown className={props.locale==="ja" && "japanese"} children={props.show.fields.description} />
           </div>
           
         </div>
       </div>
 
-      <div className={props.show.fields.description ? "col-lg-8" : "col-lg-6 offset-lg-3"}>
+      <div className={props.show.fields.description ? "col-lg-8" : "col-lg-6"}>
         {
             (props.show.fields.photos) &&
             <div className="d-none d-lg-inline">
               <div className="d-flex mb-3 position-relative">
-                <div className="bg-dark rounded-0 pt-1 position-relative shadow" style={{width: "60px", height: "60px"}}>
+                <div className="bg-dark rounded-0 pt-1 position-relative" style={{width: "60px", height: "60px"}}>
                   <span className="h1 position-absolute text-center text-light" style={{ fontSize:"40px", top: "-2px", left: "10px" }}>{carouselIndex + 1}</span>
                   <span className="position-absolute bottomRight" style={{bottom: "1px", right: "1px" }}></span>
                   <span className="position-absolute text-right" style={{ bottom: "0px", right: "5px" }}>{props.show.fields.photos.length}</span>
