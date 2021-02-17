@@ -424,6 +424,18 @@ export default createGlobalStyle`
         // border-right: 2px rgba(40,40,40,0.35) solid;
       }
 
+      @media (max-width: 767px) { 
+        .card{
+          -webkit-filter: none;
+          -moz-filter: none;
+          -ms-filter: none;
+          -o-filter: none;
+          filter: none;
+        }
+      }
+
+
+
       .card-black{
         background: linear-gradient(23.4deg, rgba(67,67,67,0.8) 0%, rgba(0,0,0,0.4) )!important;
         color: white!important;
