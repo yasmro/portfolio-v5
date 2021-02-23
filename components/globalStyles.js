@@ -14,10 +14,16 @@ import {　createGlobalStyle } from 'styled-components';
 //  @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@200;400&display=swap');
 // @import url("https://use.typekit.net/qxv3ojo.css");
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
-
+// @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@200;1,400;1,600&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,100;1,400;1,600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
 export default createGlobalStyle`
+
     *{
-      font-family:'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
+      font-family:   'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
       // font-family:  fot-rodin-pron,fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
       font-style: italic !important; 
       font-weight: 400;
@@ -37,9 +43,12 @@ export default createGlobalStyle`
       font-style: normal !important;
       font-feature-settings: "palt";
       
-      // letter-spacing: -0.3px; fot-udkakugo-large-pr6n,kozuka-gothic-pro, dnp-shuei-gothic-kin-std,a-otf-ud-shin-go-pr6n,fot-udkakugo-large-pr6n, 
-      // transform: scale(1) skew(-0deg);
-      // 
+    }
+
+    @media (min-width: 768px) { 
+      .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
+        font-family: UDKakugo_SmallPr6N-R,HiraginoSans-W3, 'Noto Sans JP', sans-serif;
+      }
     }
 
     @media (max-width: 767px) { 
@@ -471,7 +480,7 @@ export default createGlobalStyle`
       // }
 
     .card-hover{
-      transition: ease 0.3s;
+      transition: ease 0.1s;
     }
     .card-hover img{
       -webkit-filter: grayscale(100%);
@@ -482,14 +491,7 @@ export default createGlobalStyle`
       transition: all 0.3s;
     }
 
-    .card-hover:hover img {
-      -webkit-filter: grayscale(0);
-      -moz-filter: grayscale(0);
-      -ms-filter: grayscale(0);
-      -o-filter: grayscale(0);
-      filter: grayscale(0);
-      transition: all 0.3s;
-      }
+
 
     .card-hover:hover{
       // border:  1px solid rgba(180,180,180,0.2);!important;
@@ -499,10 +501,20 @@ export default createGlobalStyle`
       color: white;
       
       // filter: drop-shadow(0 10px 20px 0  var(--primary));
-      transform: translateY(-5px);
+      // transform: translateY(-5px);
+      transform: scale(1.02);
       transition: ease 0.3s;
       cursor: pointer;
     }
+
+    .card-hover:hover img {
+      -webkit-filter: grayscale(0);
+      -moz-filter: grayscale(0);
+      -ms-filter: grayscale(0);
+      -o-filter: grayscale(0);
+      filter: grayscale(0);
+      transition: all 0.3s;
+      }
 
     @media (max-width: 767px) { 
       .card-hover img{
@@ -516,6 +528,10 @@ export default createGlobalStyle`
       .card-hover:hover{
         transform: translateY(0px);
       }
+    }
+
+    .card .japanese p, .detailCms p.japanese{
+      line-height: 1.85;
     }
 
 

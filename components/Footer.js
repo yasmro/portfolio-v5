@@ -27,6 +27,18 @@ const Footer = () => {
         },
     }
 
+    const colors = [
+        '#aa0000',
+        '#ccdd00',
+        '#c870c8',
+        '#555',
+        '#f0f0f0',
+        '#880088',
+        '#cc5500',
+        '#00cc55',
+        '#0055cc',
+    ]
+
     return(
             <footer className="position-absolute w-100 page-footer text-light pink pt-4 skewedArea bg-dark">
                 <div className="container text-center text-md-left">
@@ -70,6 +82,13 @@ const Footer = () => {
                 </div>
                 <div className="footer-copyright text-center py-3">
                         Copyright &copy; {new Date().getFullYear()} Yu Ohno "Yasumaro" All rights reserved.
+                </div>
+
+                <div className="d-flex align-items-center justify-content-end">
+                    {colors.map(color => 
+                            <div style={{height: "2px", width:"16px", backgroundColor: color}}> </div>
+                        // <div style={{height: "5px", width:"10px", backgroundImage: `linear-gradient(0deg, transparent 49%, ${color} 49%, ${color} 52%, transparent 52%, transparent)`}}> </div>
+                    )}                    
                 </div>
         </footer>
     )

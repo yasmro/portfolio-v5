@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/* <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?QMuq206N5yA%3D&box=pSd-Pe6CAmY%3D&timeout=10&pm=1&aa=1&ab=1" charset="utf-8"></script> */}
+          <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?QMuq206N5yA%3D&box=pSd-Pe6CAmY%3D&pm=1&aa=1&ab=2" charset="utf-8"></script>
           {/* <script dangerouslySetInnerHTML={{
             __html: `(function(d) {
               var config = {

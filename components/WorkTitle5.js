@@ -15,12 +15,15 @@ const variants = {
 
 const WorkTitle5 = ({index=0, length=0, title, locale="", jaTitle="", description="", category="", tags=[], abstract="", thumbnail={}}) => (
   <>
-  {/* style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}} */}
+  {/* style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1)) aec6cf", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}} */}
   <div className="jumbotron-fluid mb-5 py-0 py-lg-0 " style={{backgroundColor: "#ecf2f2", height: "40vh", minHeight: "460px"}}>
     <AnimatePresence exitBeforeEnter>
-      <motion.div initial="hidden" animate="visible" transition="transition" exit="hide" variants={variants} key={`${title}-title`} className="container h-100">
+      <motion.div initial="hidden" animate="visible" transition="transition" exit="hide" variants={variants} key={`${title}-title`} className="container h-100 position-relative">
+        {/* <div className="position-absolute" style={{overflowY:"hidden", bottom: "-0px", left: 0, fontSize:"140px", opacity: 0.1}}>
+          <span>{('0' + (index+1)).slice(-2)}</span>
+        </div> */}
         <div className="row row-20 d-flex h-100" >
-          <div className="col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-start" >
+          <div className="col-lg-6 d-flex align-items-center justify-content-center" >
             <div>
               <div className="text-center text-lg-left mb-5">
                 <h1 className="display-3 gradient_text text-shadow font-weight-bold" style={{letterSpacing: "0px"}} >{title}</h1>
@@ -67,6 +70,7 @@ const WorkTitle5 = ({index=0, length=0, title, locale="", jaTitle="", descriptio
                     src={thumbnail !== {} ? thumbnail.fields.file.url : ""}
                     height={thumbnail !== {} ? 320 : "0"}
                     width={thumbnail !== {} ? thumbnail.fields.file.details.image.width : "0"}
+                    alt={title}
                     className="img-fluid my-auto mx-auto shadow"
                     style={{maxHeight: "320px", width: thumbnail.fields.file.details.image.width * (320 /thumbnail.fields.file.details.image.height) }}
                     loading="lazy"
