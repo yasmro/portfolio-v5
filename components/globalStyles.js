@@ -39,15 +39,16 @@ export default createGlobalStyle`
     // }
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family: HiraginoSans-W3, 'Noto Sans JP', sans-serif;
+      font-family:  HiraginoSans-W3, 'Noto Sans JP', sans-serif;
       font-style: normal !important;
+      font-weight: 300;
       font-feature-settings: "palt";
       
     }
 
     @media (min-width: 768px) { 
       .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-        font-family: UDKakugo_SmallPr6N-R,HiraginoSans-W3, 'Noto Sans JP', sans-serif;
+        font-family: HiraginoSans-W2,HiraginoSans-W3, 'Noto Sans JP', sans-serif;
       }
     }
 
@@ -237,7 +238,7 @@ export default createGlobalStyle`
       // background: #0a0a0a;
       // color: #fafafa;
 
-      background-image: linear-gradient(23.4deg, rgba(250,250,250,0.95) 0%, rgba(250,250,250,0.99) 80%),
+      background-image: linear-gradient(23.4deg, rgba(250,250,250,0.95) 0%, rgba(250,250,250,0.999) 20%),
       url( '/static/images/pattern_black.png');
     }
 
@@ -426,7 +427,7 @@ export default createGlobalStyle`
 
         will-change: filter;
 
-        border-radius: 10px;
+        border-radius: 0px;
         box-shadow: var(--cardShadow);
         // border: 2px rgba(255,255,255,0.4) solid;
         // border-bottom: 2px rgba(40,40,40,0.35) solid;
@@ -454,9 +455,12 @@ export default createGlobalStyle`
       }
 
       .card-primary{
-        background: var(--gradient)!important;
+        // border: 2px solid rgba(180,180,180,0.8);
+        // background: var(--gradient)!important;
+        // background: linear-gradient(23.4deg, rgba(250,250,250,0.4) 0%, rgba(250,250,250,0.29) 80%),
+      url( '/static/images/pattern_white.png')!important;
         
-        color: white!important;
+        color: rgba(60,60,60,0.95);
         --cardShadow: 10px 10px 2.5px rgba(147,163,207,.95);
         box-shadow:none;
       }
@@ -675,7 +679,10 @@ export default createGlobalStyle`
   background: rgb(10,10,10) ;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  
+  -ms-webkit-backdrop-filter: blur(8px);
+  -moz-webkit-backdrop-filter: blur(8px);
+  -o-webkit-backdrop-filter: blur(8px);
+
   top: 0;
   left: 0;
   width: 100%;

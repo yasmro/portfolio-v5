@@ -22,9 +22,6 @@ const ContactThankYou = (props) => {
             <div>
                 <div className="container vh-100">
                     <div className="d-flex center-middle" >
-                        {/* <div className="col-md-6">
-                        <div className="bg-light h-100 w-100"></div>
-                        </div> */}
                         <div className="col-12 text-center">
                         <h1 className="display-1">Thank you!</h1>
                         <p className={props.locale==="ja" ? "japanese" : ""}>{sentence.description[props.locale]}</p>
