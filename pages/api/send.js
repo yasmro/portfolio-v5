@@ -11,9 +11,10 @@ export default async function(req, res) {
     from: senderEmail,
     subject: `New Message From - ${name} (${email})`,
     text: `New Message From - ${name} (${email}). \n ${message}`,
-    html: `<h1>ポートフォリオサイトよりメールです </h1>
+    html: `<h1>ポートフォリオサイトより問い合わせがありました</h1>
     <p>差出人名：${name}</p>
     <p>メールアドレス：${email}</p>
+    <p>送信日時(UTC)：${new Date().toUTCString()}</p>
     <p>${message}</p>`
   }
 

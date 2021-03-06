@@ -59,7 +59,7 @@ const About = (props) => {
                             </div>
                             <div className="col-lg-8 " key="intro">
                                 <div className={"card-body " + (locale==="ja" ? "japanese" : "")}>
-                                    <div className={"h3 card-title " + (locale==="ja" ? "japanese" : "")}>{myself.name}</div>
+                                    <div className={"h4 card-title " + (locale==="ja" ? "japanese" : "")}>{myself.name}</div>
                                     <div className="card-text">
                                         <ReactMarkdown  children={props.introduction}/>
                                     </div>
@@ -80,7 +80,7 @@ const About = (props) => {
                                     <div initial="hidden" animate="visible" transition="transition" custom={index+2} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
                                         <div className="card p-3 h-100">
                                             <div className="card-body">
-                                                <div className={"card-title h3 d-flex align-items-center " + (locale==="ja" ? "japanese" : "")}>
+                                                <div className={"card-title h4 d-flex align-items-center " + (locale==="ja" ? "japanese" : "")}>
                                                     <div className={"bg-dark d-flex align-items-center justify-content-center mr-3 text-white text-center " } style={{width: "33px", height: "33px"}}>
                                                         <span>{index + 1}</span>
                                                     </div>

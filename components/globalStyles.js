@@ -20,16 +20,20 @@ import {　createGlobalStyle } from 'styled-components';
 //@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,100;1,400;1,600&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700&display=swap');
 export default createGlobalStyle`
 
+
     *{
-      font-family:   'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
-      // font-family:  fot-rodin-pron,fot-udkakugo-large-pr6n, fot-rodin-pron,neue-haas-grotesk-text,neue-haas-grotesk-text, ff-dax-pro,  'Fira Sans', 'Karla', a-otf-ud-shin-go-pr6n, astoria-sans, toppan-bunkyu-mincho-pr6n, dnp-shuei-gothic-kin-std, toppan-bunkyu-mincho-pr6n, din-2014,corporate-a, dnp-shuei-gothic-kin-std, a-otf-gothic-bbb-pr6n, 'Karla', sans-serif !important;
+      font-family:'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
+      
       font-style: italic !important; 
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-feature-settings: "salt";
+      font-feature-settings: "palt";
       
     }
 
@@ -39,18 +43,17 @@ export default createGlobalStyle`
     // }
 
     .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-      font-family:  HiraginoSans-W3, 'Noto Sans JP', sans-serif;
+      font-family:'Noto Sans JP',HiraginoSans-W2,HiraginoSans-W3,'SmartFontUI-Proportional',  'Noto Serif JP',  sans-serif;
       font-style: normal !important;
       font-weight: 300;
       font-feature-settings: "palt";
-      
     }
 
-    @media (min-width: 768px) { 
-      .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
-        font-family: HiraginoSans-W2,HiraginoSans-W3, 'Noto Sans JP', sans-serif;
-      }
-    }
+    // @media (min-width: 768px) { 
+    //   .japanese, .japanese p, .japanese h4, .japanese h5, .japanese h6, .japanese span, .japanese a, .japanese ul, .japanese li{
+    //     font-family: HiraginoSans-W2,HiraginoSans-W3, 'Noto Sans JP', sans-serif;
+    //   }
+    // }
 
     @media (max-width: 767px) { 
       p.japanese, .japanese p, .japanese a, .japanese ul, .japanese li{
@@ -170,9 +173,14 @@ export default createGlobalStyle`
       // --primary1:#61045F !important;
       // --primary:#AA076B !important;
 
+      
+      
+      // --primary1: #5c0931 !important;
+      // --primary: #84084a !important;
+
       --secondary: rgba(255,215,0,1) !important;
 
-      --gradient: -webkit-linear-gradient(135deg,  var(--primary1),  var(--primary))!important;
+      --gradient: -webkit-linear-gradient(135deg, var(--primary1),  var(--primary))!important;
 
     }
 
