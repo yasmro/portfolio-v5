@@ -69,15 +69,15 @@ const About = (props) => {
                     </div>
                     
 
-                    <div className="mt-4">
+                    <div className="mt-5">
                         <h2 custom={1} initial="hidden" animate="visible" transition="transition" variants={variants} 
                             className={"text-center square "+ (locale==="ja" ? "japanese" : "")}>
                             {sentence.whatICanDoTitle[locale]}
                         </h2>
-                        <div className="row row-40">
+                        <div className="row g-4">
                             {
                                 props.whatICanDo.map( (skill, index) =>
-                                    <div initial="hidden" animate="visible" transition="transition" custom={index+2} variants={variants} className="col-lg-6 g-3" key={`skill-${index}`}>
+                                    <div initial="hidden" animate="visible" transition="transition" custom={index+2} variants={variants} className="col-lg-6" key={`skill-${index}`}>
                                         <div className="card p-3 h-100">
                                             <div className="card-body">
                                                 <div className={"card-title h4 d-flex align-items-center " + (locale==="ja" ? "japanese" : "")}>

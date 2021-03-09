@@ -23,11 +23,12 @@ import {　createGlobalStyle } from 'styled-components';
 // @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,200;1,400;1,700&display=swap');
 export default createGlobalStyle`
 
 
     *{
-      font-family:'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
+      font-family: 'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
       
       font-style: italic !important; 
       font-weight: 400;
@@ -175,10 +176,11 @@ export default createGlobalStyle`
 
       
       
-      // --primary1: #5c0931 !important;
-      // --primary: #84084a !important;
+      --primary1: #5c0931 !important;
+      --primary: #84084a !important;
 
       --secondary: rgba(255,215,0,1) !important;
+      --secondary: rgba(254,175,110,1) !important;
 
       --gradient: -webkit-linear-gradient(135deg, var(--primary1),  var(--primary))!important;
 
@@ -207,6 +209,7 @@ export default createGlobalStyle`
       background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      padding: 3px;
       // filter: drop-shadow(0.25rem .25rem 2rem var(--primary))!important;
       // text-shadow: 0.25rem .25rem 10rem var(--primary)!important;
     }
@@ -422,9 +425,8 @@ export default createGlobalStyle`
 
         background: linear-gradient(23.4deg, rgba(147,163,207,0.2) 0%, rgba(228,239,233,0.2) )!important;
         
-        --cardShadow: 10px 10px 2px rgba(147,163,207,.4);
 
-        --cardShadow: 5px 5px 2px rgba(147,163,207,.3);
+        --cardShadow: 0px 5px 2px rgba(147,163,207,.15);
 
         -webkit-filter: drop-shadow(var(--cardShadow));
         -moz-filter: drop-shadow(var(--cardShadow));
