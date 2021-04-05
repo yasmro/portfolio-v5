@@ -16,7 +16,9 @@ const variants = {
 const WorkTitle5 = ({index=0, length=0, title, locale="", jaTitle="", description="", category="", tags=[], abstract="", thumbnail={}}) => (
   <>
   {/* style={{background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1)) aec6cf", background: "linear-gradient(45deg, var(--primary), rgba(201, 0, 118, 1))"}} */}
-  <div className="jumbotron-fluid mb-5 py-0 py-lg-0 " style={{backgroundColor: "#ecf2f2", height: "40vh", minHeight: "460px"}}>
+  <div className="jumbotron-fluid mb-5 py-0 py-lg-0 " 
+  style={{backgroundColor: "#ecf2f2",  height: "40vh", minHeight: "460px"}}>
+    {/* backgroundImage: "linear-gradient(23.4deg, rgba(236,242,242, 0.96),rgba(236, 242,242, 0.99) ), url( '/static/images/pattern_black.png')", */}
     <AnimatePresence exitBeforeEnter>
       <motion.div initial="hidden" animate="visible" transition="transition" exit="hide" variants={variants} key={`${title}-title`} className="container h-100 position-relative">
         {/* <div className="position-absolute" style={{overflowY:"hidden", bottom: "-0px", left: 0, fontSize:"140px", opacity: 0.1}}>

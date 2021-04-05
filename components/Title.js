@@ -2,6 +2,7 @@
 import React from 'react'
 // import Link from 'next/link'
 import { motion } from "framer-motion"
+import Header from './Header'
 
 // import ShuffleText from 'react-shuffle-text';
 
@@ -12,6 +13,7 @@ const variants = {
 }
 
 const Title = ({title, description, locale="", jaTitle="日本語テスト"}) => (
+  <>
   <div className="jumbotron jumbotron-fluid py-5 text-center bg-light mb-5" >
     <div initial="hidden" animate="visible" transition="transition" variants={variants} className="container" >
         <h1 className="quotation display-2 text-shadow">
@@ -27,6 +29,7 @@ const Title = ({title, description, locale="", jaTitle="日本語テスト"}) =>
         
     </div>
   </div>
+  </>
 )
 
 

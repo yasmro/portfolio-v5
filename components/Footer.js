@@ -44,7 +44,7 @@ const Footer = () => {
                 <div className="container text-center text-md-left">
                     <div className="row">
                         <div className="col-md-6 mt-md-0 mt-3">
-                            <img src="/static/images/name.png" className="mb-2" style={{filter: "invert(1)", webkitFilter: "invert(1)"}} loading="lazy" alt="Yu Ohno" width={120} height={32} />
+                            <img src="/static/images/name.png" className="mb-2" style={{filter: "invert(1)", WebkitFilter: "invert(1)"}} loading="lazy" alt="Yu Ohno" width={120} height={32} />
                             <p className="h5 text-uppercase mb-2">{myself.name}</p>
                             <p>{myself.quickWord}</p>
                         </div>
