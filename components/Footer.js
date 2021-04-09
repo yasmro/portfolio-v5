@@ -84,12 +84,12 @@ const Footer = () => {
                         Copyright &copy; {new Date().getFullYear()} Yu Ohno "Yasumaro" All rights reserved.
                 </div>
 
-                <div className="d-flex align-items-center justify-content-end">
+                {/* <div className="d-flex align-items-center justify-content-end">
                     {colors.map(color => 
                             <div style={{height: "2px", width:"16px", backgroundColor: color}}> </div>
                         // <div style={{height: "5px", width:"10px", backgroundImage: `linear-gradient(0deg, transparent 49%, ${color} 49%, ${color} 52%, transparent 52%, transparent)`}}> </div>
                     )}                    
-                </div>
+                </div> */}
         </footer>
     )
 }

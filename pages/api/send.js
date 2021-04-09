@@ -14,10 +14,11 @@ export default async function(req, res) {
     html: `<h1>ポートフォリオサイトより問い合わせがありました</h1>
     <p>差出人名：${name}</p>
     <p>メールアドレス：${email}</p>
+    <p>送信日時(Local Time)：${new Date().toLocaleString()}</p>
     <p>送信日時(UTC)：${new Date().toUTCString()}</p>
     <p>${message}</p>`
   }
-
+  
   try {
     await sgMail.send(content)
     res.status(200).send('Message sent successfully.')

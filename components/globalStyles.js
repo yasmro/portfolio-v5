@@ -27,9 +27,8 @@ import {　createGlobalStyle } from 'styled-components';
 // @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
 
 export default createGlobalStyle`
-
-    *{
-      font-family:  'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
+  *{
+      font-family:   'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
       
       font-style: italic !important; 
       font-weight: 400;
@@ -184,11 +183,10 @@ export default createGlobalStyle`
       --secondary: rgba(254,175,110,1) !important;
 
       --gradient: -webkit-linear-gradient(135deg, var(--primary1),  var(--primary))!important;
-
     }
 
     #kyoshindohaku{
-      --cardShadow: 10px 10px 3px rgba(147,163,207,.15);
+      --cardShadow: 10px 10px 3px rgba(108,92,48,.15);
 
       -webkit-filter: invert(95%) drop-shadow(var(--cardShadow));
       -moz-filter: invert(95%) drop-shadow(var(--cardShadow));
@@ -435,8 +433,6 @@ export default createGlobalStyle`
         -o-filter: drop-shadow(var(--cardShadow));
         filter: drop-shadow(var(--cardShadow));
         text-align: justify;
-
-        will-change: filter;
 
         border-radius: 0px;
         box-shadow: var(--cardShadow);

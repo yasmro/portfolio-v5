@@ -24,6 +24,34 @@ const Contact = ({locale}) => {
       const [name, setName] = useState("");
       const [email, setEmail] = useState("");
       const [message, setMessage] = useState("");
+      const [isLoading, setIsLoading] = useState(false);
+
+      const validateEmail = (email) => {
+        // emailの正規表現
+        const regexp = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
+        return regexp.test(email) ? true : false;
+    }
+    
+    const handleOnSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true)
+        var bodyData = {name: name, email: email, message: message};
+        const res = await fetch('/api/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(bodyData),
+          mode: 'cors',
+        })
+        const text = await res.text()
+        if(text==='Message sent successfully.'){
+            Router.push({pathname: '/contact/thankyou'})
+        }else{
+            document.getElementById('status').innerHTML = text;
+            setIsLoading(false)
+        }
+      }
 
     //   const router = useRouter();
     //   const { locale, locales, defaultLocale } = router
@@ -108,9 +136,12 @@ const Contact = ({locale}) => {
                             </div>
 
                             <div className="text-center">
-                                <button type="submit" className={"mt-5 btn btn-lg rounded-0 " + (name==="" || email === "" || message === "" || validateEmail(email) === false ? "btn-light" : "active")} disabled={name==="" || email === "" || message === "" || validateEmail(email) === false} data-ripple-color="dark">
-                                    <i className="far fa-paper-plane mr-2"></i>
-                                    <span className="">Send</span>
+                                <button type="submit" id="submitBtn" className={"mt-5 btn btn-lg rounded-0 " + (isLoading===true || name==="" || email === "" || message === "" || validateEmail(email) === false ? "btn-light" : "active")} disabled={isLoading===true || name==="" || email === "" || message === "" || validateEmail(email) === false} data-ripple-color="dark">
+                                    {isLoading ?
+                                        <span>Loading...</span> 
+                                        :                                    
+                                        <><i className="far fa-paper-plane mr-2"></i><span className="">Send</span></>
+                                    }
                                 </button>
                             </div>
                             <div className="status" id="status"></div>
@@ -144,29 +175,6 @@ export async function getStaticProps ({ locale })  {
     };
 };
 
-const validateEmail = (email) => {
-    // emailの正規表現
-    const regexp = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
-    return regexp.test(email) ? true : false;
-}
 
-const handleOnSubmit = async (e) => {
-    e.preventDefault();
-    var bodyData = {name: document.getElementById('name').value, email: email.value, message: message.value};
-    const res = await fetch('/api/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(bodyData),
-      mode: 'cors',
-    })
-    const text = await res.text()
-    if(text==='Message sent successfully.'){
-        Router.push({pathname: '/contact/thankyou'})
-    }else{
-        document.getElementById('status').innerHTML = text;
-    }
-  }
 
 export default Contact;

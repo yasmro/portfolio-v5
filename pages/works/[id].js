@@ -86,7 +86,7 @@ return(
     <WorkTitle5 thumbnail={props.show.fields.thumbnail} index={props.index.presence} length={props.shows.length} title={props.show.fields.title} jaTitle={props.show.fields.jaTitle} locale={locale} category={props.show.fields.category.fields.name} tags={props.show.fields.tags} abstract={props.show.fields.abstract} locale={props.locale}/>
     <AnimatePresence exitBeforeEnter>
     <motion.div initial="hidden" animate="visible" exit="hide" transition="transition" variants={variants} key={props.show.fields.title} className="container mt-5 ">
-      <div className="row">
+      <div className="row g-lg-5">
       <div className={props.show.fields.description ? "col-lg-4" : "col-lg-6"}>
           {
             (props.show.fields.photos) &&
