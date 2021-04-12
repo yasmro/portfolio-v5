@@ -87,7 +87,7 @@ return(
     <AnimatePresence exitBeforeEnter>
     <motion.div initial="hidden" animate="visible" exit="hide" transition="transition" variants={variants} key={props.show.fields.title} className="container mt-5 ">
       <div className="row g-lg-5">
-      <div className={props.show.fields.description ? "col-lg-4" : "col-lg-6"}>
+      <div className={props.show.fields.description ? "col-lg-6" : "col-lg-6"}>
           {
             (props.show.fields.photos) &&
             <div className="d-inline d-lg-none">
@@ -124,7 +124,7 @@ return(
         </div>
       </div>
 
-      <div className={props.show.fields.description ? "col-lg-8" : "col-lg-6"}>
+      <div className={props.show.fields.description ? "col-lg-6" : "col-lg-6"}>
         {
             (props.show.fields.photos) &&
             <div className="d-none d-lg-inline">

@@ -23,12 +23,12 @@ import {　createGlobalStyle } from 'styled-components';
 // @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,200;1,400;1,700&display=swap');
+
 // @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
 
 export default createGlobalStyle`
   *{
-      font-family:   'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
+      font-family: 'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
       
       font-style: italic !important; 
       font-weight: 400;
@@ -101,85 +101,10 @@ export default createGlobalStyle`
 
 
     :root {
-      --primary2: rgba(201, 0, 118, 1)!important;
-      --primary1: rgba( 227, 66, 51, 1)!important;
-      // --primary: rgba(192, 12, 53, 1)!important;
-      // --primary1: #BD3F32!important;
-      // --primary:#CB356B!important;
-      // --primary1: #d42968!important;
-      // --primary: #9b003f!important;
-      // --primary1: #302b63!important;
-      // --primary:#24243e !important;
-      // --primary: #D31027!important;
-      // --primary1:#BD3F32 !important;
-      // --primary: rgba(128, 39, 63, 1)!important;
-      // --secondary: rgba(197,179,88, 1)!important;
-      // --primary: #9b003f!important;
-      // --primary: #BD3F32!important;
-      // --primary: #CB356B!important;
-
-      --primary1: #eb3349!important;
-      --primary: #BD3F32!important;
-
-      // --primary1: #cc2b5e!important;
-      // --primary: #753a88!important;
-
-      --primary2:purple !important;
-      --primary: #36d1dc!important;
-      --primary1: #004e92!important;
-
-      // --primary1: #aa076b!important;
-      // --primary: #61045f!important;
-
-      // --primary: #060e6d!important;
-      // --primary1: #0041c3!important;
-
-      // --primary: #ED213A!important;
-      // --primary1: #93291E!important;
-
-      // --primary: #141e30!important;
-      // --primary1: #243b55!important;
-
-      // --primary: #AA076B!important;
-      // --primary1: #fd1d1d!important;
-
-      --primary: #d3381c !important;
-      --primary2: #b94047!important;
-      // --primary1:#640125!important;
-      --primary1: #b30050 !important;
-
-      --primary: rgba(211,56,28,0.9) !important;
-      --primary1: rgba(178,10,4,0.9) !important;
-
-      --primary1: #9F1239 !important;
-      --primary: #BE123C !important;
-
-      // --primary: #14B8A6 !important;
-      // --primary1: #0E7490 !important;
-
-      // --primary1: rgba(255,215,0,1) !important;
-      // --primary: rgba(212,175,55,1) !important;
-
-      // --primary1: #C02425 !important;
-      // --primary: #F0CB35 !important;
-      // --primary1: #141E30 !important;
-      // --primary: #243B55 !important;
-
-      // --primary1: #24243e !important;
-      // --primary: #302b63 !important;
-
-      --primary1: #690000 !important;
-      // --primary: #990444 !important;
-
-      // --primary1:#61045F !important;
-      // --primary:#AA076B !important;
-
-      
-      
+ 
       --primary1: #5c0931 !important;
       --primary: #84084a !important;
 
-      --secondary: rgba(255,215,0,1) !important;
       --secondary: rgba(254,175,110,1) !important;
 
       --gradient: -webkit-linear-gradient(135deg, var(--primary1),  var(--primary))!important;
@@ -788,6 +713,8 @@ export default createGlobalStyle`
       -webkit-text-fill-color: white;
     }
 
+
+    
 
 
     /* scroll bar */

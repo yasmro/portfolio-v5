@@ -40,7 +40,7 @@ const Footer = () => {
     ]
 
     return(
-            <footer className="position-absolute w-100 page-footer text-light pink pt-4 skewedArea bg-dark">
+            <footer className="position-absolute w-100 page-footer text-light pink pt-5 skewedArea bg-dark">
                 <div className="container text-center text-md-left">
                     <div className="row">
                         <div className="col-md-6 mt-md-0 mt-3">
@@ -51,7 +51,7 @@ const Footer = () => {
                         
                         <hr className="d-inline-flex d-md-none mt-3 mb-4 bg-dark"/>
 
-                        <div className="col-md-6 mb-md-0 mb-3">
+                        <div className="col-md-6">
 
                             <p className={(locale==="ja" ? "h6 japanese" : "h5")}>{sentence.socials[locale]}</p>
                             <ul className="d-inline-flex text-center list-unstyled">
@@ -80,7 +80,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="footer-copyright text-center py-3">
+                <div className="footer-copyright text-center py-5">
                         Copyright &copy; {new Date().getFullYear()} Yu Ohno "Yasumaro" All rights reserved.
                 </div>
 
