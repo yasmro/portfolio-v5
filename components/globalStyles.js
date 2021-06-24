@@ -1,31 +1,5 @@
 import {　createGlobalStyle } from 'styled-components';
 
-    // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@100;300;700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,00;1,300;1,400;1,700&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
-    // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
- // @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
- //  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&display=swap');
-//  @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@200;400&display=swap');
-// @import url("https://use.typekit.net/qxv3ojo.css");
-// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@200;1,400;1,600&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;1,300;1,400&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,100;1,400;1,600&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700&display=swap');
-
-// @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
-
 export default createGlobalStyle`
   *{
       font-family: 'Karla',HiraginoSans-W3,'Noto Sans JP',  'Noto Serif JP',   sans-serif;
@@ -101,12 +75,10 @@ export default createGlobalStyle`
 
 
     :root {
- 
-      --primary1: #5c0931 !important;
-      --primary: #84084a !important;
+      --primary1: #640125 !important;
+      --primary: #B1063A !important;
 
       --secondary: rgba(254,175,110,1) !important;
-
       --gradient: -webkit-linear-gradient(135deg, var(--primary1),  var(--primary))!important;
     }
 

@@ -6,10 +6,12 @@ import Router from 'next/router'
 import dynamic from 'next/dynamic'
 // import {useRouter} from 'next/router'
 
-const Title = dynamic(
-  () => import('../../components/Title'),
-  { loading: () => <div><h1>LOADING</h1></div>}
-)
+// const Title = dynamic(
+//   () => import('../../components/Title'),
+//   { loading: () => <div><h1>LOADING</h1></div>}
+// )
+
+import Title from '../../components/Title'
 
 import { motion, AnimatePresence } from "framer-motion"
 

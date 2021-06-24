@@ -9,10 +9,12 @@ import Slider from "react-slick";
 
 import dynamic from 'next/dynamic'
 
-const Title = dynamic(
-  () => import('../../components/Title'),
-  { loading: () => <div><h1>LOADING</h1></div>}
-)
+// const Title = dynamic(
+//   () => import('../../components/Title'),
+//   { loading: () => <div><h1>LOADING</h1></div>}
+// )
+
+import Title from '../../components/Title'
 
 import ListCard from "../../components/ListCard"
 

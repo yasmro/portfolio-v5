@@ -23,10 +23,10 @@ const variants = {
 
 import dynamic from 'next/dynamic'
 
-const DynamicComponentWithCustomLoading = dynamic(
-  () => import('../../components/Title'),
-  { loading: () => <div>...</div>}
-)
+// const DynamicComponentWithCustomLoading = dynamic(
+//   () => import('../../components/Title'),
+//   { loading: () => <div>...</div>}
+// )
 
 const sentence = {
     whatICanDoTitle: {
@@ -48,7 +48,7 @@ const About = (props) => {
                 <title>About - Yu Ohno's site 2020</title>
             </Head>
             <div>
-            <DynamicComponentWithCustomLoading title="About" />
+            <Title title="About" />
                 <motion.div className="container" custom={0} initial="hidden" animate="visible" variants={variants}>
                     <div custom={0} className="card px-3" initial="hidden" animate="visible" variants={variants}>
                         <div className="row align-items-center">
